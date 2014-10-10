@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Komodo Project File - DO NOT EDIT -->
+<project id="22cf924d-bd83-4704-a0fd-c50cb705df5f" kpf_version="5" name="server.komodoproject">
+<preference-set idref="22cf924d-bd83-4704-a0fd-c50cb705df5f" id="project" preftype="project">
+  <string relative="path" id="import_dirname"></string>
+  <long id="tabWidth">4</long>
+</preference-set>
+</project>

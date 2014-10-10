@@ -1,0 +1,43 @@
+body{font:12px "Microsoft YaHei",微软雅黑,"Microsoft JhengHei",Helvetica,sans-serif;}
+.sub_info .desc{
+    font-size: 12px;
+    line-height: 21px;
+}
+.sub_info h4{
+    font-size: 14px;
+}
+.team_1_h3,.team_2_h3{
+    font-size: 14px;
+}
+#i_task_list .long_task_desc{
+    font-size: 12px;
+}
+#alert_msg{
+    font-size: 14px;
+}
+.tz_d{
+    width: 40px;
+    height: 18px;
+}
+.reg_right_font{
+    width: 80px;
+    text-align: right;
+}
+.input_text_bg{
+    width: 170px;
+}
+.match_box_vs_font{
+    font-size:14px;
+}
+.match_team_name{
+    font-size: 14px;
+}
+.shop_new_btn_box{
+    width: 51px;
+}
+.lightbox_content_map_left,.lightbox_content_map_right{
+	width: 130px;	
+}
+.lightbox_content_map_ct{
+	width:  350px;
+}

@@ -1,0 +1,301 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.sidebar-nav {
+  padding: 9px 0;
+}
+.clear{
+    clear: both;
+}
+#ajax_content{
+    min-height: 500px;
+}
+.a_key_export{
+    margin-top: 20px;
+}
+.a_key_export .btn{
+    width: 60px;
+    height: 18px;
+}
+#formation_artwork{
+    clear: both;
+    border: 1px solid #FFF;
+}
+#formation_artwork textarea{
+    width: 80%;
+}
+#formation_list {
+    position: relative;
+    width: 481px;
+    height: 468px;
+    background: url(../images/admin/field.png);
+}
+.formation_position{
+    position: absolute;
+    width: 45px;
+    height: 59px;
+    text-align: center;
+    color: #FFF;
+    cursor: pointer;
+}
+.pos_player{
+    width: 83px;
+    height: 92px;
+    background: url(../images/admin/player.png);
+    margin: 0 auto;
+}
+.img_box {
+    padding: 10px;
+    margin-top: 20px;
+    background: #EEE;
+    border: 1px solid #CCC;
+    text-align: center;
+    border-radius: 5px;
+    
+}
+.img_box.active{
+    background: #F5F5F5;
+    border: 1px solid #FF0000;
+}
+.formation_data{
+    background: #EEE;
+    border: 1px solid #CCC;
+    padding: 10px;
+}
+.info_list{
+    margin: 20px;
+}
+.info_list li{
+    line-height: 23px;
+    list-style-type: decimal;
+}
+.empty_tip{
+    color: red;
+}
+#span_tactic{
+    margin-top: 20px;
+}
+#span_tactic textarea{
+    width: 400px;
+    height: 100px;
+}
+/*card edit*/
+.card_main_position_info input[type=text]{
+    width: 30px;
+}
+
+.card_select_order_type{width:100px;height:30px;}
+.card_select_target_src_player{width:100px;height:30px;}
+.card_select_target_src_region{width:140px;height:30px;}
+
+/*area name*/
+.area_name_main_position_info input[type=text]{
+    width: 100px;
+}
+
+/*skill edit*/
+#span_skill{
+    margin: 10px auto;
+    width: 80%;
+}
+.skill_info dd{
+    float: left;
+    width: 15%;
+    margin-left: 20px;
+    display: inline-block;
+}
+.skill_info dt{
+    float: left;
+    display: inline-block;
+}
+.skill_main_position{
+   margin-left: 20px;
+}
+.skill_main_position_info{
+    margin-left: 108px;
+    width: 650px;
+}
+.skill_main_position_info dd{
+    float: left;
+    width: 15%;
+    display: inline-block;
+}
+.skill_main_position_info dt{
+    float: left;
+    width: 30%;
+    display: inline-block;
+}
+.skill_main_position_info input[type=text]{
+    width: 125px;
+}
+/*end skill edit*/
+
+
+#ins_club_list{
+    width: 830px;
+    height: 380px;
+}
+.map_1{
+    background: url(../images/map/map_1.png) no-repeat;
+}
+.map_2{
+    background: url(../images/map/map_2.png) no-repeat;
+}
+.map_3{
+    background: url(../images/map/map_3.png) no-repeat;
+}
+.map_4{
+    background: url(../images/map/map_4.png) no-repeat;
+}
+.map_5{
+    background: url(../images/map/map_5.png) no-repeat;
+}
+.map_6{
+    background: url(../images/map/map_6.png) no-repeat;
+}
+.map_7{
+    background: url(../images/map/map_7.png) no-repeat;
+}
+.map_8{
+    background: url(../images/map/map_8.png) no-repeat;
+}
+.map_9{
+    background: url(../images/map/map_9.png) no-repeat;
+}
+.map_10{
+    background: url(../images/map/map_10.png) no-repeat;
+}
+.map_11{
+    background: url(../images/map/map_11.png) no-repeat;
+}
+.map_12{
+    background: url(../images/map/map_12.png) no-repeat;
+}
+.map_13{
+    background: url(../images/map/map_13.png) no-repeat;
+}
+.map_14{
+    background: url(../images/map/map_14.png) no-repeat;
+}
+.map_15{
+    background: url(../images/map/map_15.png) no-repeat;
+}
+.map_16{
+    background: url(../images/map/map_16.png) no-repeat;
+}
+.map_17{
+    background: url(../images/map/map_17.png) no-repeat;
+}
+
+
+/*#ul_ins_club_list li{
+    height: 50px;
+    width: 200px;
+    position: absolute;
+}*/
+.ins_club_info{
+    text-align: center;
+    width:120px;    
+}
+.ins_club_team_icon{
+    position: relative;
+    background: url(../images/common/red_arrow.png) no-repeat;
+    height: 11px;
+    width: 11px;
+    top: 20px ;
+    left: 60px ;
+}
+.ins_club_1,.ins_club_2,.ins_club_3,.ins_club_4{
+    position: absolute;
+}
+.ins_club_1{
+    background: url(../images/common/invite_left.png) no-repeat;
+    width: 27px;
+    height: 16px;
+    top: 46px;
+    left: 20px;
+}
+.ins_club_2{
+    background: url(../images/common/invite_bottom.png) no-repeat;
+    width: 13px;
+    height: 13px;
+    top: 46px;
+    left: -10px;
+}
+
+.ins_club_3{
+    background: url(../images/common/invite_right.png) no-repeat;
+    width: 29px;
+    height: 15px;
+    top: 11px;
+    left: 15px;
+}
+.ins_club_4{
+    background: url(../images/common/invite_top.png) no-repeat;
+    width: 28px;
+    height: 13px;
+    top: 13px;
+    left: -25px;
+}
+.ins_club_content_1,.ins_club_content_2,.ins_club_content_3,.ins_club_content_4{
+    position: relative;
+}
+.ins_club_content_1{
+    top: -50px;
+    left: 10px;
+}
+.ins_club_content_2{
+    top: -50px;
+    left: 80px;
+}
+.ins_club_content_3{
+    top: 10px;
+    left: 10px;
+}
+.ins_club_content_4{
+    top: 10px;
+    left: 100px;
+}
+.ins_club_block{
+    width:150px;
+    height: 50px;
+    position: absolute;
+}
+.ins_club_team_name{
+    position: absolute;
+    min-width: 44px;
+    top: 25px;
+    left: -30px;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr='#bf000000',EndColorStr='#bf000000');
+    border-radius: 10px;
+    border: solid 1px #CBCBCB;
+    padding:0 15px;
+    line-height: 20px;
+}
+.ins_club_team_name a{
+    color: #fff;
+    font-weight: normal;
+}
+.player_1 {
+    font-weight: bold;
+    color: #333333;
+}
+.player_2 {
+    font-weight: bold;
+    color: #0FF000;
+}
+.player_3 {
+    font-weight: bold;
+    color: #00CCFF;
+}
+.player_4 {
+    font-weight: bold;
+    color: #EE00FF;
+}
+.player_5 {
+    font-weight: bold;
+    color: #FF9900;
+}

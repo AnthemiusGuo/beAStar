@@ -1,0 +1,62 @@
+body{font:12px Helvetica,Verdana,sans-serif;}
+/*.tasks_list_font{*/
+/*    width: 15px;*/
+/*    table-layout:fixed; word-break: break-all; overflow:hidden;*/
+/*}*/
+.sub_info .desc{
+    font-size: 0.9em;
+    line-height: 16px;
+}
+.small_font {
+    font-size: 0.9em;
+}
+.sub_info h4{
+    font-size: 1em;
+}
+.team_1_h3,.team_2_h3{
+    font-size: 1em;
+}
+#i_task_list .long_task_desc{
+    font-size: 0.9em;
+}
+.player_box_common_tt{
+    font-size: 0.9em;
+}
+#alert_msg{
+    font-size: 1em;
+}
+.color_tame{
+    color: #ffff00;
+    font-size:1.2em;
+    font-weight:bold;
+}
+.tz_d{
+    width: 70px;
+    height: 18px;
+}
+.reg_right_font{
+    width: 105px;
+    text-align: right;
+}
+.input_text_bg{
+    width: 170px;
+}
+.match_box_vs_font{
+    font-size: 0.8em;
+}
+.match_team_name{
+  font-size: 0.9em;  
+}
+.match_title{
+    width:250px;
+    margin: 0 auto;
+}
+.shop_new_btn_box{
+    width: 63px;
+}
+.lightbox_content_map_left,.lightbox_content_map_right{
+	width: 190px;	
+}
+.lightbox_content_map_ct{
+	width:  220px;
+}

@@ -1,0 +1,180 @@
+@charset "utf-8";
+* {margin:0;padding:0;}
+ul,li,ol{list-style: none;}
+a{color:#ffff00;text-decoration:none;cursor:pointer;border: 0;}
+a:focus{ outline:none }
+img{border: none;}
+body {font-family:Verdana, Arial;background: #1D1D1D;font-size:12px;line-height: 18px;color: #fff;}
+.cr{color: #FF0000;}
+.cg{color: #00FF00;}
+.cy{color: #FF9900;}
+.clear{clear: both;}
+#wrap{margin:0 auto;width:980px;padding: 0 10px;background: url(../images/bg.jpg) no-repeat top center;}
+#header{width:950px;padding: 0 15px;height: 67px;background: url(../images/header.png) no-repeat top center;}
+#perinfo{float: left;width: 270px;}
+.perimg{float: left;width:55px;height: 55px; background: #222;border: 1px solid #FCFCFC;border-radius: 100px;}
+#perinfo .perinfo_detail{float: left;padding:5px 0 0 5px;line-height: 16px;}
+#perinfo .perinfo_detail span{display: block;}
+#topNav{float: right;padding-top:12px;}
+#topNav li {float:left;width: 74px;height: 34px;margin-left:5px;}
+#topNav li.menu_1{background:url(../images/menu_1.png) no-repeat top left; }
+#topNav li.menu_2{background:url(../images/menu_2.png) no-repeat top left; }
+#topNav li.menu_3{background:url(../images/menu_3.png) no-repeat top left; }
+#topNav li.menu_4{background:url(../images/menu_4.png) no-repeat top left; }
+#topNav li.menu_5{background:url(../images/menu_5.png) no-repeat top left; }
+#topNav li.menu_6{background:url(../images/menu_6.png) no-repeat top left; }
+#topNav li.menu_7{background:url(../images/menu_7.png) no-repeat top left; }
+#topNav li a{text-indent: -2000px;float: left;display: block;width: 100%;height: 100%;}
+#container{width:100%;float: left;position: relative;height: 481px;}
+#container_game{width:100%;float: left;position: relative;height: 481px;background: url(../images/bg_g.png) repeat;border: 1px solid #333;}
+#bar,#content,#zha_bar,#zha_content{float:left;width:300px;height: 481px;}
+.bar_notice{position: relative;background:url(../images/ico_1.png) no-repeat 6px 2px;width:298px;height:23px;border:1px solid #517997;border-radius:5px}
+.bar_notice p{padding: 2px 0 0 40px;}
+.notice_arrow{position:absolute;left:20px;top:23px;background:url(../images/arrow.png) no-repeat left top;width:10px;height:11px;}
+#gamelist{float:left;position: relative;width:300px;padding-top:35px;}
+.game_title{position:absolute;left:0px;top:15px;background:url(../images/gamelist_title.png) no-repeat center top;width:100%;height:41px;}
+#gamelist ul{float:left;padding: 23px 0px 10px 0px;width:298px;border:1px solid #517997;height:236px}
+#gamelist ul li{float:left;padding:10px}
+
+#gamelist ul li a span{display: block;color: #fff; text-align: center;}
+#chat_cont{margin-top:18px;float:left;width:298px;height:130px;border:1px solid #517997;}
+#content,#zha_content{float:left;width: 660px;padding-left:20px;}
+
+.game_logo{float:left;height:117px;padding: 50px 0 0 120px;}
+#game_select{float: left;position: relative;width: 100%;}
+.arrow_l,.arrow_r{position:absolute;width:48px;height: 48px;cursor: pointer;}
+.arrow_l{background:url(../images/arrow_left.png) no-repeat left top;left: 0;top:60px;}
+.arrow_r{background:url(../images/arrow_right.png) no-repeat left top;right: 0;top:60px;}
+.game_sel_list{float: left;padding:0 50px}
+.game_sel_list li{float:left;margin-left: 25px;width:120px;height:150px;}
+.game_sel_list .li_space{}
+.game_sel_list li img{margin-bottom: 5px;}
+.game_sel_list li a span{display: block;color: #fff; text-align: center;font-size: 14px;}
+#section_area{float:left;width: 660px;padding:35px 10px 0 10px;}
+#section_notice{float:left;width:303px;height:110px;border:1px solid #517997;padding:10px;}
+.notice_title{font-weight: normal;border-bottom: 1px solid #517997;padding-bottom:5px;}
+.notice_content{padding:5px 0 0 0;}
+#section_gift{float:left;width:313px;height:120px;border:1px solid #517997;margin-left:10px;padding: 10px 0 0 0;}
+#section_gift li{float: left;padding:0 10px;}
+#section_gift li a span{display: block;color: #fff; text-align: center;}
+#bar_menu{position:absolute;top:10px;right: 0;}
+#footer{clear:both;}
+#footer h4{font-weight:normal;padding-top:10px;}
+.box{border:1px solid #517997;}
+/*lightbox begin*/
+#lightbox_mask{
+    width:100%;
+    height:680px;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    background:#000;
+}
+#lightbox{
+    position: absolute;
+    left: 50%;
+    z-index: 30; 
+    background: #F0F0F0;
+    border: 5px solid #CCC;
+    border-radius: 5px;
+    overflow:hidden;
+    padding: 10px;
+    box-shadow: #333 5px 5px;
+    color: #333;
+}
+#lightbox h3{
+	color: #222;
+	font-weight: bold;
+}
+#lightbox_header{
+    height: 35px;
+    width: 100%;
+    margin-top: 5px;
+}
+#lightbox_panel{
+	overflow-y:scroll;
+}
+#lightbox_close{
+	position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+div.growlUI { background: url(../images/mini_logo.png) no-repeat 10px 10px }
+div.growlUI h1, div.growlUI h2 {
+    color: white; padding: 5px 5px 5px 75px; text-align: left;
+}
+div.growlUI h1{
+	font-size: 18px;
+}
+div.growlUI h2{
+	font-size: 14px;
+}
+/*begin zha*/
+#chip_list{
+	width: 190px;
+	background: url(../images/chip/choose_chip.png) no-repeat top center;
+	height: 58px;
+	padding: 33px 35px 20px 35px;
+}
+#chip_list li{
+	float: left;height: 45px;width: 45px;text-align:center;margin: 5px;
+}
+#chip_list li.selected{
+	margin-top: 0px;
+}
+#chip_list li.selected img{
+	width: 45px;height: 45px;
+}
+/*begin zha*/
+#xian1,#xian2,#xian3,#xian4{
+	width: 140px;
+	height: 211px;
+	margin: 10px;
+	float: left;
+}
+#xian1{
+	background: url(../images/zha/xian1.png) no-repeat top center;
+}
+#xian2{
+	background: url(../images/zha/xian2.png) no-repeat top center;
+}
+#xian3{
+	background: url(../images/zha/xian3.png) no-repeat top center;
+}
+#xian4{
+	background: url(../images/zha/xian4.png) no-repeat top center;
+}
+.bet{
+	cursor: pointer;
+	height: 120px;
+}
+#zha_content #sys{
+	float: left;
+	width: 300px;
+	height: 100px;
+}
+#zha_content #zhuang{
+	float: left;;
+	width: 200px;
+	height: 100px;
+}
+#zha_content #xian{
+	height: 211px;
+	margin-top: 10px;
+}
+.total_bet,.my_bet{
+	display: block;
+	background: rgba(0,0,0,0.5);
+	text-align: center;
+}
+.my_bet{
+	color: #FF9900;
+}
+.bet_dis{
+	height: 90px;
+	position: relative;
+}
+.hide{display:none;}
+.like_a{cursor:pointer;}

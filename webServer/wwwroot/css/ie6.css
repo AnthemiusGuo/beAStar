@@ -1,0 +1,1630 @@
+#arrow_1,#arrow_2,#arrow_3,#arrow_4{
+    background: url(../images/ie6/arrow_bg.png?v=23) no-repeat;
+    width:80px;
+    height:80px;
+}
+#arrow_1{
+    background-position: 0 0;
+}
+#arrow_2{
+    background-position: 0 -85px;
+}
+#arrow_3{
+    background-position: 0 -170px;
+}
+#arrow_4{
+    background-position: 0 -260px;
+}
+#box_long{
+    _background: #f5f5f5;
+    border-radius: 5px;
+    _border: solid 1px #333333;
+    height: 421px;
+}
+.field_view{
+    height: 120px;
+    background: url(../images/ie6/field.png?v=23) no-repeat center bottom;
+    position: relative;
+}
+.next_league_player{
+    float: left;
+    width: 138px;
+    height: 65px;
+    background:#333 url(../images/ie6/league_wait_bg.png?v=23) no-repeat 80px 10px;
+    border: 1px solid #999;
+    margin-top: 15px;
+    margin-left: 35px;
+    _margin-left: 25px;
+    border-radius: 5px;
+    line-height: 20px;
+}
+.club_player,.chat_btn_on,.chat_btn_off,.i_news_icon,#i_m_news,#i_m_team,#i_m_manager,#i_m_training,#i_m_transfer,#i_m_shop,#i_m_union,.player_img,.player_img_big,.lightbox_close,.lightbox_close:hover,#tooltip_arrow_1,#tooltip_arrow_2,#tooltip_arrow_3,#tooltip_arrow_4,.ins_club_1,.ins_club_2,.ins_club_3,.ins_club_4,.ico_locked,.combobox_kids a,.invite_link,.invite_link:hover{
+    background: url(../images/ie6/common_bg.png?v=23) no-repeat;
+}
+.lightbox_close_bg{
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 28px;
+    height: 27px;
+}
+.lightbox_close{
+    display: block;
+    width: 28px;
+    height: 27px;
+    background-position: -518px 0px ;
+}
+.lightbox_close:hover{
+    width: 28px;
+    height: 27px;
+    background-position: -551px 0px ;
+}
+.lightbox_close_index,.lightbox_close_index:hover{
+    background: url(../images/ie6/lightbox_close.png?v=23) no-repeat;
+    display: block;
+    width: 32px;
+    height: 17px;
+    background-position: -518px 0px ;
+}
+.lightbox_close_index{
+   background-position: 0px 0px ; 
+}
+.lightbox_close_index:hover{
+    background-position: 0px -22px ;
+}
+.chat_btn_on{
+    position: absolute;
+    top:-10px;
+    right:0;
+    background-position:-193px 0;
+}
+.chat_btn_off{
+    position: absolute;
+    background-position: -193px -15px;
+    top:-10px;
+    right: 0px;
+    overflow: hidden;
+}
+.i_news_icon{
+    background-position: -408px 0;
+    width: 69px;
+    height: 85px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+#i_m_team{
+    background-position: 0 0px;
+}
+#i_m_training{
+    background-position: -54px 0;
+}
+#i_m_transfer{
+    background-position: -108px 0;
+}
+#i_m_manager{
+    background-position:-162px 0px;
+}
+#i_m_shop{
+    background-position:-216px 0px;
+}
+#i_m_news{
+    background-position:-270px 0px;
+}
+#i_m_union{
+    background-position:-330px 0px;
+}
+.player_img_big{
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background-position: -483px -108px;
+}
+.player_img{
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background-position: -58px -89px;
+}
+.btn_add{ 
+    background-position:-139px -84px;
+}
+.btn_add2{
+    background-position:-139px -101px ;
+}
+.club_att_defend_info .attack_player_img{
+    height: 50px;
+    background-position: -465px -120px;
+    padding-right: 34px;
+}
+.club_att_defend_info .defend_player_img{
+    height: 50px;
+    background-position: -465px -174px;
+    padding-right: 45px;
+}
+#tooltip_arrow_1{
+    background-position: -456px -89px;
+    bottom: -19px;
+    left:50%;
+    margin-left: -10px;
+}
+#tooltip_arrow_2{
+    background-position: -479px -89px;
+    left: -12px;
+    width: 13px;
+    overflow: hidden;
+    top:50%;
+    margin-top: -10px;
+}
+#tooltip_arrow_3{
+    background-position: -508px -89px;
+    top: -13px;
+    left:50%;
+    margin-left: -10px;
+}
+#tooltip_arrow_4{
+    background-position: -495px -89px;
+    right: -34px;
+    *right:-32px;
+    width: 13px;
+    overflow: hidden;
+    top:50%;
+    margin-top: -10px;
+}
+.ins_club_1{
+    background-position: -554px -89px;
+    width: 27px;
+    height: 16px;
+    top: 46px;
+    left: 20px;
+}
+.ins_club_2{
+    background-position: -538px -89px;
+    width: 13px;
+    height: 13px;
+    top: 46px;
+    left: -10px;
+}
+.ins_club_3{
+    background-position: -581px -89px;
+    width: 29px;
+    height: 15px;
+    top: 11px;
+    left: 15px;
+}
+.ins_club_4{
+    background-position: -614px -89px;
+    width: 28px;
+    height: 13px;
+    top: 13px;
+    left: -25px;
+}
+.ico_locked{
+    padding-left: 11px;
+    background-position: -629px 0px;
+}
+/*卡牌的图片==========================================*/
+#sub_icon_5,#sub_icon_13,#sub_icon_15,#sub_icon_14,#sub_icon_3,#sub_icon_8,#sub_icon_12,#sub_icon_11,#sub_icon_6,#sub_icon_7,#sub_icon_9,#sub_icon_10,#sub_icon_4,#sub_icon_16,#sub_icon_1,#sub_icon_2,#sub_icon_17,#sub_icon_18,#sub_icon_19,#sub_icon_20,#sub_icon_21,#sub_icon_22,#sub_icon_23,#sub_icon_24,#sub_icon_25,#sub_icon_26{
+    width: 107px;
+    height: 90px;
+    background: url(../images/ie6/card_icon.png?v=23) no-repeat;
+}
+#sub_icon_1{
+    background-position: -108px -93px;
+}
+#sub_icon_2{
+    background-position: -216px -93px;
+}
+#sub_icon_3{
+    background-position: -324px 0px;
+}
+#sub_icon_4{
+    background-position: -540px 0px;
+}
+#sub_icon_5{
+    background-position: -648px -93px;
+}
+#sub_icon_6{
+    background-position: -432px -93px;
+}
+#sub_icon_7{
+    background-position: -540px -93px;
+}
+#sub_icon_8{
+    background-position: -648px 0px;
+}
+#sub_icon_9{
+    background-position: 0 -93px;
+}
+#sub_icon_10{
+    background-position: -432px 0px;
+}
+#sub_icon_11{
+    background-position: -324px -93px;
+}
+#sub_icon_12{
+    background-position: -108px 0;
+}
+#sub_icon_13{
+    background-position: -756px -93px;
+}
+#sub_icon_14{
+    background-position: -216px 0px;
+}
+#sub_icon_15{
+    background-position: 0px 0px;
+}
+#sub_icon_16{
+    background-position: -864px 0px;
+}
+#sub_icon_17{
+    background-position: -756px 0px;
+}
+#sub_icon_18{
+    background-position: -864px -93px;
+}
+#sub_icon_19{
+    background-position: -972px 0px;
+}
+#sub_icon_20{
+    background-position: -972px -93px;
+}
+#sub_icon_21{
+    background-position: 0px -186px;
+}
+#sub_icon_22{
+    background-position: -108px -186px;
+}
+#sub_icon_23{
+	background-position: -216px -186px;
+}
+#sub_icon_24{
+	background-position: -324px -186px;
+}
+#sub_icon_25{
+    background-position: -432px -186px;
+}
+#sub_icon_26{
+    background-position: -540px -186px;
+}
+/*end*/
+/*卡牌内的小图标===================================*/
+#tab_club_top,#tab_team_index,#tab_youth_player,#tab_match_tour_pre,#tab_youth_player,#tab_youth_training_base,#tab_tactics_swf,#tab_sp_training,#tab_formation_research,#tab_tactics_research,#tab_player_merge,#tab_player_blackmarket,#tab_player_market,#tab_player_loan,#tab_player_refresh,#tab_ins_index,#tab_match_tier,#tab_ins_hang_up,#tab_match_tour,#tab_league_index,#tab_shop_index,#tab_stadium_index,#tab_item,#tab_players,#tab_gift_package,#tab_honour,#tab_team_employees,#tab_alter_club_name,#tab_player_kitnumber_edit,#tab_player_exp_transfer,#tab_our_items,#tab_match_friendly,#tab_formation_equip,#tab_player_reincarnation,#tab_union_index,#tab_union_admin,#tab_union_welfare,#tab_union_class,#tab_union_cup,#tab_legend_player_list,#tab_sponsor_list,#tab_club_achievement,#tab_match_jbleague,#tab_holiday,#tab_stone_mix,#tab_open_game,#tab_my_beet{
+    background: url(../images/ie6/card_sm_icon.png?v=23) no-repeat;
+}
+#tab_team_index{
+    background-position: 0px 0px;
+}
+#tab_club_top{
+    background-position: 0px -561px;
+}
+#tab_team_employees{
+    background-position: 0px -601px;
+}
+#tab_alter_club_name{
+    background-position: 0px -676px;
+}
+#tab_player_kitnumber_edit{
+    background-position: 0px -912px;
+}
+#tab_youth_player{
+    background-position: 0px -74px;
+}
+#tab_youth_training_base{
+    background-position: 0px -109px;
+}
+#tab_tactics_swf{
+    background-position: -798px -174px;
+}
+#tab_sp_training{
+    background-position:0px -37px;
+}
+#tab_formation_research{
+    background-position: 0px -443px;
+}
+#tab_tactics_research{
+    background-position: 0px -482px;
+}
+#tab_player_merge{
+    background-position: 0px -522px;
+}
+#tab_player_refresh{
+    background-position: 0 -326px;
+}
+#tab_player_blackmarket{
+    background-position: 0 -364px;
+}
+#tab_player_market{
+    background-position: 0px -402px;
+}
+#tab_player_loan{
+	background-position: 0px -1230px;
+}
+#tab_ins_index{
+    background-position: 0px -144px;
+}
+#tab_match_tier{
+    background-position: 0px -249px;
+}
+#tab_ins_hang_up{
+    background-position: 0px -1350px;
+}
+#tab_match_tour{
+    background-position: 0px -179px;
+}
+#tab_match_tour_pre{
+    background-position: 0px -213px;
+}
+#tab_match_cup{
+    background-position: 0px -179px;
+}
+#tab_match_sk_cup{
+    background-position: 0px -213px;
+}
+#tab_league_index{
+    background-position: 0px -286px;
+}
+#tab_shop_index{
+    background-position: 0px -639px;
+}
+#tab_stadium_index{
+    background-position: 0px -1390px;
+}
+#tab_item{
+    background-position: 0px -678px;
+}
+#tab_players{
+    background-position: 0px -717px;
+}
+#tab_gift_package{
+    background-position: 0px -757px;
+}
+#tab_honour{
+    background-position: 0px -796px;
+}
+#tab_player_exp_transfer{
+    background-position: 0px -834px;
+}
+#tab_our_items{
+    background-position: 0px -873px;
+}
+#tab_match_friendly{
+    background-position: 0px -796px;
+}
+#tab_formation_equip{
+    background-position: 0px -755px;
+}
+#tab_player_reincarnation{
+    background-position: 0px -951px;
+}
+#tab_union_index{
+    background-position: 0px -989px;
+}
+#tab_union_admin{
+    background-position: 0px -1027px;
+}
+#tab_union_welfare{
+    background-position: 0px -1067px;
+}
+#tab_union_class{
+    background-position: 0px -1147px;
+}
+#tab_union_cup{
+    background-position: 0px -1107px;
+}
+#tab_legend_player_list{
+    background-position: 0px -1190px;
+}
+#tab_sponsor_list{
+    background-position: 0px -1272px;
+}
+#tab_club_achievement{
+    background-position: 0px -1310px;
+}
+#tab_match_jbleague{
+    background-position: 0px -1428px;
+}
+#tab_holiday{
+    background-position: 0px -1547px;
+}
+#tab_stone_mix{
+    background-position: 0px -1510px;
+}
+#tab_open_game{
+    background-position: 0px -1467px;
+}
+#tab_club_top{
+    background-position: 0px -561px;
+}
+#tab_my_beet{
+    background-position: 0px -1595px;
+}
+/*end========================================*/
+.red_btn_long,.red_btn_long:hover,.alert_wrong_btn,.alert_right_btn,.alert_right_btn:hover,.share_btn_short,.share_btn_short:hover,.common_alert_right_btn,.common_alert_right_btn:hover,.common_alert_right_btn_hui,.shop_btn,.shop_btn:hover,.shop_btn_long,.shop_btn_long:hover,.alert_right_btn,.alert_right_btn:hover{
+    background: url(../images/ie6/alert_box_btn_bg.png?v=23) no-repeat; 
+}
+.common_alert_right_btn{
+    background-position: 0 -115px;
+}
+.common_alert_right_btn:hover{
+    background-position: 0 -138px;
+}
+.common_alert_right_btn_hui{
+    background-position: 0 -164px;
+    color: #555;
+}
+.shop_btn{
+	background-position: 0 -87px;
+}
+.shop_btn:hover{
+	background-position: 0 -60px;
+}
+.shop_btn_long{
+	background-position: 0 -190px;
+}
+.shop_btn_long:hover{
+	background-position: 0 -215px;
+}
+.share_btn_short{
+    background-position: 0 0;
+}
+.share_btn_short:hover{
+    background-position: 0 -30px;
+}
+.red_btn_long{
+	background-position: -110px -150px;
+}
+.red_btn_long:hover{	
+	background-position: -110px -121px;
+}
+.alert_right_btn{
+    background-position: -110px 0px;
+}
+.alert_right_btn:hover{
+    background-position: -110px -30px;
+}
+.alert_wrong_btn{
+    background-position: -110px -59px;
+}
+.alert_wrong_btn:hover{
+    background-position: -110px -90px;
+}
+.undredge_left{
+    background: url(../images/ie6/undredge_l.png?v=23) no-repeat;
+    left: 3px;
+    top: 3px;
+}
+.undredge_right{
+    background: url(../images/ie6/undredge_r.png?v=23) no-repeat;
+    right: 3px;
+    bottom: 3px;
+}
+.youth_box.locked{
+    background: #666666 url(../images/ie6/lock_bg.png?v=23) no-repeat center;
+}
+a.link{padding: 0px 5px 0px 20px;background:#222222 url(../images/ie6/a_front.png?v=23) 5px center no-repeat;}
+a.link:hover{background:#222222 url(../images/ie6/a_front.png?v=23) 8px center no-repeat;}
+a.a_front2{
+    float: left;
+    padding-left: 10px;
+    background:#000 url(../images/ie6/a_front.png?v=23) 8px center no-repeat;
+    height: 20px;
+    text-align: center;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+a.a_front{
+    padding-right:5px;
+    padding-left:10px;
+    background: #000 url(../images/ie6/a_front.png?v=23) 3px center no-repeat;
+    border-radius: 10px;
+}
+a.a_front:hover{
+    background: #000 url(../images/ie6/a_front.png?v=23) 5px center no-repeat;
+}
+.ins_match_img_close{
+    background: url(../images/ie6/ins_close.png?v=23) no-repeat;
+}
+
+#club_att_defend_box{
+    float: left;
+    width: 180px;
+    height: 360px;
+    background: url(../images/ie6/ad_index_big_bg.png?v=23) no-repeat;
+}
+.combobox_kids a{
+    display: block;
+    color:#000;
+    font-weight: normal;
+    padding-left:3px;
+    height: 17px;
+    width: 40px;
+    background-position:-483px -57px;
+}
+#experience_bar_1 span,#experience_bar_2 span{
+    background: url(../images/ie6/common_line.png?v=23) repeat-x;
+}
+#experience_bar_1 span{
+    float: left;
+    height: 17px;
+    margin-left: 28px;
+    margin-top: 11px;
+    border-radius: 0 3px 3px 0;
+    background-position: 0 0;
+}
+#experience_bar_2 span{
+    float: left;
+    height: 16px;
+    margin-left: 30px;
+    margin-top: 11px;
+    border-radius: 0 3px 3px 0;
+    background-position: 0 -17px;
+}
+.ico_tkl{
+    background: url(../images/ie6/tacic_kl.png?v=23) no-repeat center left;
+    padding-left: 35px;
+    line-height: 32px;
+    height: 32px;
+    margin: 10px;    
+    display: inline-block;
+}
+.invite_link{
+    display: block;
+    padding: 0 20px 0 40px;
+    margin-bottom: 5px;
+    background:#F6F2D9 url(../images/ie6/a_front.png?v=23) 25px center no-repeat;
+    width: 60px;
+    border-radius: 10px;
+}
+.invite_link:hover{
+    background:#F6F2D9 url(../images/ie6/a_front.png?v=23) 20px center no-repeat;
+}
+.vs_bg{
+    background: url(../images/ie6/vs_ico.png?v=23) no-repeat;
+    height: 70px;
+    width: 80px;
+    margin: 8px 15px 0 22px;
+}
+.btn_challenge{
+    width: 106px;
+    height: 59px;
+    display: block;
+    background: url(../images/ie6/btn_challenge.png?v=23) no-repeat;
+}
+.btn_challenge:hover{
+    background: url(../images/ie6/btn_challenge_hover.png?v=23) no-repeat;
+}
+.match_hou_title{
+    color: #5A3A2D;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 35px;
+    /*background: url(../images/ie6/the_new_team.png) no-repeat 0 0;*/
+    height: 35px;
+}
+.match_hou_bottom{
+    /*background: url(../images/ie6/the_new_team.png) no-repeat 0 -47px;*/
+    height: 23px;
+}
+.ico_tips{
+    background: url(../images/ie6/ico_tips.png?v=23) no-repeat left center;
+    height: 32px;
+    width:32px;
+    float: left;
+}
+.ico_winner{
+    background: url(../images/ie6/ico_winner.png?v=23) no-repeat center;
+}
+.ico_up{
+    background: url(../images/ie6/ico_up.png?v=23) no-repeat right center;
+    padding-right: 20px;
+    line-height: 18px;    
+    display: inline-block;
+}
+.ico_down{
+    background: url(../images/ie6/ico_down.png?v=23) no-repeat right center;
+    padding-right: 20px;
+    line-height: 18px;
+    display: inline-block;
+}
+.green_g,.red_c{
+    width: 19px;
+    height: 17px;
+    position: absolute;
+}
+.green_g{
+    background: url(../images/ie6/green_g.png?v=23) no-repeat center center;
+}
+.red_c{
+    background: url(../images/ie6/red_c.png?v=23) no-repeat center center;
+}
+.button_style{
+    background-position: 0 0;
+    position: absolute;
+    left: 80px;
+    top: 140px;
+}
+.button_style,.button_style:hover{
+    width: 150px;
+    height: 150px;
+    border: 0;
+    background: url(../images/ie6/reg_login.png?v=23) no-repeat; 
+}
+.button_style:hover{
+    background-position: 0 -155px;
+}
+.msg1_icon{
+    background: url(../images/ie6/new_player_icon.png?v=23) no-repeat;
+    width: 173px;
+    height: 120px;
+    position: absolute;
+    right: -50px;
+}
+.i_club_info_left,.i_club_open_box,.tl_a_img,.tl_a_img:hover,.i_club_close_icon,.i_club_close_icon_down,.club_open_box_icon{
+    background: url(../images/ie6/index_top_bg.png?v=23) no-repeat;
+}
+.i_club_info_left{
+    width: 480px;
+    height: 130px;
+    background-position: 0 0;
+    position: absolute;
+    z-index: 35;
+}
+.i_club_open_box{
+    height: 45px;
+    background-position: 0 -155px;
+}
+.i_club_close_icon{
+    background-position: -509px -14px;
+}
+.i_club_close_icon_down{
+    background-position: -509px -22px;
+}
+.tl_a_img{
+    background-position: -510px 0px;
+}
+.tl_a_img:hover{
+    background-position: -510px 0px;
+}
+#week_1,#week_2,#week_3,#week_3_1,#week_4,#week_5,#week_6,#week_6_1,#week_7,#week_7_1{
+    width: 72px;
+    height: 29px;
+    background: url(../images/ie6/week_new.png?v=23) no-repeat;
+}
+#week_1{
+    background-position: 0 0px;
+}
+#week_2{
+    background-position: -78px 0;
+}
+#week_3{
+    background-position: -157px 0;
+}
+#week_3_1{
+    background-position: -235px 0;
+}
+#week_4{
+    background-position: -313px 0;
+}
+#week_5{
+    background-position: 0 -37px;
+}
+#week_6{
+    background-position: -78px -37px;
+}
+#week_6_1{
+    background-position: -157px -37px;
+}
+#week_7{
+    background-position: -235px -37px;
+}
+#week_7_1{
+    background-position: -313px -37px;
+}
+.news_con_btn,.news_con_btn:hover,.news_con_challenge,.news_con_challenge:hover{
+    width: 117px;
+    height: 31px;
+    cursor: pointer;
+    position: absolute;
+    right: 45px;
+    bottom: 20px;
+    display: block;
+    z-index: 50;
+    background: url(../images/ie6/news_all_btn.png?v=23) no-repeat;
+}
+.news_con_btn{
+    background-position: -120px 0px;
+}
+.news_con_btn:hover{
+    background-position: -120px -38px;
+}
+.news_con_challenge{
+    background-position: 0 0; 
+}
+.news_con_challenge:hover{
+    background-position: 0 -38px;
+}
+#i_news.min_menu #i_menus{
+    height: 80px;
+    background:url(../images/ie6/i_news_bg.png?v=23) 0 bottom no-repeat;
+}
+/*新版球员属性=====================*/
+.player_star_hui,.player_star_yellow,.player_star_yin,.player_zhuan_hui,.player_star_yin_zhuan,.player_star_jing_zhuan{
+    background: url(../images/ie6/star.png?v=23) repeat-x; 
+    height: 12px;
+    overflow: hidden;
+}
+.player_star_hui{
+    width:70px;
+    background-position: 0 -24px;
+}
+.player_star_yellow{
+    background-position: 0 0;
+}
+.player_star_yin{
+    background-position: 0 -12px;
+}
+.player_zhuan_hui{
+    width:70px;
+    background-position: 0 -37px;
+}
+.player_star_yin_zhuan{
+    background-position: 0 -51px;
+}
+.player_star_jing_zhuan{
+    background-position: 0 -65px;
+}
+.rating_width_icon_1,.rating_width_icon_2,.rating_width_icon_3,.rating_width_icon_4,.rating_width_icon_5,.rating_width_icon_6,.rating_width_icon_7,.rating_width_icon_8,.btn_add,.btn_add:hover,.btn_add_mo,.btn_add_mo:hover,.btn_add_jia,.btn_add_jia:hover{
+    background: url(../images/ie6/player_icon.png?v=23) no-repeat;
+}
+.rating_width_icon_1,.rating_width_icon_2,.rating_width_icon_3,.rating_width_icon_4,.rating_width_icon_5,.rating_width_icon_6,.rating_width_icon_7,.rating_width_icon_8,.btn_add,.btn_add_mo{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: -5px;
+    top: 0px;
+}
+.rating_width_icon_1{
+    background-position: 0 0;
+}
+.rating_width_icon_2{
+    background-position: -25px 0;
+}
+.rating_width_icon_3{
+    background-position: -51px 0;
+}
+.rating_width_icon_4{
+    background-position: -77px 0;
+}
+.rating_width_icon_5{
+    background-position: -103px 0;
+}
+.rating_width_icon_6{
+    background-position: -129px 0;
+}
+.rating_width_icon_7{
+    background-position: -156px 0;
+}
+.rating_width_icon_8{
+    background-position: -182px 0;
+}
+.btn_add,.btn_add:hover,.btn_add_mo,.btn_add_mo:hover{
+    width: 21px;
+    width: 21px;
+}
+.btn_add{
+    background-position: -208px 0;
+}
+.btn_add:hover{
+    background-position: -231px 0;
+}
+.btn_add_mo{
+    background-position: -254px 0;
+}
+.btn_add_mo:hover{
+    background-position: -277px 0;
+}
+.club_player{
+    float: left;
+    background-position: -58px -89px;
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+#top_three_rank{
+    color: #124AFD;
+    font-weight: bold;
+    background: url(../images/ie6/top_three_bg.png?v=23) no-repeat 25px center;
+}
+.return_choose,.return_choose:hover,.next_choose,.next_choose:hover{
+    background: url(../images/ie6/return.png?v=23) no-repeat;
+    width: 13px;
+    height: 13px;
+    margin-top:15px;
+    cursor: pointer;
+}
+.return_choose{
+    background-position: 0 0;
+}
+.return_choose:hover{
+    background-position: 0 -16px;
+}
+.next_choose{
+    background-position: -20px 0;
+}
+.next_choose:hover{
+    background-position: -20px -16px;
+}
+.hot_img{
+    position: absolute;
+    bottom: 8px;
+    left: 3px;
+    background: url(../images/shop/ico_hot.png?v=23) no-repeat;
+    height: 37px;
+    width: 32px;
+}
+/*首页礼包图片=====================*/
+#sign_vip_icon,#i_activity_box,#i_limit_gift_icon.get_present_able,#i_limit_gift_icon.get_present_desable,#i_gift_icon,#i_gift_icon.get_gift,#i_update_board_icon,#i_invite_icon,#i_registration_gift{
+    background: url(../images/ie6/gift_img_all.png?v=23) no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+#sign_vip_icon{
+    background-position: 0px 0px;
+    display: block;
+}
+#i_activity_box{
+    background-position: 0px -52px;
+    display: block;
+    margin: 0 auto 10px;
+}
+#i_limit_gift_icon.get_present_able{
+    background-position: 0 -156px;
+    width: 50px;
+    height: 50px;
+}
+#i_limit_gift_icon.get_present_desable{
+    background-position: 0 -104px;
+    width: 50px;
+    height: 50px;
+}
+#i_gift_icon{
+    background-position: 0 -208px;
+}
+#i_gift_icon.get_gift{
+    background-position: 0 -260px;
+    height: 44px;
+}
+#i_update_board_icon{
+    background-position: 0 -362px;
+    margin: 0 auto 10px;
+}
+#i_invite_icon{
+    background-position: 0 -419px;
+}
+#i_registration_gift{
+    background-position:0 -312px;
+    margin: 0 auto 10px;
+}
+.ico_league,.league_logo,.league_sword_left,.league_sword_right{
+    background: url(../images/ie6/league_ico.png?v=23) no-repeat;
+}
+.ico_league{
+    float: left;
+    width: 35px;
+    height: 35px;
+    margin: 5px 0 0 5px;
+}
+.league_logo{
+    width: 75px;
+    height: 75px;
+    margin: 10px auto;
+}
+.league_sword_left{
+    float: left;
+    width: 115px;
+    height: 35px;
+    margin-left: 130px;
+    _margin-left:70px;
+    background-position: -1px -245px;
+}
+.league_sword_right{
+    float: right;
+    width: 115px;
+    height: 35px;
+    margin-right: 130px;
+    _margin-right: 70px;
+    background-position: -165px -245px;
+}
+.ico_league_1{
+    background-position: -19px 0;
+}
+.ico_league_2{
+    background-position: -97px 0;
+}
+.ico_league_3{
+    background-position: -185px 0;
+}
+.ico_league_4{
+    background-position: -275px 0;
+}
+.ico_league_5{
+    background-position: -357px 0;
+}
+.ico_league_6{
+    background-position: -19px -38px;
+}
+.ico_league_7{
+    background-position: -97px -39px;
+}
+.ico_league_8{
+    background-position: -185px -41px;
+}
+.ico_league_9{
+    background-position: -275px -39px;
+}
+.ico_league_10{
+    background-position: -359px -40px;
+}
+.ico_league_b_1{
+    background-position: -1px -83px;
+}
+.ico_league_b_2{
+    background-position: -78px -83px;
+}
+.ico_league_b_3{
+    background-position: -165px -82px;
+}
+.ico_league_b_4{
+    background-position: -257px -82px;
+}
+.ico_league_b_5{
+    background-position: -345px -82px;
+}
+.ico_league_b_6{
+    background-position: 0 -163px;
+}
+.ico_league_b_7{
+    background-position: -80px -162px;
+}
+.ico_league_b_8{
+    background-position: -164px -163px;
+}
+.ico_league_b_9{
+    background-position: -257px -162px;
+}
+.ico_league_b_10{
+    background-position: -347px -162px;
+}
+#top_three_rank_1{
+    color: #FFFF00;
+    font-weight: bold;
+    background: url(../images/ie6/rank_top_1.png?v=23) no-repeat 20px center;
+}
+#top_three_rank_2{
+    color: #FFFF00;
+    font-weight: bold;
+    background: url(../images/ie6/rank_top_2.png?v=23) no-repeat 20px center;
+}
+#top_three_rank_3{
+    color: #FFFF00;
+    font-weight: bold;
+    background: url(../images/ie6/rank_top_3.png?v=23) no-repeat 20px center;
+}
+.youth_traning_base_box.locked{
+    background: #666666 url(../images/ie6/lock_bg.png?v=23) no-repeat center;
+}
+/*黄钻各种图标=========================*/
+.i_registration_tx_vip,.i_registration_gift_open,.i_registration_gift_new_open,.i_registration_new,#i_registration_gift_tx_vip_tq{
+    height: 54px;
+    width: 59px;
+    margin: 0 auto 10px;
+    cursor: pointer;
+    overflow: hidden; 
+}
+.i_registration_tx_vip{
+    background: url(../images/ie6/registration_vip.png?v=23) no-repeat;
+}
+.i_registration_gift_open{
+    background: url(../images/ie6/registration_open.png?v=23) no-repeat;
+}
+#i_registration_gift_tx_vip_tq{
+    background: url(../images/ie6/registration_tq.png?v=23) no-repeat;
+}
+.i_registration_new{
+    background: url(../images/ie6/registration_new.png?v=23) no-repeat;
+}
+.i_registration_gift_new_open{
+    background: url(../images/ie6/registration_new_open.png?v=23) no-repeat;
+}
+#i_yellow_upgrade_gift_icon,#i_yellow_upgrade_gift_icon.get_gift{
+    background: url(../images/ie6/tx_vip_rating.png?v=23) no-repeat;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+#i_yellow_upgrade_gift_icon.get_gift{
+    background-position: -51px 0px;
+}
+.everyday_dj_box_img,.everyday_zqb_img,.everyday_year_lb_box_img,.yellow_vip_icon_1,.yellow_vip_icon_2,.yellow_vip_icon_3,.yellow_vip_icon_4,.yellow_vip_icon_5{
+    width: 85px;
+    height: 85px;
+    background: url(../images/ie6/tx_vip_libao.png?v=23) no-repeat;
+}
+.everyday_dj_box_img{
+    background-position:-108px 0 ;
+}
+.everyday_zqb_img{
+    background-position:-108px -90px ;
+}
+.everyday_year_lb_box_img{
+    background-position:-108px -180px;
+}
+.yellow_vip_icon_1{
+    background-position:0 0;
+}
+.yellow_vip_icon_2{
+    background-position:0 -90px;
+}
+.yellow_vip_icon_3{
+    background-position:0 -180px;
+}
+.yellow_vip_icon_4{
+    background-position:0 -270px;
+}
+.yellow_vip_icon_5{
+    background-position:0 -360px;
+}
+.tx_vip_close_btn,.tx_vip_close_btn:hover,#tx_vip_tq,#tx_vip1,#tx_vip2,#tx_vip3,#tx_vip4,#tx_vip5,#tx_vip6,#tx_vip7,#tx_vip8,#tx_vip_new_player,#tx_vip_everyday_tq,#vip_activity_top_name,#guide_expense_top_name,#big_tx_vip1,#big_tx_vip2,#big_tx_vip3,#big_tx_vip4,#big_tx_vip5,#big_tx_vip6,#big_tx_vip7,#big_tx_vip8,#tx_vip_nian{
+    background: url(../images/ie6/tx_vip_bg.png?v=23) no-repeat;
+}
+#tx_vip_nian{
+    background-position: -476px -285px;
+    width: 16px;
+    height: 16px;
+}
+.tx_vip_close_btn,.tx_vip_close_btn:hover{
+    width:33px;
+    height: 34px;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.tx_vip_close_btn{
+    background-position: -458px 0;
+}
+.tx_vip_close_btn:hover{
+    background-position: -458px -36px;
+}
+#tx_vip1,#tx_vip2,#tx_vip3,#tx_vip4,#tx_vip5,#tx_vip6,#tx_vip7,#tx_vip8{
+    width:24px ;
+    height: 17px;
+}
+#tx_vip1{
+    background-position: -468px -113px;
+}
+#tx_vip2{
+    background-position: -468px -137px;
+}
+#tx_vip3{
+    background-position: -468px -161px;
+}
+#tx_vip4{
+    background-position: -468px -186px;
+}
+#tx_vip5{
+    background-position: -468px -210px;
+}
+#tx_vip6{
+    background-position: -468px -234px;
+}
+#tx_vip7{
+    background-position: -468px -258px;
+}
+#tx_vip8{
+    background-position: -468px -318px;
+}
+#big_tx_vip1,#big_tx_vip2,#big_tx_vip3,#big_tx_vip4,#big_tx_vip5,#big_tx_vip6,#big_tx_vip7,#big_tx_vip8{
+    width: 42px;
+    height: 38px;
+}
+#big_tx_vip1{
+    background-position: -394px 0;
+}
+#big_tx_vip2{
+    background-position: -394px -48px;
+}
+#big_tx_vip3{
+    background-position: -394px -95px;
+}
+#big_tx_vip4{
+    background-position: -394px -141px;
+}
+#big_tx_vip5{
+    background-position: -394px -191px;
+}
+#big_tx_vip6{
+    background-position: -394px -238px;
+}
+#big_tx_vip7{
+    background-position: -394px -286px;
+}
+#big_tx_vip8{
+    background-position: -394px -328px;
+}
+.kt_tx_vip_btn,.kt_tx_year_vip_btn,.xf_tx_vip_btn,.lj_tx_vip_btn,.know_tx_vip_btn,.everyday_gd_tq_btn,.lq_tx_vip_jl_btn,.xf_year_vip_btn,.hand_tx_vip_btn{
+    background: url(../images/ie6/tx_vip_btn.png?v=23) no-repeat;
+    cursor: pointer;
+}
+.kt_tx_vip_btn,.kt_tx_year_vip_btn,.xf_tx_vip_btn,.xf_year_vip_btn,.lq_tx_vip_jl_btn{
+    height: 34px;
+}
+.kt_tx_vip_btn{
+    background-position: -111px 0;
+    width: 111px;
+}
+.kt_tx_year_vip_btn{
+    background-position: -224px 0;
+    width: 138px;
+}
+.xf_tx_vip_btn{
+    background-position: 0 0;
+    width: 110px;
+}
+.xf_year_vip_btn{
+	background-position: -298px -37px;
+    width: 139px;
+}
+.lq_tx_vip_jl_btn{
+    background-position: -368px 0;
+    width: 138px;
+}
+.lj_tx_vip_btn,.know_tx_vip_btn{
+    width: 85px;
+    height: 28px;
+    margin-top: 5px;
+}
+.hand_tx_vip_btn{
+    height: 28px;
+    width: 136px;
+    background-position: -444px -40px;
+    margin-top: 5px;
+}
+.lj_tx_vip_btn{
+    background-position: 0 -43px;
+}
+.know_tx_vip_btn{
+    background-position: -88px -43px;
+}
+.everyday_gd_tq_btn{
+    background-position: -180px -43px;
+    width: 104px;
+    height: 28px;
+    margin-top: 5px;
+}
+.close_icon{
+    background: url(../images/ie6/c_bg.png?v=23) no-repeat;
+    width: 29px;
+    height: 35px;
+    position: absolute;
+    left: -5px;
+    top: -5px;
+}
+#new_step_1,#new_step_2,#new_step_3,#new_step_4,#new_step_5,#new_step_6,#new_step_7,#new_step_8,#new_step_hui_1,#new_step_hui_2,#new_step_hui_3,#new_step_hui_4,#new_step_hui_5,#new_step_hui_6,#new_step_hui_7,#new_step_hui_8,.js_btn,.js_btn:hover,.w_js_btn,.wc_btn,.new_closed_icon{
+    background: url(../images/ie6/new_bg.png?v=23) no-repeat;
+}
+#new_step_1,#new_step_2,#new_step_3,#new_step_4,#new_step_5,#new_step_6,#new_step_7,#new_step_8,#new_step_hui_1,#new_step_hui_2,#new_step_hui_3,#new_step_hui_4,#new_step_hui_5,#new_step_hui_6,#new_step_hui_7,#new_step_hui_8{
+    width: 85px;
+    height: 85px;
+}
+.js_btn,.js_btn:hover,.w_js_btn,.wc_btn{
+    width: 141px;
+    height: 57px;
+}
+.js_btn{
+    background-position: -320px 0px;
+}
+.js_btn:hover{
+    background-position: -320px -58px;
+}
+.w_js_btn{
+    background-position: -320px -116px;
+}
+.wc_btn{
+    background-position: -320px -174px;
+}
+.new_closed_icon{
+    background-position: -320px -240px;
+    width: 130px;
+    height: 73px;
+}
+#new_step_1{
+   background-position: 0px 0px; 
+}
+#new_step_2{
+   background-position: 0px -92px; 
+}
+#new_step_3{
+   background-position: 0px -183px; 
+}
+#new_step_4{
+   background-position: 0px -275px; 
+}
+#new_step_5{
+   background-position: 0px -366px; 
+}
+#new_step_6{
+   background-position: 0px -458px; 
+}
+#new_step_7{
+   background-position: 0px -549px; 
+}
+#new_step_8{
+   background-position: 0px -641px; 
+}
+#new_step_hui_1{
+   background-position: -91px 0px; 
+}
+#new_step_hui_2{
+   background-position: -91px -92px; 
+}
+#new_step_hui_3{
+   background-position: -91px -183px; 
+}
+#new_step_hui_4{
+   background-position: -91px -275px; 
+}
+#new_step_hui_5{
+   background-position: -91px -366px; 
+}
+#new_step_hui_6{
+   background-position: -91px -458px; 
+}
+#new_step_hui_7{
+   background-position: -91px -549px; 
+}
+#new_step_hui_8{
+   background-position: -91px -641px; 
+}
+/*ÏµÍ³vip==========================*/
+#i_club_info_sign_icon_0,#i_club_info_sign_icon_1,#i_club_info_sign_icon_2,#i_club_info_sign_icon_3{
+    background: url(../images/ie6/sign_icon.png?v=23) no-repeat;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+#i_club_info_sign_icon_3{
+    background-position: 0 0;
+}
+#i_club_info_sign_icon_2{
+    background-position: 0 -19px;
+}
+#i_club_info_sign_icon_1{
+    background-position: 0 -38px;
+}
+#i_club_info_sign_icon_0{
+    background-position: 0 -57px;
+}
+/*所有图片合并============================*/
+.ins_match_flag,.ico_tips,.ico_extend,.vs_bg,.match_close,.match_extend,.score_result-1,.score_result0,.score_result1,.main_force,.newcomer_force,.player_loan,.inj_force,.clock{
+    background: url(../images/ie6/common.png?v=23) no-repeat;
+}
+.ins_match_flag{
+    background-position: 0 0;
+    width: 12px;
+    height: 18px;
+    position: relative;
+    top: 0 ;
+    left: 35px ;
+}
+#ico_position{
+    background-position: 0 -24px;
+}
+.ico_extend{
+    background-position:-40px 0;
+    width:21px;
+    height: 19px;
+    display: block;
+}
+.vs_bg{
+    background-position: -403px 0;
+    height: 70px;
+    width: 80px;
+    margin: 15px 15px 0 22px;
+}
+.match_close{
+    background-position: -67px 0;
+}
+.match_close,.match_extend{
+    width: 19px;
+    height: 17px;
+    cursor: pointer;
+    margin: 5px 5px 0 0;
+}
+.match_extend{
+    background-position: -67px -21px;
+}
+.score_result-1{
+    background-position: 0 -223px;
+}
+.score_result0{
+    background-position: 0 -60px;
+}
+.score_result1{
+    background-position: 0 -142px;
+}
+.player_loan{
+	background-position: -93px -106px;
+}
+.main_force{
+    background-position: -213px -60px;
+}
+.newcomer_force{
+    background-position: -93px -60px;
+}
+.inj_force{
+    background-position: -153px -60px;  
+}
+.clock{
+    width: 90px;
+    height: 34px;
+    font-size: 24px;
+    line-height: 36px;
+    height: 36px;
+    margin: 5px auto;
+    background-position: -93px -165px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    padding: 13px 35px 9px 35px;
+}
+.red_icon,.blue_icon{
+	background: url(../images/common/match_card.png?v=23) no-repeat;
+	margin-top: 25px;
+	width: 30px;
+	height: 100px;
+}
+.red_icon{
+	background-position: 0px 0px;
+}
+.blue_icon{
+	background-position:0px -105px;
+}
+.xf_gift_icon{
+    background: url(../images/ie6/xf_gift.png?v=23) no-repeat;
+    height: 50px;
+    width: 50px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.club_close_bg_font{	
+    width: 470px;
+    height: 51px;
+    background: url(../images/ie6/club_close_font.png?v=23) no-repeat;
+    position: absolute;
+    top: 150px;
+    left: 155px;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top:30px;
+    padding-left: 50px;
+    text-align: center;
+}
+/*新版box20121127========================*/
+.lightb_bg{
+    background: url(../images/ie6/lightb_bg.png?v=23) no-repeat;
+}
+.newsbox_bg{
+    background: url(../images/ie6/newsbox.png?v=23) no-repeat;
+}
+.alert_box_left{
+    background: url(../images/ie6/alertbox_left.png?v=23) no-repeat;
+}
+.alert_box_right{
+    background: url(../images/ie6/alertbox_right.png?v=23) no-repeat; 
+}
+.alert_box_common{
+    width: 510px;
+    height: 235px;
+    padding-top: 30px;
+    background: url(../images/ie6/alertbox_center.png?v=23) repeat-x; 
+    position: relative;
+}
+.alert_pnc_0{
+    background: url(../images/ie6/alert_box_left_img.png?v=23);
+    position: absolute;
+    top: -65px;
+    left: 35px;
+    width: 223px;
+    height: 141px;
+    z-index: 71;
+}
+.alert_img_0{
+    background: url(../images/ie6/prompt.png?v=23) no-repeat 18px 10px;   
+}
+.alert_img_1{
+    background: url(../images/ie6/ok.png?v=23) no-repeat 18px 10px;
+}
+.alert_img_2{
+    background: url(../images/ie6/ok.png?v=23) no-repeat 18px 10px;
+}
+.alert_img_3{
+    background: url(../images/ie6/ensure.png?v=23) no-repeat 18px 10px;
+}
+.i_index_bottom{
+    background: url(../images/ie6/bottom_panel.png?v=23) no-repeat;
+    width: 1000px;
+    height: 61px;
+    position: absolute;
+    bottom:0px;
+    z-index: 20;
+}
+.combobox{
+    width: 53px;
+    height: 22px;
+    background: url(../images/ie6/button_p.png?v=23) no-repeat;
+}
+.chat_sub{
+    font-family:"微软雅黑";
+    color: #000000;
+    width: 53px;
+    float: left;
+    height: 22px;
+    background: #fff;
+    border: none;
+    cursor:pointer;
+    background: url(../images/ie6/button_set.png?v=23) no-repeat;
+}
+/*主界面好友列表和任务列表============*/
+#i_friend_list,.tasks_list_left{
+    background: url(../images/ie6/i_f_bg.png?v=23) no-repeat;
+}
+#i_friend_list{
+    width: 30px;
+    height: 360px;
+    position: absolute;
+    right: 256px;
+    top: 140px;
+    z-index: 5;
+    background-position: -8px 0;
+}
+.tasks_list_left{
+    padding-left: 3px;
+    width: 23px;
+    height: 360px;
+    cursor: pointer;
+    background-position:0 -368px;
+}
+.tasks_list_right{
+    width: 193px;
+    height: 360px;
+    background: url(../images/ie6/i_task_bg.png?v=23) right 0 no-repeat;
+}
+.icon_f_l,.icon_f{
+    width: 12px;
+    height: 12px;
+    background: url(../images/ie6/i_f_icon.png?v=23) no-repeat;
+}
+.icon_f_l{
+    background-position: 0 0;
+}
+.icon_f{
+    background-position: 0 -15px;
+}
+.i_sub_menu li{
+    display: inline-block;
+    background: url(../images/ie6/card_bg.png?v=23) no-repeat;
+    float: left;
+    height: 225px;
+    width:131px;
+    padding-top:13px;
+    padding-left: 9px;
+    _padding-left:0px;
+    margin-left: 15px;
+    text-align: center;
+    cursor: pointer;    
+}
+.tx_vip_eight_icon,.sign_vip_eight_icon{
+    background:url(../images/ie6/hz_icon.png?v=23) no-repeat;
+    width: 14px;
+    height: 12px;
+    margin-top: 3px;
+}
+/*新版20121220开始=================*/
+.player_box_common li{
+    background: url(../images/ie6/player_box_bg.png?v=23) no-repeat;
+    width: 150px;
+    height: 155px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom:2px;
+    position: relative;
+}
+/*???moddlebox====*/
+.modless_big_bg{
+    background: url(../images/ie6/infobox_big.png?v=23) no-repeat;
+}
+.modless_sm_bg{
+    background: url(../images/ie6/infobox_small.png?v=23) no-repeat;
+}
+.menu_icon{
+    background: url(../images/ie6/icon_nav.png?v=23) 15px bottom no-repeat;
+}
+.menu_icon_hover{
+    background: url(../images/ie6/icon_nav_active.png?v=23) 15px bottom no-repeat;
+}
+.common_sm_player_bg{
+	background: url(../images/shop/shop_item_bg.png??v=14) no-repeat;
+	width: 119px;
+    height: 148px;
+    float: left;
+    margin-bottom: 5px;
+    margin-right: 5px;  
+}
+/*比赛相关系列===============*/
+#ico_tour_b_big_1,#ico_tour_b_big_2,.ico_tour_b_1,.ico_tour_b_2,.match_tourpre_icon_2,.match_tourpre_icon_3{
+	background: url(../images/ie6/tour_ico_bg.png?v=23) no-repeat;
+}
+#ico_tour_b_big_1{
+	background-position: 0px 0px;
+}
+#ico_tour_b_big_2{
+	background-position: 0px -119px;
+}
+.ico_tour_b_1{
+	background-position: 0px -244px;
+}
+.ico_tour_b_2{
+	background-position: 0px -329px;
+}
+.match_tourpre_icon_2{
+	background-position: 0px -530px;
+}
+.match_tourpre_icon_3{
+	background-position: 0px -410px;
+}
+.choose_role_div_li{
+	background: url(../images/ie6/choose_bg.png?v=23) no-repeat;
+	width: 262px;
+	font-size: 12px;
+	margin-bottom: 15px;
+	padding:0 10px;
+}
+/*20130124整理ie6图片====================*/
+.shop_bg_img,.wait_team{
+    background: url(../images/ie6/shop_bg_img.png?v=23) no-repeat;
+    position: relative;
+}
+.has_player{
+    background: url(../images/ie6/player_box_bg.png?v=23) no-repeat;
+}
+.no_player,.no_wait_team{
+    background: url(../images/ie6/player_box_bg_kx.png?v=23) no-repeat;
+}
+.un_player{
+    background: url(../images/ie6/player_box_bg_closed.png?v=23) no-repeat;
+}
+.player_no_skill{
+	background: url(../images/ie6/no_skill_bg.png?v=23) no-repeat;
+}
+.player_skill_bg_info{
+	background: url(../images/ie6/skill_bg.png?v=23) no-repeat;
+}
+.office_lv_r_bg{
+	background: url(../images/ie6/office_lv_r_bg.png??v=23) no-repeat;
+	margin: 10px auto 0px;
+}
+.office_lv_h_bg{
+	background: url(../images/ie6/office_lv_h_bg.png??v=23) no-repeat;
+}
+#input_true_icon{
+	background: url(../images/ie6/up_hang_icon.png?v=23) right 0 no-repeat;
+}
