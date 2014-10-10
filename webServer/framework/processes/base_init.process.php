@@ -76,12 +76,12 @@ if ($g_access_mode!=-2) {
     }
 }
 
-if(empty($_REQUEST['sub_sys']))
+if(empty($_REQUEST['s']))
 {
-    $_REQUEST['sub_sys'] = $g_system;
+    $_REQUEST['s'] = $g_system;
 } else {
-    if (isset($app_allow_system[$_REQUEST['sub_sys']]) ) {
-        $g_system = addslashes($_REQUEST['sub_sys']);;
+    if (isset($app_allow_system[$_REQUEST['s']]) ) {
+        $g_system = addslashes($_REQUEST['s']);;
     }
 }
 

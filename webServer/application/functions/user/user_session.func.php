@@ -22,14 +22,4 @@ function check_user_session($sid,$uid)
     }
     return $this_uid;
 }
-
-function update_online_info($uid,$user_extend,$zeit,$online_id){
-    global $session_config;
-    if ($zeit - $user_extend['last_online'] > $session_config['memcache_sync_time']){
-        $user_extend['last_online'] = $change['last_online'] = $zeit;
-        user_write_back_extend_data($uid,$user_extend, $change);
-        $sql = "UPDATE st_online_details SET last_online = $zeit WHERE 	id=$online_id";
-        mysql_x_query($sql);
-    }
-}
 ?>
