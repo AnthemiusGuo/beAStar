@@ -26,3 +26,10 @@ $config['maintain_work'] = false;
 //$config['maintain_work'] = true;
 $config['maintain_open'] = '13:59';
 
+$config_open_reg = true;
+
+$cfg_reg["credits"] = 0;
+$cfg_reg["money"] = 1000;
+$cfg_reg["voucher"] = 1000;
+$cfg_reg["energy"] = 30;
+

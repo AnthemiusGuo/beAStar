@@ -46,6 +46,7 @@ class User {
 	public function initBydata($data) {
 		$this->uid = (string) $data['_id'];
 		$this->baseInfo = $data['baseInfo'];
+		$this->attrInfo = $data['attrInfo'];
 	    $this->devicesList = $data['devicesList'];
 	    $this->extendInfo = $data['extendInfo'];
 	    $this->counters = $data['counters'];
@@ -62,18 +63,25 @@ class User {
 		$this->create(	array(
 				'uuid' => $uuid,
 				'is_anonym' => 1,
-				'reg_zeit' => $uname,
+				"uname" => $uname,
+				'reg_zeit' => $zeit,
 				'level' => 0,
 				'exp' => 0,
+				'money' => $cfg_reg["money"],
 				"credits" => $cfg_reg["credits"],
-				"total_credits" => $cfg_reg["credits"]
+				"voucher" => $cfg_reg["voucher"]
 			)
 		);
 		# code...
 	}
 
+	public function getAttrInfo()
+	{
+
+	}
+
 	public function create($userInfo = array(),$extendInfo = array()){  
-		global $zeit;
+		global $zeit,$cfg_reg;
 	    $baseArray = array(
 	        "uuid" => "",
 	        "is_anonym" => 0,
@@ -82,10 +90,15 @@ class User {
 	        "avatar_id" => 1,
 	        "level" => 0,
 	        "exp" => 0,
-	        "credits" => 0,
-	        "credits_in_box" => 0,
-	        "total_credits" => 0,
-	        "credits_from_sys" => 0,
+	        "mood" => 0,
+	        "point" => 0,
+	        "point_all" =>0,
+	        "energy" => $cfg_reg["energy"],
+
+	       	'money' => $cfg_reg["money"],
+			"credits" => $cfg_reg["credits"],
+			"voucher" => $cfg_reg["voucher"],
+
 	        "is_robot" => 0,
 	        "DOA" => 0,
 	        "pp_id" => 0,
@@ -110,9 +123,6 @@ class User {
 	    
 
 	    $extendArray = array(
-	        "room_id" => 0,
-	        "table_id" => 0,
-	        "credits_in_game" => 0,
 	        "last_login" => $zeit,
 	        "last_online" => $zeit,
 	        
@@ -129,6 +139,22 @@ class User {
 	        "win_counter" => 0,
 	        "speaker_count" => 0
 	    );
+
+	    $attrInfo = array(
+	    	"common"=>array(
+	    			"charm"=>0,
+	    			"looks"=>0,
+	    			"intelligence"=>0,
+	    		),
+	    	"special"=>array(
+	    			"voice"=>0,
+	    			"musicality"=>0,
+	    			"play"=>0,
+	    			"acting"=>0, 
+	    			"literature"=>0
+	    		),
+
+	    );
 	    foreach ($userInfo as $key => $value) {
 	    	$baseArray[$key] = $value;
 	    }
@@ -139,12 +165,14 @@ class User {
 	    $this->devicesList = $deviceList;
 	    $this->extendInfo = $extendArray;
 	    $this->counters = $counters;
+	    $this->attrInfo = $attrInfo;
 
 	    $this->hasSync = false;
 	    $ret = mongoInsert("user",array('baseInfo'=>$baseArray,
 	    	'devicesList' => $deviceList,
 			"extendInfo" => $extendArray,
-			'counters' => $counters));
+			'counters' => $counters,
+			'attrInfo' => $attrInfo));
 	    $this->uid = (string) $ret;
 	    $newdata = array('$set' => array("uid" => $this->uid));
 	    mongoUpdate("user",array("_id"=>$ret),$newdata);
@@ -233,7 +261,7 @@ class User {
 		                 "ip3" => $ipx[0],
 		                 "ip4" => $ipx[0],
 		                 "ip_all" => $ipx[0],
-		                 "uuid" => $uuid,
+		                 "uuid" => $this->uuid,
 		                 );
 		mongoInsert("userOnline",$newdata);
 	}
@@ -257,10 +285,10 @@ class User {
 				'level'=>$this->baseInfo['level'],
 	            'exp'=>$this->baseInfo['exp'],
 	            'exp_len'=>0,
-				'credits'=>($show_credits==1)?$this->baseInfo['credits']:0,
-				'credits_in_box'=>($is_myself==1)?$this->baseInfo['credits_in_box']:0,
-				'total_credits'=>($is_myself==1)?$this->baseInfo['total_credits']:0,
-				'credits_show'=>($show_credits==1)?common_get_zipd_number($this->baseInfo['credits']):0,
+				'money'=>($show_credits==1)?$this->baseInfo['money']:0,
+				'voucher'=>($is_myself==1)?$this->baseInfo['voucher']:0,
+				'credits'=>($is_myself==1)?$this->baseInfo['credits']:0,
+				'money_show'=>($show_credits==1)?common_get_zipd_number($this->baseInfo['money_show']):0,
 				'avatar_url'=>$this->baseInfo['avatar_url'],
 				'avatar_id'=>$this->baseInfo['avatar_id'],
 				'show_uid'=>user_get_display_uid($this->uid),

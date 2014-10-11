@@ -4,7 +4,7 @@ if (isset($_REQUEST['h']) && ($_REQUEST['h']==1)) {
     
     $json_rst = array('rstno'=>1,'error'=>_('成功!'),'m'=>$g_module,'a'=>$g_action);     
     if (!file_exists(HR.$g_module.'/'.$g_action.'.php')) {
-		$json_rst = array('rstno'=>-98,'error'=>_('您访问的接口不存在!'),'m'=>$g_module,'a'=>$g_action);
+		$json_rst = array('rstno'=>-98,'error'=>_('您访问的接口不存在!'),'m'=>$g_module,'a'=>$g_action,'data'=>array());
         echo json_encode($json_rst);
 		exit;
     } 
@@ -17,24 +17,19 @@ if (isset($_REQUEST['h']) && ($_REQUEST['h']==1)) {
     
     if (!file_exists(MR.$g_module.'/'.$g_action.'.php'))
     {
-        echo(MR.$g_module.'/'.$g_action.'.php');
-        header("HTTP/1.1 404 Not Found");
-        exit;
+        return_not_exist();
     }
     if (!file_exists(VR.$g_module.'/'.$g_action.'.php') && $g_view == PAGE)
     {
-        echo(VR.$g_module.'/'.$g_action.'.php');
-        header("HTTP/1.1 404 Not Found");
-        exit;
+        return_not_exist();
+        
     }
     if (!file_exists(VR.$g_module.'/block/'.$g_action.'.php') && $g_view == HTML)
     {
-        echo(VR.$g_module.'/block/'.$g_action.'.php');
-        header("HTTP/1.1 404 Not Found");
-        exit;
+        return_not_exist();
     }
 	if ($g_view == JSON) {
-		$json_rst = array('rstno'=>1,'error'=>_('成功!'),'m'=>$g_module,'a'=>$g_action);
+		$json_rst = array('rstno'=>1,'error'=>_('成功!'),'m'=>$g_module,'a'=>$g_action,'data'=>array());
 	}
     if (file_exists(MR.$g_module.'/common.php'))
     {

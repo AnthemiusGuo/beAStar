@@ -26,6 +26,18 @@ include_once FR.'functions/common/mongo.func.php';
 include_once FR.'functions/common/redis.func.php';
 include_once FR.'functions/common/cache_info.func.php';
 
+function return_not_exist(){
+    global $g_view,$g_module,$g_action;
+    if ($g_view==JSON) {
+        $json_rst = array('rstno'=>-98,'error'=>_('您访问的接口不存在!'),'m'=>$g_module,'a'=>$g_action,'data'=>array());
+        echo json_encode($json_rst);
+        exit;
+    } else {
+        header("HTTP/1.1 404 Not Found");
+        exit;
+    }
+}
+
 function return_not_open(){
     global $game_www_url,$config;
     header('Location: '.$game_www_url.'?m=index&a=not_open&open_zeit='.$config['game_start'].'&server='.urlencode($config['srv_name']));

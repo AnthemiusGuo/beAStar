@@ -20,7 +20,7 @@ $config['dbpwd'] = 'test';
 $config['mongo']['host'] =  '127.0.0.1';
 $config['mongo']['port'] = '27017';
 
-$config['mongo']['db'] = 'card_game';
+$config['mongo']['db'] = 'beStar';
 $config['mongo']['user'] = 'test';
 $config['mongo']['pwd'] = 'test';
 
