@@ -35,15 +35,9 @@ start_page_log();
 
 //用户的走用户session，服务器API的走server session
 $g_is_reg = 1;
-if ( $g_system=='admin'||$g_system=='cp'||$g_system=='cp_news' ) {	
-    include_once AR.'processes/admin_session.process.php';
-	$g_is_reg = 2;
-} else {
-	if($g_module != 'user'){
-		include_once AR.'processes/session.process.php';
-		$g_is_reg = 0;
-	}
-	
+if (!isset($app_allow_nonLogin[$g_system]) || !isset($app_allow_nonLogin[$g_system][$g_module]) || !isset($app_allow_nonLogin[$g_system][$g_module][$g_action])) {
+	include_once AR.'processes/'.$g_system.'.session.process.php';
+	$g_is_reg = 0;
 }
 
 include_once FR.'processes/router.process.php';

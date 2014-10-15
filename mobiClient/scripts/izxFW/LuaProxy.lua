@@ -1,0 +1,3 @@
+function proxySetUser(userInfo)
+	
+end

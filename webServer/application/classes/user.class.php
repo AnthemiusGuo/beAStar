@@ -1,10 +1,12 @@
 <?
 include_once AR.'functions/user/user_session.func.php';
 class User { 
+	public $typ = 1;//1 for full,0 for just base
 	public $baseInfo = array();
 	public $devicesList = array();
 	public $extendInfo = array();
 	public $counters = array();
+	public $attrInfo = array();
 
 	public $uid = '';
 	public $uuid = '';
@@ -16,7 +18,17 @@ class User {
 	public function init($uid){
 		$dbInfo = mongoSearchOne("user",array("uid"=>$uid));
 		if ($dbInfo!=null) {
-			$this->initBydata($dbInfo);
+			$this->initByFulldata($dbInfo);
+			return true;
+		}
+		return false;
+	}
+
+	public function initBaseByUid($uid){
+		$dbInfo = mongoSearchOne("user",array("uid"=>$uid),array('baseInfo'));
+		if ($dbInfo!=null) {
+			$this->uid = (string) $data['_id'];
+			$this->baseInfo = $data['baseInfo'];
 			return true;
 		}
 		return false;
@@ -25,7 +37,7 @@ class User {
 	public function initFullByUid($uid){
 		$dbInfo = mongoSearchOne("user",array("uid"=>$uid));
 		if ($dbInfo!=null) {
-			$this->initBydata($dbInfo);
+			$this->initByFulldata($dbInfo);
 			return true;
 		}
 		return false;
@@ -37,13 +49,13 @@ class User {
 	public function initByUuid($uuid){
 		$dbInfo = mongoSearchOne("user",array("baseInfo.uuid"=>$uuid));
 		if ($dbInfo!=null) {
-			$this->initBydata($dbInfo);
+			$this->initByFulldata($dbInfo);
 			return true;
 		}
 		return false;
 	}
 
-	public function initBydata($data) {
+	public function initByFulldata($data) {
 		$this->uid = (string) $data['_id'];
 		$this->baseInfo = $data['baseInfo'];
 		$this->attrInfo = $data['attrInfo'];
@@ -75,9 +87,18 @@ class User {
 		# code...
 	}
 
-	public function getAttrInfo()
+	public function getAttrInfo($force = false)
 	{
-
+		if (empty($this->attrInfo) || $force){
+			$dbInfo = mongoSearchOne("user",array("uid"=>$this->uid),array('attrInfo'));
+			if ($dbInfo!=null) {
+				$this->attrInfo = $data['attrInfo'];
+				return true;
+			}
+			return false;
+		} else {
+			return true;
+		}
 	}
 
 	public function create($userInfo = array(),$extendInfo = array()){  

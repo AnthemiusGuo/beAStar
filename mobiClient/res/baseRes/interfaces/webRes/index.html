@@ -1,0 +1,470 @@
+﻿<!doctype html>  
+<html>  
+<head>  
+    <meta charset="utf-8">
+    <title>Hello world!</title>  
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <script src="jquery-1.10.2.min.js"></script>    
+    <script>
+    var baseParam = {};
+    $.support.cors = true;  
+    function showTab(id) {
+        $(".tabPage").addClass("hidden");
+        $(".nav-tabs li").removeClass("active");
+        $("#"+id).removeClass("hidden");
+        $("#tab_"+id).addClass("active");
+        if (id=="feedback") {
+            showFeedbacks();
+        }
+    }
+    function showFeedbacks(){
+        $.ajax({
+          type: "POST",
+          dataType: "json",
+          url: baseParam.feedbackList,
+          data: {pid:baseParam.pid,ticket:baseParam.ticket,pn:baseParam.packageName},
+          success: function(json){
+                console.log(json);
+                var _html = "";
+                $.each(json.resultList,function(k,v){
+                    if (v.status==0) {
+                        v.rptimeStr = '尚未回复';
+                    }
+                    _html = _html+"<tr>"+
+                        "<td>"+v.msg+"</td>"+
+                        "<td>"+v.reply+"</td>"+
+                        "<td>"+v.rptimeStr+"</td>"+
+                        "</tr>";
+                });
+                $("#feedbackList").html(_html);
+
+            }
+        });
+    }
+    function initLoad(){
+        if (typeof(baseSetting)=="undefined") {
+            // $("#test").html("baseSetting undefined")
+            baseParam = {url:'http://payment.hiigame.com/new/gateway/feedback',pid:1113134339110250,ticket:'d8022ccb24df42249902e418e83838dc',packageName:'com.izhangxin.ddz.android.weiping',feedbackList:'http://payment.hiigame.com/new/gateway/feedback/list',canCommit:true};
+            //baseParam = {canCommit:false};
+        } else {
+            baseParam = JSON.parse(baseSetting.getSetting());
+        }
+        if (baseParam.canCommit==false) {
+            $("#info_commit_status").removeClass("hidden").html('尚未登录或服务器连接失败，请稍后重试');
+            $("#sendCommit").hide();
+        }
+        if (baseParam.firstShow==undefined || baseParam.firstShow==1) {
+            showTab('index');
+        }
+        else if (baseParam.firstShow==2) {
+            showTab('vip');
+        }
+        else if (baseParam.firstShow==3) {
+            showTab('feedback');
+        }
+        if (baseParam.noVip) {
+            $("#tab_vip").hide();
+        }
+        
+
+    }
+    $(function(){
+        initLoad();
+    });
+    function callLuaFunc(param){
+        if (typeof(baseSetting)=="undefined") {
+            alert("Don't support call lua func now!!")
+        } else {
+            if (typeof(param)!="string") {
+                param = JSON.stringify(param);
+            }
+            baseSetting.CallLua(param);
+        }
+        
+    }
+    function gotoVip(){
+        callLuaFunc("gotoVip");
+    }
+    function submitComment(){
+        // callLuaFunc({"type":"fuck","info":"WTF!!"});
+        // return;
+        if (typeof(baseParam.url)=="undefined") {
+            $("#sendInfo").removeClass("has-success").addClass("has-error")
+            $("#errorTips").html("当前不可提交，请稍后重新进入");
+            return;
+        }
+        var commits = $("#inputComment").val().trim();
+        if (commits == "") {
+            $("#sendInfo").removeClass("has-success").addClass("has-error")
+            $("#errorTips").html("请输入您的意见");
+            return;
+        }
+        $.ajax({
+            type: "POST",
+            url: baseParam.url,
+            data: {pid:baseParam.pid,ticket:baseParam.ticket,pn:baseParam.packageName,msg:commits},
+            success: function(data){
+                if (data.ret==0) {
+                    $("#sendInfo").removeClass("has-error").addClass("has-success")
+                    $("#errorTips").html("意见提交成功! 谢谢您的意见");
+                } else {
+                    $("#sendInfo").removeClass("has-error").addClass("has-success")
+                    $("#errorTips").html("意见反馈提交失败! 请稍后重新进入");
+                }
+                $("#inputComment").val('');
+                showFeedbacks();
+            }
+        });
+        
+    }
+    </script>
+</head>  
+  
+<body id="help_game">  
+    <div class="container">
+    <header class="navbar navbar-fixed-top" id="top" role="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-3">
+                  <a href="http://www.izhangxin.com/" class="navbar-brand">返回</a>
+                </div>
+                <div class="col-md-9 col-xs-9">
+                  <ul class="nav nav-tabs navbar-right">
+                    <li id="tab_index" class="active">
+                      <a href="javascript:void(0);" onclick="showTab('index')">游戏帮助</a>
+                    </li>
+                    <li id="tab_vip">
+                      <a href="javascript:void(0);" onclick="showTab('vip')">VIP介绍</a>
+                    </li>
+                    <li id="tab_feedback">
+                      <a href="javascript:void(0);" onclick="showTab('feedback')">意见反馈</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+            </div>
+
+    </header>
+    <div class="row">
+        <div class="col-md-12 tabPage" id="index">
+            <h3>规则说明</h3>
+            <div>
+                <p>
+                斗地主起源于湖北，该游戏由三个人用一副54 张牌。地主为一方，其余两家农民为另一方，双方对战，先出完牌的人所代表的一方获胜；玩法非常简单，牌型变化多，非常考验人的判断和分析能力，游戏对抗性和配合性也很强。
+                </p>
+                <h4>1、发牌</h4>
+                <p>
+                一副牌54张，随机抽一张明牌，然后轮流抓牌。抓到明牌的玩家优先叫地主。最后三张作为游戏的底牌。在没有确定地主之前，底牌不能看。
+                </p>
+
+                <h4>2、抢地主叫牌</h4>
+                <ul class="list-group">
+                    <li class="list-group-item">拿到那张明牌的玩家开始叫分，叫牌时可以叫“1分”、“2分”、“3分”或“不叫”。</li>
+                      <li class="list-group-item">从后叫分者只能叫比前面玩家高的分或者不叫。</li>
+                      <li class="list-group-item">如果有玩家叫“3分”，则立即结束叫牌；如果都不叫，则重新发牌，重新叫分。</li>
+                      <li class="list-group-item">在带“抢地主”房间里面，叫完分后，从最后一个叫分的玩家下家开始抢地主。</li>
+                      <li class="list-group-item">凡是选择了“不叫”的玩家，没有抢地主的资格。抢地主转到最后一个叫分的玩家结束。</li>
+                        <li class="list-group-item">每抢一次地主，则游戏的倍数翻一倍（×2）。如果没人抢地主，则叫分最高的为地主。</li>
+                </ul>
+
+                <h4>3、倍数</h4>
+                <ul class="list-group">
+                  <li class="list-group-item">在一局刚开始时，倍数为1</li>
+                  <li class="list-group-item">如果有人抢地主，则每抢一次地主，游戏的倍数翻一倍（×2）。</li>
+                  <li class="list-group-item">如果地主选择了亮牌，则游戏的倍数翻一倍（×2）。</li>
+                  <li class="list-group-item">在游戏的过程中，每出一个炸弹或火箭，则游戏的倍数翻一倍（×2）（手上没出的炸弹和火箭不算）。</li>
+                  <li class="list-group-item">春天：如果地主出完所有牌，其他两家一张都未出，则游戏的倍数翻一倍（×2）。</li>
+                    <li class="list-group-item">反春天：如果其他两家中有一家先出完牌，地主只出过一手牌则游戏的倍数翻一倍（×2）。</li>
+                </ul>
+
+
+                <h4>4、牌型</h4>
+                <table class="table table-striped">
+                    <tr>
+                        <th>火箭</th>
+                        <td>即双王（大王和小王），最大的牌。</td>
+                    </tr>
+                    <tr>
+                        <th>炸弹</th>
+                        <td>四张同数值牌（如：7777）。</td>
+                    </tr>
+                    <tr>
+                        <th>单牌</th>
+                        <td>单个牌（如：红桃5）。</td>
+                    </tr>
+                    <tr>
+                        <th>对牌</th>
+                        <td>数值相同的两张牌（如：梅花4+方块4）。</td>
+                    </tr>
+                    <tr>
+                        <th>三张牌</th>
+                        <td>数值相同的三张牌（如：JJJ）。</td>
+                    </tr>
+                    <tr>
+                        <th>三带一</th>
+                        <td>数值相同的三张牌 + 一张单牌（如：333+6）。</td>
+                    </tr>
+                    <tr>
+                        <th>三带二</th>
+                        <td>数值相同的三张牌 + 一对牌（如：444+99）。</td>
+                    </tr>
+                    <tr>
+                        <th>单顺</th>
+                        <td>五张或更多的连续单牌（如：45678或78910JQK）。不包括2点和双王。</td>
+                    </tr>
+                    <tr>
+                        <th>连对</th>
+                        <td>三对或更多的连续对牌（如：334455或7788991010JJ）。不包括2点和双王。</td>
+                    </tr>
+                    <tr>
+                        <th>三顺</th>
+                        <td>二个或更多的连续三张牌（如：333444或555666777888）。不包括2点和双王。</td>
+                    </tr>
+                    <tr>
+                        <th>飞机带翅膀</th>
+                        <td>三顺 + 同数量的单牌或同数量的对牌（如：444555+79或333444555+7799JJ）。</td>
+                    </tr>
+                    <tr>
+                        <th>四带二</th>
+                        <td>四张牌 + 两手牌（如：5555＋3＋8或4444＋55＋77）。注意：四带二不是炸弹。</td>
+                    </tr>
+                </table>
+            </div>
+            <h3>分数算法</h3>
+            <ul class="list-group">
+              <li class="list-group-item">地主胜：地主得分为 2×底注×叫分分数×倍数。 其余玩家各得：-底注×叫分分数×倍数。</li>
+              <li class="list-group-item">地主败：地主得分为 -2×底注×叫分分数×倍数。 其余玩家各得：底注×叫分分数×倍数。</li>
+              <li class="list-group-item">如果游戏流局（没人叫地主），则不算任何分数。</li>
+            </ul>
+
+            <h3>癞子场帮助</h3>
+            <h4>【牌型】</h4>
+            <blockquote>
+              <p><small>赖子牌：也称混牌，是可以代替除大小王之外的任何一张牌的全能牌，每副牌共4张。
+            注意：癞子可以和其他牌搭配成上述各种牌型；但癞子单独出时不能当作万能牌，只能作为其本身使用。例如：癞子为7， 44556 + 7会作为445566的双顺使用；77单出时，只能作为一对7使用。</small></p>
+            </blockquote>
+            <table class="table table-striped">
+                <tr>
+                    <th>纯赖子炸弹</th>
+                    <td>四张赖子牌组成的炸弹（例如癞子为5，四个5即为纯赖子炸弹）</td>
+                </tr>
+                <tr>
+                    <th>火箭</th>
+                    <td>即双王（大王和小王）。</td>
+                </tr>
+                <tr>
+                    <th>硬炸弹</th>
+                    <td>四张点数相同的牌，如7777。</td>
+                </tr>
+                <tr>
+                    <th>软炸弹</th>
+                    <td>由癞子搭配成的炸弹，如癞子为7，三个A加7就构成软四个A炸弹，或两个A加两个7也可构成四个A的软炸弹。</td>
+                </tr>
+                <tr>
+                    <th>单牌</th>
+                    <td>任意一张单牌。</td>
+                </tr>
+                <tr>
+                    <th>硬对牌</th>
+                    <td>任意两张点数相同的牌。</td>
+                </tr>
+                <tr>
+                    <th>软对牌</th>
+                    <td>单张牌和赖子构成的对。</td>
+                </tr>
+                <tr>
+                    <th>硬三张</th>
+                    <td>任意三张点数相同的牌，如888。</td>
+                </tr>
+                <tr>
+                    <th>软三张</th>
+                    <td>单张加两个赖子或双张加一个赖子</td>
+                </tr>
+                <tr>
+                    <th>硬三带单张或一对</th>
+                    <td>点数相同的三张牌+一张单牌或一对牌。如333+6 或 444+99。</td>
+                </tr>
+                <tr>
+                    <th>软三带单张或一对</th>
+                    <td>单张加两个赖子或双张加一个赖子+一张单牌或一对牌。</td>
+                </tr>
+                <tr>
+                    <th>硬单顺</th>
+                    <td>任意五张或五张以上点数相连的牌如45678或78910JQK。不包括 2和双王。</td>
+                </tr>
+                <tr>
+                    <th>软单顺</th>
+                    <td>含赖子任意五张或五张以上点数相连的牌</td>
+                </tr>
+                <tr>
+                    <th>硬双顺</th>
+                    <td>三对或更多的连续对牌，如334455、7788991010JJ。不包括 2 点和双王。</td>
+                </tr>
+                <tr>
+                    <th>软双顺</th>
+                    <td>含赖子的任意三对或更多的连续对牌</td>
+                </tr>
+                <tr>
+                    <th>三顺</th>
+                    <td>二个或更多的连续三张牌，如333444 、555666777888。不包括 2 点和双王。</td>
+                </tr>
+                <tr>
+                    <th>软三顺</th>
+                    <td>含赖子二个或更多的连续三张牌</td>
+                </tr>
+                <tr>
+                    <th>飞机带翅膀</th>
+                    <td>三顺＋同数量的单牌或同数量的牌。如444555+79 或333444555+7799JJ或666777+55  JJJQQQKKK+334</td>
+                </tr>
+                <tr>
+                    <th>软飞机带翅膀</th>
+                    <td>含赖子的三顺＋同数量的单牌或同数量的牌。</td>
+                </tr>
+                <tr>
+                    <th>四带二</th>
+                    <td>四张牌＋一对或者两对或两单牌。（注意：四带二不是炸弹）。如6666+33或5555＋3＋8 或 4444＋55＋77 。<br/>
+                    <small>注:AAA222不是飞机（飞机必须是顺子相连的牌）如333444、555666、kkkAAA</small></td>
+                </tr>
+                <tr>
+                    <th>软四带二</th>
+                    <td>含癞子的四张牌＋一对或者两对或两单牌。</td>
+                </tr>
+            </table>
+
+            <blockquote>
+              <p><small>除炸弹以外牌型，软跟硬同大小牌型是一样大，无大小之分如赖子为4  硬顺子56789   软顺子45679（赖子配8）是一样大</small></p>
+            </blockquote>
+
+            <h4>【牌型比较】</h4>
+            <p>
+            火箭>纯赖子炸弹>硬炸弹（没有赖子牌的炸弹）>软炸弹（有赖子牌的炸弹）>一般牌型（单牌、对牌、三张牌、三带一、单顺、双顺、三顺、飞机带翅膀、四带二）。
+            其中：同等级别的炸弹按牌的分值比大小。
+            </p>
+            <h4>【炸弹积分法】</h4>
+            <ul class="list-group">
+              <li class="list-group-item">软炸弹，倍数×2</li>
+              <li class="list-group-item">硬炸弹，倍数×4</li>
+              <li class="list-group-item">火箭，倍数×4</li>
+              <li class="list-group-item">纯癞子炸弹，倍数×64</li>
+            </ul>
+        </div>
+        <div class="col-md-12 hidden tabPage" id="vip">
+            <h3>一.VIP简介</h3>
+            <p>
+                充值任意金额即可获得VIP经验，累计VIP经验可提升VIP等级，每个VIP级别都会获得相应级别的奖励和VIP特殊权利，以及代表无限荣耀的会员资历标识。
+            </p>
+                       <h3>二.VIP专属权限</h3>
+            <table class="table table-striped">
+                <tr>
+                    <th></th>
+                    <th>VIP1</th>
+                    <th>VIP2</th>
+                    <th>VIP3</th>
+                    <th>VIP4</th>
+                    <th>VIP5</th>
+                </tr>
+                <tr>
+                    <th>升级所需经验</th>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>50</td>
+                    <td>100</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <th>权限1</th>
+                    <td>VIP标识</td>  
+                    <td>低保领取+1</td>
+                    <td>昵称突出显示</td>
+                    <td>签到多奖1千</td>
+                    <td>签到多奖2千</td>
+                    
+
+                </tr>
+                <tr>
+                    <th>权限2</th>
+                    <td>保险箱</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <br/>
+            <table class="table table-striped">
+                <tr>
+                    <th></th>
+                    <th>VIP6</th>
+                    <th>VIP7</th>
+                    <th>VIP8</th>
+                    <th>VIP9</th>
+                    <th>VVIP</th>
+                </tr>
+                <tr>
+                    <th>升级所需经验</th>
+                    <td>500</td>
+                    <td>1000</td>
+                    <td>2000</td>
+                    <td>5000</td>
+                    <td>10000</td>
+                </tr>
+                <tr>
+                    <th>权限1</th>
+                    <td>签到多奖3千</td>
+                    <td>签到多奖5千</td>
+                    <td>签到多奖8千</td>
+                    <td>免费记牌器</td>
+                    <td>签到多奖1万</td>
+                </tr>
+                <tr>
+                    <th>权限2</th>
+                    <td>红色头像</td>
+                    <td>金色头像</td>
+                    <td>特殊炸弹</td>
+                    <td>钻石头像</td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="text-center">
+                <a class="btn btn-primary" onclick="gotoVip()" href="javascript:void(0)">开通VIP</a>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+        <div class="col-md-12 hidden tabPage" id="feedback">
+            <blockquote id="info_commit_status" class="hidden">
+              <p></p>
+            </blockquote>
+            <form role="form" id="sendCommit">
+              <div class="form-group" id="sendInfo">
+                <label for="inputComment">请填写您的意见</label>
+                <textarea rows="4" tabindex="0" class="form-control" id="inputComment" placeholder="请填写您的意见"></textarea>
+                <span id="errorTips" class="help-block"></span>
+              </div>
+              <a class="btn btn-primary" onclick="submitComment()" href="javascript:void(0)">提交</a>
+            </form>
+
+            <div>
+                <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>您的意见</th>
+                    <th>客服回复</th>
+                    <th>回复时间</th>
+                </tr>
+                </thead>
+                <tbody id="feedbackList">
+                    
+                </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>  
+</html> 

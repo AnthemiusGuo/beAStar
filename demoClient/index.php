@@ -36,7 +36,8 @@
 <div>
 	<div id="send" style="width:28%;float:left;margin:10px;border:1px solid #DDD;padding:10px;">
 
-	<h2>SEND</h2>
+	<h2>req</h2>
+	<a href="javascript:void(0);" onclick="demo_req_get({m:'user',a:'getAttr'})">getAttr</a>
 	</div>
 	<div id="recv" style="width:28%;float:left;margin:10px;border:1px solid #DDD;padding:10px;">
 	<h2>RECV</h2>

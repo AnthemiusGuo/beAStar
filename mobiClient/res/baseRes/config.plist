@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>config</key>
+	<dict>
+		<key>dianxin_sms</key>
+		<true/>
+		<key>liantong_sms</key>
+		<true/>
+		<key>yidong_sms</key>
+		<true/>
+		<key>replace_text</key>
+		<string>炸金花:赢三张|扎金花:赢三张|掌心游:掌心游</string>
+		<key>share</key>
+		<false/>
+		<key>thirdplatformexitpage</key>
+		<true/>
+		<key>thirdplatformquickpay</key>
+		<true/>
+		<key>toolbar</key>
+		<false/>
+		<key>banedpay</key>
+		<false/>
+		<key>usetestenv</key>
+		<false/>
+		<key>skipupgrade</key>
+		<false/>
+		<key>quickpay</key>
+		<true/>
+		<key>logoloading</key>
+		<string>thirdparty/login_logo.png</string>
+		<key>logodenglu</key>
+		<string>thirdparty/login_logo.png</string>
+		<key>logodating</key>
+		<string>thirdparty/lobby_pic_logo.png</string>
+		<key>showPingCoo</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

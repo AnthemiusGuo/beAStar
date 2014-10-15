@@ -2,15 +2,38 @@ function consoleLog(tag,info){
 	$("#console").append(tag+":"+info+"<br/>");
 }
 
+function recvLog(tag,info){
+  $("#recv").append(tag+":"+info+"<br/>");
+}
+
 function updateUserInfo(userInfo){
 	$("#userInfo").html(JSON.stringify(userInfo));
+}
+
+function demo_req_get(getInfo) {
+  if (typeof(getInfo.d)!="undefined"){
+    getInfo.d = {};
+  }
+  ajax_get({
+        m: getInfo.m,
+        a: getInfo.a,
+        id: '',
+        data: getInfo.d,
+        error_alert:1,
+        callback: function(json){
+            recvLog("get",JSON.stringify(json.data));
+        },
+        callback_fail: function(json){
+            consoleLog("demo_req_get","failed!!!"+JSON.stringify(json));
+        },
+    });
 }
 
 WEB_SOCKET_SWF_LOCATION = "js/WebSocketMain.swf";
 var GAME_ID = 1;
 var packetId = 0;
-var uuid = uuid();
-var uid = 0;
+var gUUid = uuid();
+var gUid = 0;
 var gTicket = "";
 var webUrl = "http://127.0.0.1/bestar/webServer/wwwroot/u.php";
 var req_url_template = webUrl+"?m={ctrller}&a={action}";
@@ -48,12 +71,13 @@ function rand(min, max) {
 //     });
 $(function() {
 	ajax_get({
-        m: 'user',
+        m: 'account',
         a: 'doLogin',
         id: '',
-        data: {uuid:uuid},
+        data: {uuid:gUUid},
         error_alert:1,
         callback: function(json){
+          gUid = json.data.uid;
         	gTicket = json.data.ticket;
         	updateUserInfo(json.data.user_info);
             consoleLog("web","login suceess!!! ticket:"+gTicket);
@@ -67,19 +91,16 @@ $(function() {
 
 setInterval(function(){
 	ajax_get({
-        m: 'user',
+        m: 'account',
         a: 'doRefresh',
         id: '',
-        data: {uid:uid},
+        data: {uid:gUid},
         error_alert:1,
         callback: function(json){
         	if (typeof(json.data.ticket)!="undefined"){
-				gTicket = json.data.ticket;	
-			}
-            if (json.ret!=1) {
-				consoleLog("web","refresh failed!!!");
-				return;
-			}
+    				  gTicket = json.data.ticket;	
+              consoleLog("web","refresh ticket and new ticket is "+gTicket);
+    			}
         }
     });
 },180000)
