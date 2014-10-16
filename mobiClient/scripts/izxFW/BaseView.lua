@@ -104,6 +104,11 @@ function BaseView:onPressKeyMenu()
 	-- body
 end
 
+function BaseView:onDidLoadFromCCJ()
+	self:onAssignVars();
+	
+end
+
 function BaseView:onDidLoadFromCCB()
 	self:onAssignVars();
 	

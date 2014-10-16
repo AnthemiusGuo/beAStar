@@ -54,7 +54,7 @@ DEFAULT.URL = {};
 RESOURCE_PATH = "/game/"
 C_RESOURCE_PATH = "/c_res/"
  
-RES_LOAD_PRE_PATH = {"res/baseRes/","res/moduleDDZRes/"}
+RES_LOAD_PRE_PATH = {"res/baseRes/"}
 
 ENV_OFFICIAL = 0;
 ENV_TEST = 1;

@@ -6,7 +6,7 @@ BaseLogic.DownloadPath = device.writablePath .. "/download/";
 
 BaseLogic.stateUpgrade = 0;
 BaseLogic.stateLogin = 1;
-BaseLogic.stateInLobby = 2;
+BaseLogic.stateInLocation = 2;
 BaseLogic.stateInRealGame = 5;
 BaseLogic.stateInSingleGame = 6;
 BaseLogic.stateInMiniGame = 7;
@@ -458,6 +458,7 @@ function BaseLogic:run(updaterSuccOrFail)
 		self.lobbyLogic:onNoNet();
 		return;
 	end
+	gBaseLogic.lobbyLogic:enterLocation({isFirstRun=true});
 end
 
 
@@ -1112,7 +1113,7 @@ function BaseLogic:switchEnv(env)
 	self:setSocketConfig(SOCKET_CONFIGS[PLUGIN_ENV]);
 	self.MBPluginManager:loadPluginsConfig();
 	self.MBPluginManager.pluginProxy:switchPluginXRunEnv(PLUGIN_ENV);
-	self.lobbyLogic:reShowLoginScene(false);
+	self.lobbyLogic:enterLocation();
 end
 
 function BaseLogic:unblockUI()

@@ -24,3 +24,4 @@ izx.UTF8 = require("izxFW.UTF8");
 izx.resourceManager = izx.resourceManager or require("izxFW.ResourceManager").new();
 izx.miniGameManager = require("izxFW.MiniGameManager").new();
 scheduler = require(cc.PACKAGE_NAME .. ".scheduler");
+CCJReader = require "izxFW.CCJReader";

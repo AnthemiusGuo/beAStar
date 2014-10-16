@@ -5,6 +5,7 @@ ccb = ccb or {}
 
 BasePage.PAGE_TYP_CODE = 1;
 BasePage.PAGE_TYP_CCB = 2;
+BasePage.PAGE_TYP_CCJ = 3;
 
 function BasePage:ctor(logic,pageName,moduleName,opt)
     self.pageName = pageName;
@@ -46,6 +47,14 @@ function BasePage:ctor(logic,pageName,moduleName,opt)
         self.view.rootNode = CCBuilderReaderLoad(opt.ccbFileName,proxy,self.view);
         self.view.rootNode.controller = self.ctrller;
         self.view:onDidLoadFromCCB();
+    elseif (opt.pageType == BasePage.PAGE_TYP_CCJ) then
+        ccb[opt.ccbController] = self.view;
+        -- 取数据
+        local reader = CCJReader.new(opt.ccjFileName);
+        self.view.rootNode = reader:load(self.view);
+        self.view.rootNode.controller = self.ctrller;
+        self.view:onDidLoadFromCCJ();
+        
     else
         if opt.isCodeScene then
             self.view.rootNode = CCLayer:create();
