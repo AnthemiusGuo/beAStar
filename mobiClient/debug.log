@@ -1,0 +1,155 @@
+
+<dict>
+	cocos2d.x.version: quick-cocos2d-x 2.2.5
+	cocos2d.x.compiled_with_profiler: false
+	cocos2d.x.compiled_with_gl_state_cache: true
+	gl.vendor: Intel Open Source Technology Center
+	gl.renderer: Mesa DRI Intel(R) Ivybridge Desktop x86/MMX/SSE2
+	gl.version: 3.0 Mesa 9.1.7
+	gl.max_texture_size: 8192
+	gl.max_texture_units: 32
+	gl.supports_PVRTC: false
+	gl.supports_NPOT: true
+	gl.supports_BGRA8888: false
+	gl.supports_discard_framebuffer: false
+	gl.supports_vertex_array_object: true
+</dict>
+lua_loadChunksFromZIP() - load zip file: \data\Codes\quick\quick-cocos2d-x\lib\framework_precompiled\framework_precompiled.zip
+lua_loadChunksFromZIP() - loaded chunks count: 108
+------------------------------------------------
+LOAD LUA FILE: Z:/data/Codes/bestar/mobiClient/scripts/main.lua
+------------------------------------------------
+[0.1261] [INFO] 
+[0.1263] [INFO] # DEBUG                        = 0
+[0.1266] [INFO] #
+[0.1270] [INFO] # device.platform              = windows
+[0.1273] [INFO] # device.model                 = unknown
+[0.1275] [INFO] # device.language              = cn
+[0.1277] [INFO] # device.writablePath          = Z:\data\Codes\bestar\mobiClient\
+[0.1279] [INFO] # device.cachePath             = Z:\data\Codes\bestar\mobiClient\
+[0.1281] [INFO] # device.directorySeparator    = \
+[0.1283] [INFO] # device.pathSeparator         = ;
+[0.1285] [INFO] #
+[0.1298] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+[0.1300] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+[0.1302] [INFO] # CONFIG_SCREEN_HEIGHT         = 757.33
+[0.1304] [INFO] # display.widthInPixels        = 960.00
+[0.1307] [INFO] # display.heightInPixels       = 640.00
+[0.1310] [INFO] # display.contentScaleFactor   = 0.85
+[0.1315] [INFO] # display.width                = 1136.00
+[0.1319] [INFO] # display.height               = 757.33
+[0.1325] [INFO] # display.cx                   = 568.00
+[0.1328] [INFO] # display.cy                   = 378.67
+[0.1330] [INFO] # display.left                 = 0.00
+[0.1333] [INFO] # display.right                = 1136.00
+[0.1337] [INFO] # display.top                  = 757.33
+[0.1340] [INFO] # display.bottom               = 0.00
+[0.1344] [INFO] # display.c_left               = -568.00
+[0.1346] [INFO] # display.c_right              = 568.00
+[0.1349] [INFO] # display.c_top                = 378.67
+[0.1352] [INFO] # display.c_bottom             = -378.67
+[0.1353] [INFO] #
+[0.1524] [INFO] INIT ResourceManager
+CCNetwork::isLocalWiFiAvailable() - not support this platform.
+CCNetwork::isInternetConnectionAvailable() - not support this platform.
+[0.1535] [INFO] old path------> Z:\data\Codes\bestar\mobiClient
+[0.1542] [INFO] path check OK------> Z:\data\Codes\bestar\mobiClient\download/
+[0.1638] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+[0.1695] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+[0.1795] [INFO] BEGIN!!!!!!BaseLogic:run
+[0.1799] [INFO] BaseLogic:initPluginManager
+[0.1836] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+[0.1841] [INFO] PluginProxy:getInstance
+[0.1890] key = dianxin_sms
+[0.1908] key = liantong_sms
+[0.1916] key = yidong_sms
+[0.1923] key = replace_text
+[0.1930] self.distributions====replace_text
+[0.1955] 炸金花:赢三张|扎金花:赢三张|掌心游:掌心游
+[0.1961] key = share
+[0.1969] key = thirdplatformexitpage
+[0.1976] key = thirdplatformquickpay
+[0.1993] key = toolbar
+[0.2000] key = banedpay
+[0.2006] key = usetestenv
+[0.2011] key = skipupgrade
+[0.2016] key = quickpay
+[0.2021] key = logoloading
+[0.2026] key = logodenglu
+[0.2033] key = logodating
+[0.2038] key = showPingCoo
+[0.2044] plugins.t.plist
+[0.2054] [INFO] will load plugins from plugins.t.plist
+[0.2060] [INFO] plugins.t.plist not exists
+[0.2255] self.allIAPSmsTypeloginTypNum
+[0.2260] (table)
+{
+    1 =     (table)
+    {
+        simTyp = 3  (number)
+        needConfirm = 1  (number)
+        mid = 47  (number)
+        pluginName = IAPEstore  (string)
+    },
+    2 =     (table)
+    {
+        simTyp = 1  (number)
+        needConfirm = 1  (number)
+        mid = 25  (number)
+        pluginName = IAPYdmm  (string)
+    },
+    3 =     (table)
+    {
+        simTyp = 2  (number)
+        needConfirm = 1  (number)
+        mid = 28  (number)
+        pluginName = IAPUniPay  (string)
+    },
+    4 =     (table)
+    {
+        simTyp = -1  (number)
+        needConfirm = 1  (number)
+        mid = 71  (number)
+        pluginName = IAPWPSMS  (string)
+    },
+},
+
+[0.2264] (table)
+{
+    49 = IAP360  (string)
+},
+
+[0.2268] [INFO] Load MB Plugin config
+[0.2272] [INFO] -----SET PACKAGE NAME:com.hiigame.ddz.android.qh360-----
+[0.2284] [INFO] self.deviceInfo
+[0.2289] (table)
+{
+    imsi = 1111  (string)
+    mac = 1111  (string)
+    imei = 1111  (string)
+},
+
+[0.2332] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+[0.2347] [INFO]  dealing createElement CCLayer
+[0.2352] [INFO]  dealing contentSize w:1136,h:757
+[0.2357] [INFO] 	 dealing createElement CCLayerColor
+[0.2362] [INFO] 	 dealing contentSize w:1136,h:757
+[0.2367] [INFO] 	 dealing createElement CCSprite
+Get data from file(images/Main/lobby_bg.jpg) failed!
+[0.2390] [ERR] display.newSprite() - create sprite failure, filename images/Main/lobby_bg.jpg
+[0.2395] 
+stack traceback:
+	[string "framework.display"]: in function 'newSprite'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/CCJReader.lua"]:28: in function <[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/CCJReader.lua"]:27>
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/CCJReader.lua"]:145: in function 'createElement'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/CCJReader.lua"]:229: in function 'createElement'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/CCJReader.lua"]:244: in function 'load'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/BasePage.lua"]:54: in function 'ctor'
+	[string "framework.functions"]: in function 'new'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/moduleLobby/logics/LobbyLogic.lua"]:342: in function 'enterLocation'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/izxFW/BaseLogic.lua"]:461: in function 'run'
+	[string "Z:/data/Codes/bestar/mobiClient/scripts/main.lua"]:31: in main chunk
+[0.2412] [INFO] 	 dealing position x:568,y:379
+[0.2416] [INFO] 	 dealing createElement CCScale9Sprite
+Get data from file(images/Main/lobby_btn_shangdian2.png) failed!
+[LUA ERROR] ASSERT FAILED ON LUA EXECUTE: CCSpriteBatchNode::initWithTexture() - invalid tex

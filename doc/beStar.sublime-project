@@ -4,10 +4,6 @@
 		{
 			"follow_symlinks": true,
 			"path": "/data/Codes/bestar"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/data/Codes/cchMarkDown/demo"
 		}
 	]
 }

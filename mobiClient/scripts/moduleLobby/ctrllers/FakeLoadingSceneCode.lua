@@ -43,7 +43,7 @@ function FakeLoadingSceneCodeCtrller:gotoLobby()
     local scheduler = require(cc.PACKAGE_NAME .. ".scheduler");
     scheduler.performWithDelayGlobal(function()
         self.view:setLoadingPercent(0.9); 
-        gBaseLogic.lobbyLogic:EnterLobby();
+        gBaseLogic.lobbyLogic:enterLocation();
     end, 0.3)
 end
 

@@ -47,11 +47,7 @@ function BaseGameLogic:onSocketClose()
 		self.gamePage:removePage()
 		self.gamePage = nil
 	end
-	if gBaseLogic.lobbyLogic.lobbyErr==1 then
-		gBaseLogic.lobbyLogic:showLoginScene(false);
-	else
-		gBaseLogic.lobbyLogic:EnterLobby();
-	end
+	gBaseLogic.lobbyLogic:enterLocation();
 	
 end
 
