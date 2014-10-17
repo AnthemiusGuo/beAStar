@@ -16,7 +16,7 @@
 			"children":[
 				{
 					"var":"null",
-					"displayName":"color节点",
+					"displayName":"背景色",
 					"baseClass":"CCLayerColor",
 					"properties":{
 						"contentSize":[100,"%",100,"%"],
@@ -27,6 +27,36 @@
 					}
 				},
 				{
+					"var":"null",
+					"displayName":"底栏",
+					"baseClass":"CCNode",
+					"properties":{
+						"contentSize":[100,"%",20,"%"],
+						"anchorPoint":[0.5,0],
+						"position":[50,"%",0,"%","LEFT_BOTTOM"]
+					}
+				},
+				{
+					"var":"null",
+					"displayName":"顶栏",
+					"baseClass":"CCNode",
+					"properties":{
+						"contentSize":[100,"%",20,"%"],
+						"anchorPoint":[0.5,1],
+						"position":[50,"%",0,"%","LEFT_TOP"]
+					}
+				},
+				{
+					"var":"null",
+					"displayName":"右栏",
+					"baseClass":"CCNode",
+					"properties":{
+						"contentSize":[10,"%",20,"%"],
+						"anchorPoint":[0.5,1],
+						"position":[100,"%",0,"%","LEFT_CENTER"]
+					}
+				},
+				{
 					"var":"bgMain",
 					"displayName":"背景",
 					"baseClass":"CCSprite",
@@ -34,7 +64,7 @@
 						"anchorPoint":[0.5,0.5],
 						"scale":[1,1],
 						"position":[50,"%",50,"%"],
-						"displayFrame":"images/Main/lobby_bg.jpg"
+						"displayFrame":"{location_img}"
 					}
 				},
 				{

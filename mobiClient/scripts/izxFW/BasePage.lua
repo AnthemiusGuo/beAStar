@@ -39,6 +39,8 @@ function BasePage:ctor(logic,pageName,moduleName,opt)
     self.targetX = opt.targetX;
     self.targetY = opt.targetY;
     self.block = false;
+
+
     
     if (opt.pageType == BasePage.PAGE_TYP_CCB) then
         ccb[opt.ccbController] = self.view;
@@ -48,7 +50,7 @@ function BasePage:ctor(logic,pageName,moduleName,opt)
         self.view.rootNode.controller = self.ctrller;
         self.view:onDidLoadFromCCB();
     elseif (opt.pageType == BasePage.PAGE_TYP_CCJ) then
-        ccb[opt.ccbController] = self.view;
+        self.view:prepareVar(opt.initParam);
         -- 取数据
         local reader = CCJReader.new(opt.ccjFileName);
         self.view.rootNode = reader:load(self.view);

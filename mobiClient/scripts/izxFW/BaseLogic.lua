@@ -13,7 +13,7 @@ BaseLogic.stateInMiniGame = 7;
 BaseLogic.stateInNewbieGuide = 8;
 BaseLogic.stateInMatchGame = 9; --for match
 
-
+BaseLogic.nowLocation = 0;
 
 function BaseLogic.getInstance()
     if not _instance then

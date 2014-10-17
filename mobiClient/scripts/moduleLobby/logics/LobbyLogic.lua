@@ -113,6 +113,12 @@ function LobbyLogic:ctor()
 	-- self.curMatchScore = 0;
 	-- self.curMatchRound = 0;
 	-- self.curMatchTRound = 0;
+
+	self.locationInfo = {
+		location = 1,
+		imgId = 1,
+		name = '未知'
+	}
 end
 
 
@@ -219,6 +225,7 @@ function LobbyLogic:reShowLoginScene(block,msg)
 
 	gBaseLogic.onLogining = false;
 	gBaseLogic.currentState = gBaseLogic.stateInLobby;
+
 	self:enterLocation();
 end
 
@@ -336,8 +343,11 @@ function LobbyLogic:showLoadingScene(moduleName,miniGameId)
 end
 
 function LobbyLogic:enterLocation(initParam)
-	if (initParam ==nil) then
-		initParam = {};
+	if (initParam == nil or initParam.locationInfo == nil) then
+		initParam = {
+			locationInfo = self.locationInfo
+			
+		};
 	end
 	local locationScene = izx.basePage.new(self,"LocationScene","moduleLobby",{
 			pageType = izx.basePage.PAGE_TYP_CCJ,

@@ -4,9 +4,11 @@ function LocationSceneCtrller:ctor(pageName,moduleName,initParam)
     self.data = {
         userName = '',
         userMoney = 0,
-        ply_vip_ = {}
+        ply_vip_ = {},
+        locationInfo = initParam.locationInfo
         --gBaseLogic.lobbyLogic.userHasLogined
     };
+
     
 
 	LocationSceneCtrller.super.ctor(self,pageName,moduleName,initParam);

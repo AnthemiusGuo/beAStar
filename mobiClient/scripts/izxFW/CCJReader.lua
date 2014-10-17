@@ -14,6 +14,62 @@ function CCJReader:read()
 	self.jsonNodeList = self.jsonFile.nodeList;
 end
 
+function CCJReader:getPosition(posInfo,parentWeight,parentHeight)
+	if (posInfo[5]==nil) then
+		posInfo[5] = "LEFT_BOTTOM"
+	end
+	local posTyp = display[posInfo[5]];
+	-- display.CENTER        = 1
+	-- display.LEFT_TOP      = 2; display.TOP_LEFT      = 2
+	-- display.CENTER_TOP    = 3; display.TOP_CENTER    = 3
+	-- display.RIGHT_TOP     = 4; display.TOP_RIGHT     = 4
+	-- display.CENTER_LEFT   = 5; display.LEFT_CENTER   = 5
+	-- display.CENTER_RIGHT  = 6; display.RIGHT_CENTER  = 6
+	-- display.BOTTOM_LEFT   = 7; display.LEFT_BOTTOM   = 7
+	-- display.BOTTOM_RIGHT  = 8; display.RIGHT_BOTTOM  = 8
+	-- display.BOTTOM_CENTER = 9; display.CENTER_BOTTOM = 9
+	local myX = 0;
+	local myY = 0;
+
+	if (posInfo[2]=="%") then
+		if (posTyp==display.CENTER or posTyp==display.CENTER_TOP or posTyp==display.CENTER_BOTTOM) then
+			myX = parentWeight/2 + posInfo[1] * parentWeight /100;
+		elseif (posTyp==display.RIGHT_TOP or posTyp==display.RIGHT_CENTER or posTyp==display.RIGHT_BOTTOM) then
+			myX = parentWeight - posInfo[1] * parentWeight /100;
+		else
+			myX = posInfo[1] * parentWeight /100;
+		end
+	elseif (posInfo[2]=="px") then
+		if (posTyp==display.CENTER or posTyp==display.CENTER_TOP or posTyp==display.CENTER_BOTTOM) then
+			myX = parentWeight/2 + posInfo[1];
+		elseif (posTyp==display.RIGHT_TOP or posTyp==display.RIGHT_CENTER or posTyp==display.RIGHT_BOTTOM) then
+			myX = parentWeight - posInfo[1];
+		else
+			myX = posInfo[1];
+		end
+	end
+
+	if (posInfo[4]=="%") then
+		if (posTyp==display.CENTER or posTyp==display.LEFT_CENTER or posTyp==display.RIGHT_CENTER) then
+			myY = parentHeight/2 + posInfo[3] * parentHeight /100;
+		elseif (posTyp==display.CENTER_TOP or posTyp==display.LEFT_TOP or posTyp==display.RIGHT_TOP) then
+			myY = parentHeight - posInfo[3] * parentHeight /100;
+		else
+			myY = posInfo[3] * parentHeight /100;
+		end
+	elseif (posInfo[4]=="px") then
+		if (posTyp==display.CENTER or posTyp==display.LEFT_CENTER or posTyp==display.RIGHT_CENTER) then
+			myY = parentHeight/2 + posInfo[3];
+		elseif (posTyp==display.CENTER_TOP or posTyp==display.LEFT_TOP or posTyp==display.RIGHT_TOP) then
+			myY = parentHeight - posInfo[3];
+		else
+			myY = posInfo[3];
+		end
+	end
+	return myX,myY;
+
+end
+
 function CCJReader:createCCNode(info)
 	local thisNode = display.newNode();
 	return thisNode;
@@ -176,19 +232,7 @@ function CCJReader:createElement(info,parentWeight,parentHeight)
 	end
 	if (info.properties.position) then
 
-		local myX = 0;
-		local myY = 0;
-		if (info.properties.position[2]=="%") then
-			myX = info.properties.position[1] * parentWeight /100;
-		elseif (info.properties.position[2]=="px") then
-			myX = info.properties.position[1];
-		end
-
-		if (info.properties.position[4]=="%") then
-			myY = info.properties.position[3] * parentHeight /100;
-		elseif (info.properties.position[4]=="px") then
-			myY = info.properties.position[3];
-		end
+		local myX,myY = self:getPosition(info.properties.position,parentWeight,parentHeight);
 		echoInfo("%s dealing position x:%d,y:%d",debugPrefix,myX,myY);
 		thisNode:setPosition(myX,myY);
 	end

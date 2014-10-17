@@ -4,6 +4,7 @@ function BaseView:ctor(pageName,moduleName,initParam)
     self.pageName = pageName;
     self.moduleName = moduleName;
     self.initParam = initParam;
+    self.pageVar = {};
 end
 
 function BaseView:onInitView()
@@ -30,6 +31,12 @@ end
 function BaseView:onRemovePage()
 
 end
+
+function BaseView:prepareVar(initParam)
+	echoInfo("%s view object is created! if need init some var for CCJ,pls do here for :prepareVar(initParam)",self.pageName);
+
+end
+
 --slider:滑块对象，toX：移动目标X，nil为x值不变, toY：移动目标Y,nil为有y值不变 t：移动时间
 function BaseView:SliderMoveAction(slider, toX, toY, t)
 	if nil == toX then 
