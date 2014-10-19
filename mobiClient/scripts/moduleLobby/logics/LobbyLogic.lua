@@ -117,7 +117,9 @@ function LobbyLogic:ctor()
 	self.locationInfo = {
 		location = 1,
 		imgId = 1,
-		name = '未知'
+		locationName = '未知地点',
+		cityName = '未知城市',
+
 	}
 end
 

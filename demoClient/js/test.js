@@ -35,7 +35,7 @@ var packetId = 0;
 var gUUid = uuid();
 var gUid = 0;
 var gTicket = "";
-var webUrl = "http://127.0.0.1/bestar/webServer/wwwroot/u.php";
+var webUrl = "http://127.0.0.1/beAStar/webServer/wwwroot/u.php";
 var req_url_template = webUrl+"?m={ctrller}&a={action}";
 var req_id_template = "&id={id}";
 var nowRoomId = null;

@@ -313,7 +313,10 @@ class User {
 				'avatar_url'=>$this->baseInfo['avatar_url'],
 				'avatar_id'=>$this->baseInfo['avatar_id'],
 				'show_uid'=>user_get_display_uid($this->uid),
-				'is_anonym'=>$this->baseInfo['is_anonym']
+				'is_anonym'=>$this->baseInfo['is_anonym'],
+				'energy'=>($is_myself==1)?$this->baseInfo['energy']:0,
+				'mood'=>($is_myself==1)?$this->baseInfo['mood']:0,
+				
     	);
 	}
 

@@ -81,11 +81,21 @@ function CCJReader:createCCLayer(info)
 end
 
 function CCJReader:createCCSprite(info)
+	if (info.properties.varFrame) then
+		if (self.targetRoot.pageVar[info.properties.varFrame]) then
+			info.properties.displayFrame = self.targetRoot.pageVar[info.properties.varFrame];
+		end
+	end
 	local thisNode = display.newSprite(info.properties.displayFrame);
 	return thisNode;
 end
 
 function CCJReader:createCCScale9Sprite(info)
+	if (info.properties.varFrame) then
+		if (self.targetRoot.pageVar[info.properties.varFrame]) then
+			info.properties.displayFrame = self.targetRoot.pageVar[info.properties.varFrame];
+		end
+	end
 	local thisNode = display.newScale9Sprite(info.properties.displayFrame,display.cx,display.cy,CCSizeMake(display.width, display.height));
 	if (info.properties.inset) then
 		if (info.properties.inset[1]>0) then
@@ -164,6 +174,8 @@ function CCJReader:createCCControlButton(info)
 end
 
 function CCJReader:createCCLabelTTF(info)
+	info.properties.string = str_supplant(info.properties.string,
+	                                      self.targetRoot.pageVar);
 	local thisNode = ui.newTTFLabel({
 	                    text = info.properties.string,
 	                    size = info.properties.fontSize,
@@ -195,7 +207,7 @@ function CCJReader:createCCLabelBMFont(info)
 end
 
 function CCJReader:createElement(info,parentWeight,parentHeight)
-	echoInfo("%s dealing createElement %s",debugPrefix,info.baseClass);
+	echoInfo("%s dealing createElement %s as %s",debugPrefix,info.baseClass,info.displayName);
 	local thisNode = nil;
 	if (self['create'..info.baseClass]) then
 		thisNode = self['create'..info.baseClass](self,info);
@@ -221,7 +233,9 @@ function CCJReader:createElement(info,parentWeight,parentHeight)
 		echoInfo("%s dealing contentSize w:%d,h:%d",debugPrefix,myWeight,myHeight);
 		thisNode:setContentSize(CCSizeMake(myWeight, myHeight));
 	else
-		myWeight,myHeight = thisNode:getContentSize();
+		myWHSize = thisNode:getContentSize();
+		myWeight = myWHSize.width;
+		myHeight = myWHSize.height;
 	end
 	if (info.properties.scale) then
 		thisNode:setScaleX(info.properties.scale[1]);

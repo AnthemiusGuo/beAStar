@@ -5,7 +5,27 @@ function LocationSceneCtrller:ctor(pageName,moduleName,initParam)
         userName = '',
         userMoney = 0,
         ply_vip_ = {},
-        locationInfo = initParam.locationInfo
+        locationInfo = initParam.locationInfo,
+
+        userInfo = {
+            avatarId = 1,
+            uname = "张三",
+            vip_level = 0,
+            uid = "5442305d511deeb1010041a7",
+            level = 0,
+            exp = 0,
+            exp_len = 0,
+            money = 0,
+            voucher = 1000,
+            credits = 2000,
+            money_show = 0,
+            avatar_url = "./images/avatar/1.png",
+            avatar_id = 1,
+            show_uid = "XGSA3",
+            is_anonym = 1,
+            energy = 100,
+            mood = 100
+        }
         --gBaseLogic.lobbyLogic.userHasLogined
     };
 

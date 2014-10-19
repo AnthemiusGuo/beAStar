@@ -956,6 +956,12 @@ function supplant(str,listSrc,tableRst)
 	end
 	return str
 end
+function str_supplant(str,tableRst)
+	for k,v in pairs(tableRst) do
+		str = string.gsub(str, "{".. k .."}", v);
+	end
+	return str
+end
 --多帧动画
 function createAnimation(ani_type,imgList)
 	local pAnimation = CCAnimation:create();
