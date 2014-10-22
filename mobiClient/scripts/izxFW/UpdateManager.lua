@@ -73,7 +73,11 @@ function UpdateManager:analyseOnlineParam()
 	-- else
 	-- 	ONLINE_PARAM = {};
 	-- end
+	if (self.versionInfo.version_code == self.updateInfo.onlineparam.ver_code) then
 	ONLINE_PARAM = self.updateInfo.onlineparam;
+	else
+		ONLINE_PARAM = {};
+	end
 end
 
 function UpdateManager:runCheckTotal()

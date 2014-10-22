@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"Lob",
+				"LobbyLogic	."
+			],
+			[
+				"childre",
+				"children"
+			],
+			[
+				"CCS",
+				"CCSizeMake(width, height)	CCSizeMake-width-height"
+			],
+			[
+				"getCon",
+				"getContentSize()	CCTexture2D"
+			],
+			[
+				"lower",
+				"lowercase"
+			],
+			[
 				"succ",
 				"successful"
 			],
@@ -348,10 +368,6 @@
 				"MINIGAME_IN_DEVELOP_CONFIG 	."
 			],
 			[
-				"Lob",
-				"LobbyGameLogic	."
-			],
-			[
 				"ret",
 				"return"
 			],
@@ -498,144 +514,56 @@
 			[
 				"module",
 				"moduleName"
-			],
-			[
-				"ses",
-				"sessionRst"
-			],
-			[
-				"plu",
-				"plugin_config"
-			],
-			[
-				"load",
-				"loadPlugin(pluginName)	PluginProxy"
-			],
-			[
-				"sess",
-				"sessionType"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/data/Codes/quick/quick-cocos2d-x/framework/framework/api/Store.lua",
+			"file": "/data/Codes/beAStar/mobiClient/scripts/plugins/lua/SessionGuest.lua",
 			"settings":
 			{
-				"buffer_size": 3887,
+				"buffer_size": 558,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/data/Codes/ddz_lua/proj.android.weiping/AndroidManifest.xml",
+			"file": "/data/Codes/beAStar/mobiClient/scripts/moduleLobby/logics/LobbyLogic.lua",
 			"settings":
 			{
-				"buffer_size": 20953,
+				"buffer_size": 16604,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/data/Codes/ddz_lua/scripts/izxFW/BaseFunctions.lua",
+			"file": "/data/Codes/beAStar/mobiClient/scripts/moduleLobby/ctrllers/LocationScene.lua",
 			"settings":
 			{
-				"buffer_size": 43526,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/moduleLobby/views/UpdaterSceneCode.lua",
-			"settings":
-			{
-				"buffer_size": 14094,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/moduleLobby/views/ShopScene.lua",
-			"settings":
-			{
-				"buffer_size": 33613,
+				"buffer_size": 467,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/data/Codes/ddz_lua/scripts/ios_main.lua",
+			"file": "/data/Codes/beAStar/mobiClient/scripts/moduleLobby/views/LocationScene.lua",
 			"settings":
 			{
-				"buffer_size": 3501,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/distribution.lua",
-			"settings":
-			{
-				"buffer_size": 1520,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/moduleLobby/logics/LobbyLogic.lua",
-			"settings":
-			{
-				"buffer_size": 99817,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/izxFW/BaseLogic.lua",
-			"settings":
-			{
-				"buffer_size": 54364,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/izxFW/ResourceManager.lua",
-			"settings":
-			{
-				"buffer_size": 21283,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/izxFW/AudioManager.lua",
-			"settings":
-			{
-				"buffer_size": 3599,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/updater.lua",
-			"settings":
-			{
-				"buffer_size": 10685,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/quick/quick-cocos2d-x/framework/framework/init.lua",
-			"settings":
-			{
-				"buffer_size": 4731,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/data/Codes/ddz_lua/scripts/moduleDdz/logics/Audio.lua",
-			"settings":
-			{
-				"buffer_size": 8599,
+				"buffer_size": 1370,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/data/Codes/ddz_lua/sources/luaExt/DownloadRequest.cpp",
+			"file": "/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseLogic.lua",
 			"settings":
 			{
-				"buffer_size": 17605,
+				"buffer_size": 58746,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/data/Codes/beAStar/mobiClient/scripts/izxFW/MBPluginManager.lua",
+			"settings":
+			{
+				"buffer_size": 25481,
 				"line_ending": "Unix"
 			}
 		}
@@ -696,134 +624,134 @@
 	],
 	"file_history":
 	[
-		"/data/Codes/quick/quick-cocos2d-x/framework/framework/crypto.lua",
-		"/data/Codes/ddz_lua/bin/Resources/interfaces/DaTing.ccb",
-		"/data/Codes/ddz_lua/bin/trans_img_size.pl",
-		"/data/Codes/ddz_lua/bin/trans.ccb.py",
-		"/data/Codes/ddz_lua/scripts/izxFW/init.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/SetupLayer.lua",
-		"/data/Codes/ddz_lua/scripts/gap.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/BaseFunctions.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/ResourceManager.lua",
-		"/data/Codes/ddz_lua/bin/interfaces/ChongZhiJiangLiNode.ccb",
-		"/data/Codes/ddz_lua/bin/trans.ccb.pl",
-		"/data/Codes/ddz_lua/bin/1.txt",
-		"/data/Codes/ddz_lua/bin/interfaces/AwardExchangeScene.ccb",
-		"/data/Codes/ddz_lua/sources/luaExt/FileManager.cpp",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/FakeLoadingSceneCode.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/ctrllers/LoadingSceneCode.lua",
-		"/data/Codes/quick/quick-cocos2d-x/framework/framework/cc/EventProxy.lua",
-		"/data/Codes/quick/quick-cocos2d-x/framework/framework/api/EventProtocol.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/MiniGameManager.lua",
-		"/data/Codes/ddz_lua/sources/luaExt/FileManager.h",
-		"/data/Codes/ddz_lua/sources/luaExt/FileManager_luabinding.cpp",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/LobbyScene.lua",
-		"/data/Codes/ddz_lua/proj.cocosbuilder/Resources/interfaces/BangZhuVip.ccb",
-		"/data/Codes/ddz_lua/proj.cocosbuilder/Resources/interfaces/BangZhuText.ccb",
-		"/data/Codes/ddz_lua/proj.cocosbuilder/Resources/interfaces/BangZhu1.ccb",
-		"/data/Codes/ddz_lua/proj.cocosbuilder/Resources/interfaces/BangZhu.ccb",
-		"/data/Codes/ddz_lua/proj.cocosbuilder/Resources/interfaces/AwardExchangeScene.ccb",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/ctrllers/LobbyScene.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/ctrllers/JieSuanLayer.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/BaseLogic.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/logics/GameLogic.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/PersonalScene.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/logics/LobbyLogic.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/LoginScene.lua",
-		"/data/Codes/ddz_lua/scripts/config.lua",
-		"/data/Codes/MiniGame/LuckyGames/trunk/src/scripts/gap.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/logics/PicConfig.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/ctrllers/Player.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/ctrllers/GameScene.lua",
-		"/data/Codes/MiniGame/LuckyGames/trunk/src/scripts/moduleLobby/logics/LobbyLogic.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/AudioManager.lua",
-		"/data/Codes/ddz_lua/res/baseRes/plugins.plist",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/views/ChatLayer.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/UpdateManager.lua",
-		"/data/Codes/ddz_lua/scripts/main.lua",
-		"/data/Codes/ddz_lua/scripts/version_control.lua",
-		"/data/Codes/plugins/src/protocols/proj.android/src/org/cocos2dx/plugin/PlatformWP.java",
-		"/data/Codes/ddz_lua/scripts/izxFW/MBPluginManager.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/DengLuXuanZeLayer.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/BasePage.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/BaseView.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/views/GameScene.lua",
-		"/data/Codes/ddz_lua/sources/luaExt/PluginProxy.cpp",
-		"/data/Codes/ddz_lua/res/baseRes/config.plist",
-		"/data/Codes/ddz_lua/scripts/updater.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/BaseGameLogic.lua",
-		"/data/Codes/ddz_lua/sources/luaExt/DownloadRequest.h",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/LoadingScene.lua",
-		"/data/Codes/ddz_lua/sources/luaExt/DownloadRequest.cpp",
-		"/data/Codes/ddz_lua/sources/luaExt/PluginProxy.h",
-		"/home/guojia/Documents/Bromski充分认识到观众的需求，观众经过多年的吞咽那些西方作品，终于感觉到回家的冲动，回到波兰的",
-		"/home/guojia/Documents/电影娱乐化.txt",
-		"/home/guojia/Documents/1989年后波兰电影的商业策略.txt",
-		"/data/Codes/ddz_lua/proj.web_upgrade/moduleDdz/codeTemp/izxFW/ResourceManager.lua",
-		"/home/guojia/Share/package/ydmm.sh",
-		"/data/Codes/quick/quick-cocos2d-x-2.2.5.weiping/samples/touch/scripts/app/MyApp.lua",
-		"/data/Codes/quick/quick-cocos2d-x/framework/framework/audio.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/ctrllers/Me.lua",
-		"/data/Codes/quick/quick-cocos2d-x/samples/coinflip/scripts/app/ui/ScrollView.lua",
-		"/data/Codes/quick/quick-cocos2d-x/samples/iap4ios/scripts/scenes/MainScene.lua",
-		"/data/Codes/quick/quick-cocos2d-x/samples/dragonbones/scripts/scenes/MainScene.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.9/scripts/config.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/views/InformationLayer.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/UpdaterSceneCode.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.9/scripts/izxFW/MiniGameManager.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.9/scripts/izxFW/BasePage.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/QianDaoLayer.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.9/scripts/moduleLobby/views/QianDaoLayer.lua",
-		"/data/Codes/ddz_lua/sources/CasinoLoaderScene.cpp.bak",
-		"/data/Codes/ddz_lua/scripts/distribution.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/logics/LobbyGameLogic.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.9/scripts/izxFW/BaseLogic.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/ctrllers/UpdaterSceneCode.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/logics/packetDefine.lua",
-		"/data/Codes/ddz_lua/scripts/moduleDdz/ctrllers/PlayCard.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/UpdaterSceneCodeBak.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/LuaSockets.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/ctrllers/TouXiangGengXinLayer.lua",
-		"/data/Codes/ddz_lua/sources/luaExt/luaProxy.cpp",
-		"/data/Codes/ddz_lua/sources/luaExt/PluginProxy.cpp.edited",
-		"/data/Codes/ddz_lua/scripts/izxFW/SocketWrapper.lua",
-		"/data/Codes/ddz_lua/scripts/izxFW/SceneManager.lua",
-		"/data/Codes/quick/quick-cocos2d-x/framework/framework/cocos2dx/LayerEx.lua",
-		"/data/Codes/ddz_lua/sources/stdafx.h",
-		"/data/Codes/quick/quick-cocos2d-x/framework/audio.lua",
-		"/data/Codes/quick/quick-cocos2d-x/framework/network.lua",
-		"/data/Codes/ddz_lua/sources/luaExt/luaProxy.h",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/LoadingSceneCode.lua",
-		"/data/Codes/ddz_lua/scripts/ios_main.lua",
-		"/data/Codes/ddz_lua/proj.android/buildConfig.php",
-		"/data/Codes/ddz_lua/proj.android/autoupload.sh",
-		"/data/Codes/ddz_lua/proj.android/build_native.sh",
-		"/data/Codes/ddz_lua/proj.ios/config/plugins.plist",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/moduleLobby/logics/LobbyLogic.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/izxFW/MiniGameManager.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/moduleLobby/views/GongGaoLayer.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/moduleLobby/views/NewHelpScene.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/moduleLobby/views/ShopScene.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/debug.log",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/gap.lua",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/res/baseRes/interfaces/webRes/index.html",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/moduleLobby/views/LobbyScene.lua",
-		"/data/Codes/ddz_lua/proj.ios/lua/ios/AppController.mm",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ/trunk/src/Client/ddz_ios/Client/ios/ddz_appstore/ddz/ios/AppController.mm",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/res/baseRes/plugins.plist",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ_LUA/tags/3.0.7/scripts/distribution.lua",
-		"/data/Codes/ERMJ_LUA/trunk/src/scripts/moduleLobby/views/ShopScene.lua",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/NewHelpScene.lua",
-		"/data/Codes/ddz_lua/proj.ios/lua/ios/LuaObjc.mm",
-		"/data/Codes/ddz_lua/scripts/moduleLobby/views/HuoDongScene.lua",
-		"/data/Codes/ddz_lua/proj.ios/config/config.plist",
-		"/data/Codes/ddz_lua/proj.ios/build_zip_native.sh",
-		"/data/Codes/OldDDZ/workspace/trunk/BDMobile/BDCasino/DDZ/trunk/src/Client/ddz_ios/Client/ios/ddz_appstore/ddz/plugins.plist",
-		"/data/Codes/ddz_lua/res/baseRes/bak/plugins_sougou_bak.plist",
-		"/data/Codes/ERMJ_LUA/trunk/src/scripts/moduleErmj/logics/GameLogic.lua",
-		"/data/Codes/ERMJ_LUA/trunk/src/scripts/moduleLobby/logics/LobbyLogic.lua",
-		"/data/Codes/ddz_lua/proj.ios/config/plugins.m.plist",
-		"/data/Codes/ddz_lua/proj.ios/config/plugins.t.plist"
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginSession.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/fake/PluginPlatform.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/fake/PluginExtend.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/fake/PluginIAPSms.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/fake/PluginPush.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/fake/PluginIAP.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/fake/PluginSession.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginProxy.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginPlatform.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginExtend.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginPush.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginIAPSms.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/PluginIAP.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/izxFW/PluginProxy.lua",
+		"/data/Codes/beAStar/mobiClient/scripts/plugins/plugins.fake.PluginSession.lua",
+		"/data/Codes/beAStar/demoClient/js/test.js",
+		"/data/Codes/bestar/mobiClient/res/baseRes/interfaces/location.json",
+		"/data/Codes/bestar/mobiClient/scripts/moduleLobby/logics/LobbyLogic.lua",
+		"/data/Codes/bestar/mobiClient/scripts/izxFW/BaseGameLogic.lua",
+		"/data/Codes/bestar/mobiClient/scripts/izxFW/CCJReader.lua",
+		"/data/Codes/bestar/mobiClient/scripts/izxFW/BasePage.lua",
+		"/data/Codes/bestar/mobiClient/scripts/izxFW/BaseView.lua",
+		"/data/Codes/bestar/mobiClient/scripts/moduleLobby/ctrllers/LocationScene.lua",
+		"/data/Codes/bestar/mobiClient/scripts/izxFW/BaseLogic.lua",
+		"/data/Codes/bestar/mobiClient/scripts/moduleLobby/views/LocationScene.lua",
+		"/data/Codes/bestar/mobiClient/scripts/moduleLobby/ctrllers/FakeLoadingSceneCode.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/main.lua",
+		"/data/Codes/ddz_lua/proj.cocosbuilder/Resources/interfaces/DaTing.ccb",
+		"/data/Codes/cchMarkDown/demo/res/baseRes/interfaces/lobbyScene.json",
+		"/data/Codes/cchMarkDown/demo/scripts/config.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/izxFW/CCJReader.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/moduleLobby/views/LobbyScene.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/moduleLobby/logics/LobbyLogic.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/izxFW/BaseView.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/izxFW/BasePage.lua",
+		"/data/Codes/bestar/mobiClient/scripts/config.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/izxFW/BaseLogic.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/izxFW/init.lua",
+		"/data/Codes/cchMarkDown/demo/scripts/moduleLobby/ctrllers/LobbyScene.lua",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/user/doAddPoint.php",
+		"/data/Codes/bestar/webServer/application/config/sys_main.config.php",
+		"/data/Codes/bestar/webServer/wwwroot/u.php",
+		"/data/Codes/bestar/webServer/application/processes/main.session.process.php",
+		"/data/Codes/bestar/webServer/application/config/cache/room_list.cache.php",
+		"/data/Codes/bestar/webServer/application/config/application.config.php",
+		"/data/Codes/bestar/demoClient/index.php",
+		"/data/Codes/bestar/webServer/application/config/define/define.zha.php",
+		"/data/Codes/bestar/webServer/application/config/define/define.roombak.php",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/user/doCleanPoint.php",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/user/getAttr.php",
+		"/data/Codes/bestar/demoClient/js/test.js",
+		"/data/Codes/bestar/webServer/application/classes/user.class.php",
+		"/data/Codes/bestar/webServer/application/config/define/user.define.php",
+		"/data/Codes/bestar/webServer/application/config/define/define.Laba.php",
+		"/data/Codes/bestar/webServer/application/functions/user/robot.func.php",
+		"/data/Codes/bestar/webServer/application/config/server/local.config.php",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/account/doLogin.php",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/account/check_use_name.php",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/account/chk_login.php",
+		"/data/Codes/bestar/webServer/framework/functions/common/mongo.func.php",
+		"/data/Codes/bestar/webServer/application/processes/session.process.php",
+		"/data/Codes/shiitake/shiitake/client_demo/index.html",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/user/doLogin.php",
+		"/data/Codes/bestar/webServer/application/functions/common/base.func.php",
+		"/data/Codes/bestar/demoClient/js/lib.js",
+		"/data/Codes/bestar/webServer/framework/processes/router.process.php",
+		"/data/Codes/bestar/webServer/framework/processes/base_init.process.php",
+		"/data/Codes/bestar/webServer/application/functions/user/user_session.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/log/zha.log.php",
+		"/data/Codes/bestar/webServer/framework/functions/log/yao.log.php",
+		"/data/Codes/bestar/webServer/framework/functions/log/log.func.ophp",
+		"/data/Codes/bestar/webServer/framework/functions/game/gamebase.func.php",
+		"/data/Codes/bestar/webServer/application/systems/main/modules/user/doRefresh.php",
+		"/data/Codes/bestar/webServer/application/systems/main/handlers/account/auto_reg.php",
+		"/data/Codes/bestar/webServer/application/systems/main/handlers/account/anou_login.php",
+		"/data/Codes/bestar/webServer/framework/functions/common/base.func.php",
+		"/data/Codes/bestar/webServer/application/config/sys_cp.config.php",
+		"/data/Codes/bestar/webServer/application/main/modules/zha/zhuang_info.php",
+		"/data/Codes/bestar/webServer/application/main/modules/zha/room_user_rank.php",
+		"/data/Codes/bestar/webServer/application/main/modules/zha/room_user_list.php",
+		"/data/Codes/bestar/webServer/application/main/modules/zha/ask_enter_room.php",
+		"/data/Codes/bestar/webServer/application/main/modules/yao/ask_enter_room.php",
+		"/data/Codes/bestar/webServer/application/main/modules/index/shopinit.php",
+		"/data/Codes/bestar/webServer/application/main/modules/index/room.php",
+		"/data/Codes/bestar/webServer/application/main/modules/index/init_game.php",
+		"/data/Codes/bestar/webServer/application/main/modules/index/init.php",
+		"/data/Codes/bestar/webServer/application/main/modules/index/ask_chat_config.php",
+		"/data/Codes/bestar/webServer/application/main/modules/account/reg.php",
+		"/data/Codes/bestar/webServer/application/main/modules/account/chk_user.php",
+		"/data/Codes/bestar/webServer/application/main/modules/account/chk_login.php",
+		"/data/Codes/bestar/webServer/application/main/modules/account/check_use_name.php",
+		"/data/Codes/bestar/webServer/application/main/modules/Laba/init.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/zha/ya.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/zha/upd_online_user.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/zha/kai.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/zha/init.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/zha/ch_zhuang.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/zha/ask_zhuang.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/yao/ya.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/yao/kai.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/yao/init.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/user/cdk_exchange.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/user/bind_user.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/test/test_add_exp.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/account/test_login.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/account/reg.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/account/login.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/account/auto_reg.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/account/anou_login.php",
+		"/data/Codes/bestar/webServer/application/functions/user/user_info.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/common/cache_info.func.php",
+		"/data/Codes/bestar/webServer/framework/processes/admin_session.process.php",
+		"/data/Codes/bestar/webServer/framework/functions/zha/zha.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/yao/yao.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/log/log.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/common/translate.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/common/filecache.func.php",
+		"/data/Codes/bestar/webServer/framework/functions/common/common.func.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/Laba/startgame.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/Laba/gameover.php",
+		"/data/Codes/bestar/webServer/application/main/handlers/Laba/changecard.php",
+		"/data/Codes/bestar/webServer/application/functions/user/pay.func.php",
+		"/data/Codes/bestar/webServer/application/cp/modules/pay/trace.php",
+		"/data/Codes/bestar/webServer/application/cp/modules/pay/total.php",
+		"/data/Codes/bestar/webServer/application/cp/modules/pay/index.php",
+		"/data/Codes/bestar/webServer/application/cp/modules/pay/bet.php",
+		"/data/Codes/bestar/webServer/application/cp/modules/obt_act/index.php",
+		"/data/Codes/bestar/webServer/application/cp/modules/obt_act/bet.php"
 	],
 	"find":
 	{
@@ -927,6 +855,62 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"self.ctrller.data.userInfo",
+			"self.ctrller.data.locationInfo",
+			"locationData",
+			"locationInfo",
+			"loadPlugins",
+			"});\n",
+			"showLoginScene",
+			" )",
+			"enterLocation",
+			"posTyp",
+			"\n			",
+			"info.properties.position",
+			"posTyp",
+			"end",
+			"showLoginScene\nshowLoginScen",
+			"stateInLocation",
+			"	gBaseLogic.lobbyLogic:showLoginScene(false,);\nshowLoginScene",
+			"end",
+			"showLoginScene",
+			"enterLobby",
+			"LobbyScene",
+			"stateInLocation",
+			"spriteFrame",
+			"50",
+			"CCScale9Sprite",
+			"preferedSize",
+			"});",
+			"0",
+			"titleColor",
+			"],",
+			"CCColorLayer",
+			"Color",
+			"3",
+			"()",
+			"loading",
+			"RES_LOAD_PRE_PATH",
+			"displayFrame",
+			"json.",
+			"PAGE_TYP_CCJ",
+			"getFunctionStatus",
+			"EnterLobby",
+			"getInfo",
+			"uid",
+			"uuid",
+			"initBydata",
+			"mongoSearchOne",
+			"initBydata",
+			" $.",
+			"();",
+			"update_online_info",
+			"IR.",
+			"bad_words",
+			"application",
+			"AR",
+			"mongo_connect",
+			"g_server_list",
 			"tolua_cast",
 			"platform",
 			"distribution",
@@ -998,63 +982,7 @@
 			"game_ani_boom",
 			"第三方",
 			"unregisterScriptHandler",
-			"MBPluginManager.framework",
-			"unregisterScriptHandler",
-			"m_downloadFileLenth",
-			"LoadingScene:onProgress",
-			"m_downloadFileLenth",
-			"onSendPing",
-			"startPing",
-			"WTF",
-			"cancelDownload",
-			"downloadHandler",
-			"m_downloadFile",
-			"cleanup",
-			"m_downloadFile",
-			"m_downloadFileName",
-			"stat",
-			"leng",
-			"FILE DON'T MATCH!images",
-			"writeDataCURL",
-			"my_write_file",
-			"resourceManager:startBatchDownload",
-			"ResourceManager:startBatchDownload",
-			"onError",
-			"onBatchDownloadFinish",
-			"checkFile",
-			"m_downloadFile",
-			"m_autoSaveFile",
-			"m_resumeDownload",
-			"isResumeDownload",
-			"false",
-			"isResumeDownload",
-			"CURLE_OK",
-			"completed",
-			"m_listener",
-			"completed",
-			"zipF",
-			"complete",
-			"sortMainButton",
-			"showPingCoo",
-			"FrameworkVersion",
-			"frameworkVersion",
-			"framework",
-			"onTouch_",
-			"show_version",
-			"show",
-			"shopi",
-			"uid",
-			"SHOPITEMS",
-			"HTTPPOST",
-			"SHOPITEMS",
-			"shop",
-			"MBPl",
-			"getDevice",
-			"getDeviceIM",
-			"forceupdate",
-			"SHOW_VERSION",
-			":reorderChild(",
-			"reorderChild"
+			"MBPluginManager.framework"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1062,6 +990,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"gBaseLogic.lobbyLogic.userData",
+			"gBaseLogic.lobbyLogic.locationData",
+			"posInfo",
+			"LocationScene",
+			"FR.",
 			"checkImageType",
 			"$thisPath",
 			"APP_IOS_ROOT",
@@ -1156,134 +1089,153 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": false,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/data/Codes/quick/quick-cocos2d-x/framework/framework/api/Store.lua",
+					"file": "/data/Codes/beAStar/mobiClient/scripts/plugins/lua/SessionGuest.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3887,
+						"buffer_size": 558,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								90,
-								90
+								532,
+								532
 							]
 						],
 						"settings":
 						{
+							"open_with_edit": true,
 							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tab_size": 4,
-							"tabs_extra_last_activated": 1412845339.38,
+							"tabs_extra_last_activated": 1413961599.3,
 							"tabs_extra_last_activated_sheet_index": 0,
-							"translate_tabs_to_spaces": true
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1254.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/data/Codes/ddz_lua/proj.android.weiping/AndroidManifest.xml",
+					"file": "/data/Codes/beAStar/mobiClient/scripts/moduleLobby/logics/LobbyLogic.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20953,
+						"buffer_size": 16604,
 						"regions":
 						{
+							"bookmarks":
+							{
+								"flags": 144,
+								"icon": "bookmark",
+								"regions":
+								[
+									[
+										3224,
+										3224
+									],
+									[
+										5234,
+										5234
+									]
+								],
+								"scope": "bookmarks"
+							}
 						},
 						"selection":
 						[
 							[
-								12346,
-								12346
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 4,
-							"tabs_extra_last_activated": 1412908071.14,
-							"tabs_extra_last_activated_sheet_index": 1,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 939.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/data/Codes/ddz_lua/scripts/izxFW/BaseFunctions.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 43526,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								41433,
-								41433
+								4852,
+								4852
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412910000.94,
-							"tabs_extra_last_activated_sheet_index": 2
+							"tabs_extra_last_activated": 1413965622.09,
+							"tabs_extra_last_activated_sheet_index": 1,
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 28782.0,
+						"translation.y": 2094.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/data/Codes/ddz_lua/scripts/moduleLobby/views/UpdaterSceneCode.lua",
+					"buffer": 2,
+					"file": "/data/Codes/beAStar/mobiClient/scripts/moduleLobby/ctrllers/LocationScene.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14094,
+						"buffer_size": 467,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5742,
-								5742
+								346,
+								346
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412909310.92,
-							"tabs_extra_last_activated_sheet_index": 3
+							"tab_size": 4,
+							"tabs_extra_last_activated": 1413965473.21,
+							"tabs_extra_last_activated_sheet_index": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2508.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/data/Codes/beAStar/mobiClient/scripts/moduleLobby/views/LocationScene.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1370,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1192,
+								1192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"tabs_extra_last_activated": 1413965444.96,
+							"tabs_extra_last_activated_sheet_index": 3,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1291,346 +1243,65 @@
 				},
 				{
 					"buffer": 4,
-					"file": "/data/Codes/ddz_lua/scripts/moduleLobby/views/ShopScene.lua",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 33613,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3942,
-								3942
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tab_size": 4,
-							"tabs_extra_last_activated": 1412909302.7,
-							"tabs_extra_last_activated_sheet_index": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3192.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/data/Codes/ddz_lua/scripts/ios_main.lua",
+					"file": "/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseLogic.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3501,
+						"buffer_size": 58746,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3471,
-								3471
+								19821,
+								19821
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412909899.9,
-							"tabs_extra_last_activated_sheet_index": 5,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1881.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/data/Codes/ddz_lua/scripts/distribution.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1520,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1477,
-								1477
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412845249.73,
+							"tabs_extra_last_activated": 1413961586.78,
 							"tabs_extra_last_activated_sheet_index": 2,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 513.0,
+						"translation.y": 11172.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "/data/Codes/ddz_lua/scripts/moduleLobby/logics/LobbyLogic.lua",
+					"buffer": 5,
+					"file": "/data/Codes/beAStar/mobiClient/scripts/izxFW/MBPluginManager.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 99817,
+						"buffer_size": 25481,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1411895846.83,
-							"tabs_extra_last_activated_sheet_index": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 114.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/data/Codes/ddz_lua/scripts/izxFW/BaseLogic.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 54364,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1972,
-								1972
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412835673.59,
-							"tabs_extra_last_activated_sheet_index": 5,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1172.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/data/Codes/ddz_lua/scripts/izxFW/ResourceManager.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 21283,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								17745,
-								17745
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1411961267.73,
-							"tabs_extra_last_activated_sheet_index": 6,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 11161.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/data/Codes/ddz_lua/scripts/izxFW/AudioManager.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3599,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1765,
-								1765
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412047595.28,
-							"tabs_extra_last_activated_sheet_index": 7,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 95.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "/data/Codes/ddz_lua/scripts/updater.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10685,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								390,
-								390
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1412047600.55,
-							"tabs_extra_last_activated_sheet_index": 8,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/data/Codes/quick/quick-cocos2d-x/framework/framework/init.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3054,
-								3054
+								1061,
+								1061
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Lua/Lua.tmLanguage",
 							"tab_size": 4,
-							"tabs_extra_last_activated": 1412068643.22,
-							"tabs_extra_last_activated_sheet_index": 9,
+							"tabs_extra_last_activated": 1413961344.32,
+							"tabs_extra_last_activated_sheet_index": 3,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1824.0,
+						"translation.y": 493.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/data/Codes/ddz_lua/scripts/moduleDdz/logics/Audio.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8599,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								201
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Lua/Lua.tmLanguage",
-							"tabs_extra_last_activated": 1411897175.56,
-							"tabs_extra_last_activated_sheet_index": 7,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 741.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/data/Codes/ddz_lua/sources/luaExt/DownloadRequest.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 17605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1481,
-								1481
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"tab_size": 4,
-							"tabs_extra_last_activated": 1411896762.17,
-							"tabs_extra_last_activated_sheet_index": 7,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 912.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

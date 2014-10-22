@@ -113,17 +113,25 @@ function LobbyLogic:ctor()
 	-- self.curMatchScore = 0;
 	-- self.curMatchRound = 0;
 	-- self.curMatchTRound = 0;
+	
+	
+end
 
-	self.locationInfo = {
-		location = 1,
-		imgId = 1,
+function LobbyLogic:resetLocation()
+	self.locationData = {
+		location = 0,
+		imgId = 0,
 		locationName = '未知地点',
 		cityName = '未知城市',
 
 	}
 end
 
-
+function LobbyLogic:run()
+	self:resetLocation();
+	self:resetUserInfo();
+	self:enterLocationScene();
+end
 
 function LobbyLogic:dispatchLogicEvent(event)
 	-- var_dump(event)
@@ -180,21 +188,34 @@ end
 function LobbyLogic:resetUserInfo()
 	print("LobbyLogic:resetUserInfo")
 	self.userData = nil;
-	self.userData = {};
-	self.userData.ply_nickname_ = '';
+	self.userData = {
+		avatarId = 1,
+        uname = "未登录",
+        vip_level = 0,
+        uid = "0",
+        level = 0,
+        exp = 0,
+        exp_len = 0,
+        money = 0,
+        voucher = 0,
+        credits = 0,
+        money_show = 0,
+        avatar_url = "/images/avatar/0.png",
+        avatar_id = 0,
+        show_uid = "0",
+        is_anonym = 1,
+        energy = 0,
+        mood = 0
+	};
+	
 	self.haschangename = false
 	self.userHasLogined = false;
-	self.face = ""
-	self.userData.ply_vip_ = {}
-	self.userData.ply_vip_.level_ = 0
-	self.userData.ply_vip_.status_ = 0 
+
+	
 	self:dispatchLogicEvent({
         name = "MSG_Socket_UserData",
         message = {}
     })
-    if (self.loginScene and self.loginScene.view) then
-        self.loginScene.view:setDisabled();
-    end
 end
 
 
@@ -203,7 +224,7 @@ function LobbyLogic:destroyListen()
   	scene:removeChild(self.rootNode)
 end
 
-function LobbyLogic:reShowLoginScene(block,msg)
+function LobbyLogic:resetLogin(block,msg)
 	gBaseLogic:unblockUI();
 	if (gBaseLogic.gameLogic) then
 		if (gBaseLogic.gameLogic.resDir) then
@@ -250,47 +271,6 @@ function LobbyLogic:goBackToMain(withLoading)
 	end
 end
 
-function LobbyLogic:goBackToMainOld(withLoading)
-	if (gBaseLogic.gameLogic) then
-		if (gBaseLogic.gameLogic.resDir) then
-			izx.resourceManager:removeSearchPath(gBaseLogic.gameLogic.resDir);
-		end
-		if (gBaseLogic.gameLogic.onGameExit) then
-			gBaseLogic.gameLogic:onGameExit();
-		end
-		gBaseLogic.gameLogic = nil;
-	end
-	if (withLoading) then
-		self:showFakeLoadingScene("moduleLobby");
-	else
-		if (gBaseLogic.currentState==gBaseLogic.stateLogin) then
-			self:showLoginScene()
-		else
-			self:EnterLobby()
-		end
-	end
-end
-
-function LobbyLogic:showLoginScene(block,initParam)	
-	var_dump(initParam)
-	self:EnterLobby(initParam);
-end
-
-function LobbyLogic:showLoginSceneOld(block,initParam)	
-	self.loginScene = izx.basePage.new(self,"LoginScene","moduleLobby",{
-			pageType = izx.basePage.PAGE_TYP_CCB,
-			ccbFileName = "interfaces/DengLu.ccbi",
-			ccbController = "sceneLogin",			
-			slideIn = "right",
-			initParam = initParam
-		}
-	);
-	self.loginScene:enterScene(block);
-	gBaseLogic.onLogining = false;
-	gBaseLogic.currentState = gBaseLogic.stateLogin;
-
-	
-end
 
 function LobbyLogic:showFakeLoadingScene(moduleName)
 	local slideIn = "";
@@ -344,7 +324,7 @@ function LobbyLogic:showLoadingScene(moduleName,miniGameId)
 	LoadingScene:enterScene(false);
 end
 
-function LobbyLogic:enterLocation(initParam)
+function LobbyLogic:enterLocationScene(initParam)
 	if (initParam == nil or initParam.locationInfo == nil) then
 		initParam = {
 			locationInfo = self.locationInfo
@@ -477,6 +457,49 @@ end
 function LobbyLogic:onConnectFailure()
 	self.lobbySocket = nil;
 	self:onKickNet("网络连接失败，请检查网络");
+end
+
+function LobbyLogic:reqPluginLogin()
+	echoInfo("checkLogin!!");
+	
+	self.userHasLogined = false;
+
+	local everLogin = CCUserDefault:sharedUserDefault():getBoolForKey("everLogin",false);
+	-- echoInfois_login = false;
+
+	if everLogin == true then
+		-- 已经登录过的自动选择上次的登录方式
+
+	    local sessionType = CCUserDefault:sharedUserDefault():getStringForKey("sessionType");
+	    echoInfo("will load:sessionType:"..sessionType);
+	    
+	    if (gBaseLogic.MBPluginManager.allLoginTyp[sessionType]~=nil) then
+		    gBaseLogic.MBPluginManager:sessionLogin(sessionType);
+	    	return;
+	    end
+	end
+
+	local hasSessionGuest = 0;
+	local defaultSession = "";
+	for sessionName,sessionInfo in pairs(gBaseLogic.MBPluginManager.allLoginTyp) do
+		if (sessionName=="SessionGuest") then
+			defaultSession = "SessionGuest";
+		else
+			if sessionInfo.default==1 then				
+				defaultSession = sessionName;
+			end
+		end
+		
+	end
+	if (defaultSession~="") then		
+		scheduler.performWithDelayGlobal(function()
+			gBaseLogic.MBPluginManager:sessionLogin(defaultSession); 
+	    end, 0.01);
+	else
+
+		gBaseLogic:unblockUI();
+		self:showLoginTypeLayer();
+	end
 end
 
 function LobbyLogic:reqLogin()	

@@ -7,7 +7,7 @@ function MBPluginManager:ctor()
         self.pluginProxy = require("plugin_gap").new();
         self.frameworkVersion = 0;
     else
-        self.pluginProxy = PluginProxy:getInstance();
+        self.pluginProxy = require("izxFW.PluginProxy").new();
         self.frameworkVersion = self:getFrameworkVersion();
     end
 
@@ -40,40 +40,6 @@ function MBPluginManager:getDeviceInfo()
 
 end
 
-function MBPluginManager:refreshConfig()
-    if(self.distributions.onlineConfig == true) then
-        print("MBPluginManager:refreshConfig 1")
-        --self.m_strOnlineConfig = nil;
-        self.m_bLastOnlineConfig = false;
-        --self.m_strOnlineConfig = self:getConfigString("config");
-        --self.pluginProxy:refreshConfig()
-        local url = string.gsub(URL.GETFUNCTIONSTATUS,"{pName}",gBaseLogic.packageName ..".config");--"com.izhangxin.zjh.ios.as.config2"
-        echoInfo("checking url is: "..url);
-        local request = network.createHTTPRequest(function(event)
-                local ok = (event.name == "completed")
-                local request = event.request
-                if not ok then
-                    if (event.name == "inprogress") then
-                        return
-                    end
-                    var_dump(event)
-                    -- printx("HTTP err", request:getErrorCode() .. request:getErrorMessage())
-                    -- if cback then cback(nil) end
-                else
-                    local code = request:getResponseStatusCode()
-                    if code == 200 then
-                        local response = request:getResponseString()
-                        self.m_strOnlineConfig = json.decode(response)
-                        print("self.m_strOnlineConfig")
-                        var_dump(self.m_strOnlineConfig)
-                        self.m_bLastOnlineConfig = true;
-                    end
-                end
-            end, url, "GET") 
-        request:setTimeout(20);
-        request:start()
-    end
-end
 function MBPluginManager:getConfigParams(configName,param_key,defaultValue)
     print("MBPluginManager:getConfigParams 0"..param_key)
     if(self.distributions.onlineConfig == true) then
@@ -222,6 +188,58 @@ function MBPluginManager:loadPluginsConfig()
 
     local plugin_plist_table = trans_plist_to_lua_table(plistPath);
 
+    self.packetName = plugin_plist_table.game[1].PacketName;
+
+    self.pluginConfigs = {};
+    self.allLoginTyp = {};
+    self.loginTypNum = 0;
+
+    for k,v in pairs(plugin_plist_table.plugins) do
+        v.type = tonumber(v.type);
+        if (v.runType==nil) then
+            if device.platform=="ios" then
+                v.runType="ios"
+            elseif device.platform=="android" then
+                v.runType="android"
+            else
+                v.runType="unknown"
+            end
+        end
+        self.pluginConfigs[v.name] = v;
+        if (v.type==kPluginIAP) then
+
+        elseif (v.type==kPluginIAPSms) then
+            --todo
+
+        elseif (v.type==kPluginSession ) then
+            self.allLoginTyp[v.name] = v;
+            self.loginTypNum = self.loginTypNum+1;
+        end
+        self.pluginProxy:initPlugin(v.type,v.name,v);
+    end
+
+end
+
+function MBPluginManager:loadPluginsConfigOld()
+    self:loadConfigPlist();
+    self.IAPSmsType = "";
+    self.IAPType = "";
+    self.allIAPSmsType = {};
+    self.allIApTyp = {};
+	local plistName = "plugins.plist";
+    if PLUGIN_ENV == ENV_TEST then
+        plistName = "plugins.t.plist"
+    elseif PLUGIN_ENV == ENV_MIRROR then
+        plistName = "plugins.m.plist"
+    end
+    print(plistName)
+    local plistPath=CCFileUtils:sharedFileUtils():fullPathForFilename(plistName)
+    echoInfo("will load plugins from %s", plistPath);
+    if (io.exists(plistPath)~=true) then
+        echoInfo("%s not exists", plistName);
+        plistName = "plugins.plist";
+        plistPath=CCFileUtils:sharedFileUtils():fullPathForFilename(plistName)
+    end
     local plistDic=CCDictionary:createWithContentsOfFile(plistPath)
     tolua.cast(plistDic, "CCDictionary")
 

@@ -12,6 +12,36 @@
 	<key>plugins</key>
 	<array>
 		<dict>
+			<key>LoginRequestURL</key>
+			<string>new/gateway/visitor/login</string>
+			<key>name</key>
+			<string>SessionGuest</string>
+			<key>type</key>
+			<string>5</string>
+			<key>tag</key>
+			<string>2</string>
+			<key>default</key>
+			<string>1</string>
+			<key>runType</key>
+			<string>lua</string>
+		</dict>
+		<dict>
+			<key>LoginRequestURL</key>
+			<string>new/gateway/sina/login</string>
+			<key>WeiboAppKey</key>
+			<string>1479868089</string>
+			<key>WeiboRedirectUrl</key>
+			<string>http://www.sina.com</string>
+			<key>name</key>
+			<string>SessionWeibo</string>
+			<key>type</key>
+			<string>5</string>
+			<key>tag</key>
+			<string>4</string>
+			<key>default</key>
+			<string>1</string>
+		</dict>
+		<dict>
 			<key>AppID</key>
 			<string>201506591</string>
 			<key>LoginRequestURL</key>
@@ -24,6 +54,7 @@
 			<string>4</string>
 			<key>default</key>
 			<string>0</string>
+			
 		</dict>
 		<dict>
 			<key>AppID</key>
@@ -71,7 +102,7 @@
 			<key>mid</key>
 			<string>47</string>
 			<key>SmsTyp</key><!--短代类型 0:都可 1:移动 2:联通 3:电信 -->
-			<string>3</string>
+			<string>0</string>
 			<key>needConfirm</key>
 			<string>1</string>	
 		</dict>
@@ -120,22 +151,6 @@
 			<string>1</string>
 		</dict>
 		<dict>
-			<key>OrderRequestURL</key>
-			<string>sp/intl/pay</string>
-      		<key>name</key>
-			<string>IAPWPSMS</string>
-			<key>type</key>
-			<string>10</string>
-			<key>default</key>
-			<string>1</string>
-			<key>mid</key>
-			<string>71</string>
-			<key>SmsTyp</key>
-			<string>-1</string>
-			<key>needConfirm</key>
-			<string>1</string>
-		</dict>
-		<dict>
 			<key>name</key>
 			<string>PushIGeXin</string>
 			<key>type</key>
@@ -145,18 +160,6 @@
 			<key>default</key>
 			<string>1</string>
 		</dict>
-		<dict>
-	    	<key>appkey</key>
-	    	<string>1407204168143</string>
-	    	<key>appchannel</key>
-	    	<string>android.ddz.qh360</string>
-	      	<key>name</key>
-		  	<string>AdsPingCoo</string>
-		  	<key>type</key>
-		  	<string>1</string>
-	      	<key>default</key>
-	      	<string>1</string>
-	    </dict>
 	</array>
 </dict>
 </plist>

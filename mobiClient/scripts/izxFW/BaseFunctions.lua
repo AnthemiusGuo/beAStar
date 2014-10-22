@@ -1610,6 +1610,42 @@ function get00ofday(day)
 	return os.time({year=os.date("%Y",day), month=os.date("%m",day), day=os.date("%d",day), hour=0})
 end
 
+function makeCookieString(cookie)
+	print("makeCookieString")
+    local arr = {}
+    for name, value in pairs(cookie) do
+    	-- var_dump(value)
+        if type(value) == "table" then
+            value = tostring(value.value)
+        else
+            value = tostring(value)
+        end
+        -- var_dump(value)
+        arr[#arr + 1] = tostring(name) .. "=" .. urlencode(value)
+    end
+
+    return table.concat(arr, "; ")
+end
+
+function urlencode(str)
+    -- convert line endings
+	if (str) then
+	    str = string.gsub (str, "\n", "\r\n")
+	    str = string.gsub (str, "([^%w %-%_%.%~])",
+	        function (c) return string.format ("%%%02X", string.byte(c)) end)
+	    str = string.gsub (str, " ", "+")
+	end
+  	return str	
+end
+
+function common_get_zipd_number(money)
+	money = tonumber(money)
+	return money
+end
+function common_get_slipt_number(money)
+	return money
+end
+
 function trans_plist_to_lua_table(plistPath)
 	local target = {};
 	local plistDic=CCDictionary:createWithContentsOfFile(plistPath)
@@ -1643,4 +1679,12 @@ function trans_plist_to_lua_table(plistPath)
 
     end
     return target;
+end
+
+function setLocalSingledata(key,data)
+	CCUserDefault:sharedUserDefault():setStringForKey(key,data);
+end
+function getLocalSingledata(key)
+	local data =  CCUserDefault:sharedUserDefault():getStringForKey(key,-1);
+	return data
 end

@@ -83,8 +83,7 @@ function getURL()
 	local prevUrl = {}
 	if (PLUGIN_ENV ==ENV_TEST) then
 		--todo
-		prevUrl.login1 = "http://t.payment.hiigame.com/";
-		prevUrl.login2 = "http://t.payment.hiigame.com:18000/";
+		prevUrl.static = "http://127.0.0.1/beAStar/webServer/wwwroot/";
 		prevUrl.pay = "http://t.mall.hiigame.com/";
 		prevUrl.web = "http://t.statics.hiigame.com/";
 		prevUrl.activity = "http://activity.izhangxin.com/";
@@ -102,67 +101,11 @@ function getURL()
 		prevUrl.web = "http://statics.hiigame.com/";
 		prevUrl.activity = "http://activity.izhangxin.com/";
 
-		-- prevUrl.login1 = "http://login.match.ddz.hiigame.com:12330/";
-		-- prevUrl.login2 = "http://login.match.ddz.hiigame.com:12330/";
-		-- prevUrl.pay = "http://mall.match.ddz.hiigame.com:12330/";
-		-- prevUrl.web = "http://statics.match.ddz.hiigame.com:12330/";
-		-- prevUrl.activity = "http://activity.match.ddz.hiigame.com:12330/";
+
 	end
-	DEFAULT.URL.GET_EXCHANGE_PERSONAL_INFO =prevUrl.web.."get/user/identify";
-	DEFAULT.URL.Match_Info = prevUrl.web.."/get/match/info";
-	-- http://t.statics.hiigame.com/get/match/info?matchid=308
-	DEFAULT.URL.Feedback = prevUrl.login1.."new/gateway/feedback";
-	DEFAULT.URL.FeedbackList = prevUrl.login1.."new/gateway/feedback/list";
-	DEFAULT.URL.GONGGAO = prevUrl.login1.."new/gateway/game/tips?gameid={gameid}&pn={packageName}&count=5&pid={pid}&pagenow=4&pagesize=1&gametype=0";
 	
-	DEFAULT.URL.SHOPITEMS = prevUrl.pay.."shop/box/list"
-	DEFAULT.URL.SHOP_HISTORY = prevUrl.pay.."vou/order/list?pid={pid}&ticket={ticket}&pn={packageName}";
-	-- DEFAULT.URL.CDKAWARD = prevUrl.web.."gift/key/activation?uid={pid}&giftkey={cdk}&gameid={gameid}&sign={sign}";
-	DEFAULT.URL.CDKAWARD = prevUrl.web.."gift/key/activation?uid={pid}&ticket={ticket}&giftkey={cdk}&gameid={gameid}&sign={sign}";
-	DEFAULT.URL.USERBATCH = prevUrl.login1.."new/gateway/user/batch?uids={uids}"
-	DEFAULT.URL.NAMECHANGE = prevUrl.web.."get/modify/count.do"
-	DEFAULT.URL.NAMECOMMIT = prevUrl.login2.."user/detail/upt"
-	DEFAULT.URL.NEWTASK = prevUrl.login2.."task/novice/list?pid={pid}&ticket={ticket}"
-	DEFAULT.URL.NEWTASKAWARD = prevUrl.login2.."task/draw/award?pid={pid}&ticket={ticket}&taskid={taskid}"
-	DEFAULT.URL.GOLDEXC_RECHCARD_TYPE = prevUrl.login2.."new/gateway/vou/goods/types?pn={packageName}"
-	DEFAULT.URL.GOLDEXC_RECHCARD_LIST = prevUrl.login2.."new/gateway/vou/goods/list?type={type}"
-	DEFAULT.URL.GOLDEXC_EXCGIFT = prevUrl.login2.."new/gateway/vou/goods/newcharge?gid={gid}&pid={pid}&ticket={ticket}&pn={packageName}&gameid={gameid}&name=123&address=123&phone=123&code=123"
-	DEFAULT.URL.GOLDEXC_EXCRECORD = prevUrl.login2.."query/pay/order/list?pid={pid}&ticket={ticket}&pn={packageName}&type={type}"
-	DEFAULT.URL.DAYTASK = prevUrl.web.."load/panel/image.do"	
-	DEFAULT.URL.MINIGAME_CONFIG = prevUrl.web.."get/smallgame/showlist";
-	DEFAULT.URL.MAINGAME_VERSION_CTL = prevUrl.web.."get/game/config";
-
-	DEFAULT.URL.CHONGZHIJIANGLI_INIT = prevUrl.web.."load/pay/award.do?pn={packageName}&uid={pid}&rm=0"
-	DEFAULT.URL.CHONGZHIJIANGLI_AWARD = prevUrl.web.."get/pay/award.do?pn={packageName}&uid={pid}&awardid={awardid}&money={money}&gameid={gameid}"
-	DEFAULT.URL.HUODONG = prevUrl.activity.."load/activity/list?uid={uid}&gameid={gameid}&sign={sign}";
-	-- DEFAULT.URL.ISHUODONG = "http://igame.b0.upaiyun.com/readme/aaaa.htm"
-	DEFAULT.URL.GETPROMOTE = prevUrl.web.."get/promotion/code";
-	DEFAULT.URL.PROMOTEBINDING = prevUrl.web.."bind/promotion/code.do";
-	DEFAULT.URL.GETPROMOTEPARTNER = prevUrl.web.."get/bound/friend/info.do";
-	DEFAULT.URL.GETPROMOTERECORD = prevUrl.web.."get/promotion/record";
-	DEFAULT.URL.GETPROMOTEAWARD = prevUrl.web.."get/promotion/award";
-	DEFAULT.URL.IFBINDING = prevUrl.web.."is/promotion/bind";
-	DEFAULT.URL.GETALLHEADIMAGE = prevUrl.web.."get/face/all"
-	DEFAULT.URL.SETALLHEADIMAGE = prevUrl.web.."get/face/url"
-
-	DEFAULT.URL.SAFTGETPWD =prevUrl.web.."get/casino/safepassword?pid={pid}&phoneno={phoneno}&ticket={ticket}&signMsg={signMsg}"
-
-	DEFAULT.URL.XIAOFEIXIANE = prevUrl.web.."get/consumelimit/tips"
-	DEFAULT.URL.GETFUNCTIONSTATUS = prevUrl.web.."get/online/param?paramname={pName}"
-	DEFAULT.URL.DoubleChest = prevUrl.web.."get/first/pay/box"
-	DEFAULT.URL.TOTALUPDATE = prevUrl.web.."version/update"
-	DEFAULT.URL.APP_UPDATE_INIT_ALL = prevUrl.web.."get/loading/params"
-	DEFAULT.URL.GET_ITEM_LIST = prevUrl.web.."get/goods/list?pn={pn}&gameid={gameid}&index={index}";
-	DEFAULT.URL.EXCHANGE_ITEM = prevUrl.web.."vou/goods/charge?pn={pn}&gameid={gameid}&gid={gid}&uid={uid}&ticket={ticket}";
-	DEFAULT.URL.GET_ITEM_EXCHANGE_RECORD_LIST = prevUrl.web.."get/charge/list?pn={pn}&uid={uid}&ticket={ticket}";
-	DEFAULT.URL.GETEVALUATE = prevUrl.login2.."new/gateway/evaluate?pid={pid}&ticket={ticket}&mac={mac}&pn={packageName}";
-	DEFAULT.URL.MATCHINFODATA = prevUrl.web.."get/match/player"
-	DEFAULT.URL.MATCHRANKINFO = prevUrl.web.."get/round/rank/info"
-	DEFAULT.URL.MATCHGETAWARDE = prevUrl.web.."get/player/bonus"
-	DEFAULT.URL.AWARDEVALUATE = prevUrl.login2.."new/gateway/eva/gm?pid={pid}&order={order}";
-
-	DEFAULT.URL.NoticeList = prevUrl.web.."get/activity/notice"
-	DEFAULT.URL.ActivityImg = prevUrl.web.."get/activity/image"
+	DEFAULT.URL.GET_EXCHANGE_PERSONAL_INFO =prevUrl.web.."get/user/identify";
+	
 	
 	return DEFAULT.URL;
 end

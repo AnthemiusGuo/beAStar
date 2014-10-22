@@ -137,13 +137,9 @@ function BaseView:onTouch(event, x, y)
     end
 end
 
-function BaseView:showPopBoxCCB(ccbFileName,popBox,clickMaskToClose,maskType,zOrder,toSceneOrRootNode)
-	if (self.nodePopBox) then
-		self:realClosePopBox();
-	end
 
-	local proxy = CCBProxy:create();
-	self.nodePopBox = CCBuilderReaderLoad(ccbFileName,proxy,popBox);
+function BaseView:realShowPopBox(nodePop,popBox,clickMaskToClose,maskType,zOrder,toSceneOrRootNode) 
+	self.nodePopBox = nodePop;
 	if nil == maskType or 0 == maskType then 
 		self.maskLayerColor = display.newScale9Sprite("images/bg.png", display.cx,display.cy, CCSizeMake(display.width, display.height)); 
 	--self.maskLayerColor = display.newColorLayer(ccc4(0, 0, 0, 80));	
@@ -216,6 +212,27 @@ function BaseView:showPopBoxCCB(ccbFileName,popBox,clickMaskToClose,maskType,zOr
 	end
 	print("12334")
 	self.currentPopBox = popBox;
+end
+
+function BaseView:showPopBoxCCJ(ccjFileName, popBox,clickMaskToClose,maskType,zOrder,toSceneOrRootNode)
+	if (self.nodePopBox) then
+		self:realClosePopBox();
+	end
+	local reader = CCJReader.new(ccjFileName);
+    local nodePop = reader:load(popBox);
+
+	self:realShowPopBox(nodePop,popBox,clickMaskToClose,maskType,zOrder,toSceneOrRootNode)
+
+end
+
+function BaseView:showPopBoxCCB(ccbFileName,popBox,clickMaskToClose,maskType,zOrder,toSceneOrRootNode)
+	if (self.nodePopBox) then
+		self:realClosePopBox();
+	end
+
+	local proxy = CCBProxy:create();
+	local nodePop = CCBuilderReaderLoad(ccbFileName,proxy,popBox);
+	self:realShowPopBox(nodePop,popBox,clickMaskToClose,maskType,zOrder,toSceneOrRootNode)
 end
 
 function BaseView:realClosePopBox()

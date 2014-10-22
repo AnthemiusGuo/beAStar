@@ -63,6 +63,9 @@ function BaseLogic:init()
 	self.hasDownloadBiaoqing = false;
 	self.hasDownloadShengyin = false;
 	
+	self.userInfo = {};
+	self.uid = 0;
+
     CCUserDefault:sharedUserDefault():setStringForKey("currGameInfo", "0")
     CCUserDefault:sharedUserDefault():setStringForKey("chargeCancel", "0")
 
@@ -439,26 +442,229 @@ function BaseLogic:initPluginManager()
 	self.MBPluginManager:loadPluginsConfig();
 	self:setPackage(self.MBPluginManager.packetName);
 	self.deviceInfo = self.MBPluginManager:getDeviceInfo();
-	echoInfo("self.deviceInfo");
-	var_dump(self.deviceInfo);
 end
 
-function BaseLogic:run(updaterSuccOrFail)
-	echoInfo('BEGIN!!!!!!BaseLogic:run');
-	if (updaterSuccOrFail==nil) then
-		self.updaterSuccOrFail = true;
-	else
-		self.updaterSuccOrFail = updaterSuccOrFail;
+function BaseLogic:ajax_handler(opts)
+	local default_opt = {
+		m = "index",
+		a = "index",
+		h = 0,
+		block = false,
+		succ_alert=0,
+		error_alert=1,
+		plus = {}        
+	};
+	genParam(opts,default_opt);
+	if opts.block then
+		gBaseLogic:blockUI();
 	end
+
+	local url = self.req_url ..'/w.php?m='..opts.m ..'&a='.. opts.a .."&h="..opts.h;
+	var_dump(url);
+	function callback(event)
+		if block then
+			gBaseLogic:unblockUI();
+		end
+		local ok = (event.name == "completed")
+		local request = event.request
+		if not ok then
+			printx(request:getErrorCode(), request:getErrorMessage())
+			-- if cback then cback(nil) end
+			local initParam = {msg="服务器出错！",type=1000};
+			self.lobbyLogic:showYouXiTanChu(initParam) 
+		else
+			local code = request:getResponseStatusCode()
+			echoVerb(code)
+			if code ~= 200 then
+				local initParam = {msg="服务器出错！！！",type=1000};
+				self.lobbyLogic:showYouXiTanChu(initParam) 
+				-- local 
+				-- if cback then cback(nil) end
+			else
+				local response = request:getResponseString()
+				local tableCookie = network.parseCookie(request:getCookieString())
+				self.cookieString = makeCookieString(tableCookie);
+				if (DEBUG>=3) then
+					print("----HTTP getResponseString---- data for:"..rst_url);
+					var_dump(pdata);
+					print("----HTTP getResponseString response----");
+					var_dump(response);
+					print("----HTTP getResponseString---end");
+				end
+				--解析成table
+				local table = json.decode(response)
+				table.rstno = tonumber(table.rstno)
+				--返回table数据
+				if table~=nil and table.rstno~=nil then
+					if table.rstno>=1 then
+						if opts.m~="account" then
+							if table.credits~=nil then
+								gBaseLogic.userInfo.credits = credits
+								self.lobbyLogic:dispatchLogicEvent({
+									name = "MSG_user_change",
+									message = {typ=1}
+								})
+							end
+							if table.total_credits~=nil then
+								gBaseLogic.userInfo.total_credits = table.total_credits
+							end
+							if table.cur_exp~=nil then
+								gBaseLogic.userInfo.exp = table.cur_exp
+								self.lobbyLogic:dispatchLogicEvent({
+									name = "MSG_user_change",
+									message = {typ=2}
+								})
+							end
+							if table.level~=nil then
+								gBaseLogic.userInfo.level = table.level
+								self.lobbyLogic:dispatchLogicEvent({
+									name = "MSG_user_change",
+									message = {typ=3}
+								})
+							end
+						end
+
+						if opts.succ_alert==1 then
+							local initParam = {msg=table.error,type=1000,flag=1};
+							self.lobbyLogic:showYouXiTanChu(initParam) 
+						end
+					else
+						if opts.error_alert==1 then
+							local initParam = {msg=table.error,type=1000,flag=0};
+							self.lobbyLogic:showYouXiTanChu(initParam) 
+						end
+					end
+				end
+				if cback then cback(table) end
+			end
+		end
+	end
+	local request = network.createHTTPRequest(callback, url, "POST")
+	if pdata then--add key,value
+		for k,v in pairs(opts.plus) do
+			request:addPOSTValue(k, v)
+		end
+	end
+	if self.cookieString~=nil then
+		request:setCookieString(self.cookieString)
+	end	
+	request:start()
+end
+function BaseLogic:ajax_req(opts) 
+	echoVerb("BaseLogic:HTTPGetdata")
+	default_opt = {
+		m = "index",
+		a = "index",
+		h = 0,
+		block = false,
+		succ_alert=0,
+		error_alert=1,
+		plus = {}        
+	};
+	genParam(opts,default_opt);
+	var_dump(self.req_url);
+	local url = self.req_url ..'/w.php?m='..opts.m ..'&a='.. opts.a .."&h="..opts.h;
+	for k,v in pairs(opts.plus) do
+		url = url .."&".. k .. "="..v
+	end
+	cback = opts.cback
+	print ("BaseLogic:ajax_req::::\n"..url)
+	if block then
+		gBaseLogic:blockUI();
+	end
+	function callback(event)
+		-- gBaseLogic:unblockUI();
+		local ok = (event.name == "completed")
+		local request = event.request
+		if not ok then
+			printx("HTTP err", request:getErrorCode() .. request:getErrorMessage())
+			-- if cback then cback(nil) end
+			local initParam = {msg="服务器出错！",type=1000};
+			self.lobbyLogic:showYouXiTanChu(initParam) 
+		else
+			local code = request:getResponseStatusCode()
+			if code ~= 200 then
+				-- if cback then cback(nil) end
+				local initParam = {msg="服务器出错！！!",type=1000};
+				self.lobbyLogic:showYouXiTanChu(initParam) 
+			else
+				local response = request:getResponseString()
+				local tableCookie = network.parseCookie(request:getCookieString())
+				self.cookieString = makeCookieString(tableCookie);
+
+				
+				-- printx(response)
+				--解析成table
+				local table = json.decode(response)
+				if table~=nil and table.rstno~=nil then
+					table.rstno = tonumber(table.rstno)
+					--返回table数据
+					if table.rstno>=1 then
+						if opts.m~="account" then
+							if table.credits~=nil then
+								gBaseLogic.userInfo.credits = table.credits
+								self.lobbyLogic:dispatchLogicEvent({
+									name = "MSG_user_change",
+									message = {typ=1}
+								})
+							end
+							if table.total_credits~=nil then
+								gBaseLogic.userInfo.total_credits = table.total_credits
+							end
+							if table.cur_exp~=nil then
+								gBaseLogic.userInfo.exp = table.cur_exp
+								self.lobbyLogic:dispatchLogicEvent({
+									name = "MSG_user_change",
+									message = {typ=2}
+								})
+							end
+							if table.level~=nil then
+								gBaseLogic.userInfo.level = table.level
+								self.lobbyLogic:dispatchLogicEvent({
+									name = "MSG_user_change",
+									message = {typ=2}
+								})
+							end
+						end
+
+						if opts.succ_alert==1 then
+							local initParam = {msg=table.error,type=1000,flag=1};
+						self.lobbyLogic:showYouXiTanChu(initParam) 
+						end
+					else
+						if opts.error_alert==1 then
+							local msg = table.error;
+							if msg==nil then
+								msg="返回失败";
+							end
+							local initParam = {msg=msg,type=1000,flag=0};
+						self.lobbyLogic:showYouXiTanChu(initParam) 
+						end
+					end
+				end
+				if cback then cback(table) end
+			end
+		end
+	end
+	local request = network.createHTTPRequest(callback, url, "GET")
+	if self.cookieString~=nil then
+		request:setCookieString(self.cookieString)
+	end	
+	request:start()
+end
+
+
+function BaseLogic:run()
+	echoInfo('BEGIN!!!!!!BaseLogic:run');
 	
 	self:initPluginManager();
-	
-	-- gBaseLogic.lobbyLogic:requestHTTPHelpDesk()
+	self.MBPluginManager:loadPlugins();
+
 	if (izx.resourceManager.netState == false) then
 		self.lobbyLogic:onNoNet();
 		return;
 	end
-	gBaseLogic.lobbyLogic:enterLocation({isFirstRun=true});
+	self.lobbyLogic:run();
 end
 
 
@@ -502,6 +708,10 @@ function BaseLogic:setVersion(versionNum)
 	self.versionNum = versionNum;
 end
 
+function BaseLogic:setReqUrl(req_url)
+	self.req_url = req_url;
+	var_dump(self.req_url);
+end
 function BaseLogic:setSocketConfig(socketConfig)
 	self.socketConfig = socketConfig;
 end
@@ -536,113 +746,6 @@ function BaseLogic:setTestUser(userInfo)
     --CCUserDefault:sharedUserDefault():setStringForKey("ply_Level_", userInfo.param_2_)
     CCUserDefault:sharedUserDefault():setBoolForKey("everLogin", true)
 end
-
-function BaseLogic:checkLogin()
-	echoInfo("checkLogin!!");
-	
-
-	self.lobbyLogic.userHasLogined = false;
-	local everLogin = CCUserDefault:sharedUserDefault():getBoolForKey("everLogin");
-	-- echoInfois_login = false;
-	echoInfo("BaseLogic:checkLogin")
-
-	if everLogin == true then
-	    local sessionType = CCUserDefault:sharedUserDefault():getStringForKey("sessionType");
-	    echoInfo("will load:sessionType:"..sessionType);
-	    
-	    --write back the updater 
-	    if (StartUpdater~=nil) then
-	    	-- var_dump(StartUpdater);
-
-	    	gBaseLogic.MBPluginManager:logEventDurationTable(StartUpdater);
-	    	StartUpdater = nil;
-	    end
-	    gBaseLogic.MBPluginManager:logEventLabelMyBegin("LOGIN_STEP_DURA","sessionLogin");
-	    
-	    
-	    if (self.MBPluginManager.allLoginTyp[sessionType]~=nil) then
-		    self.MBPluginManager:sessionLogin(sessionType);
-	    	return;
-	    end
-	end
-	-- local canAutoReg = true;
-	-- if (VenderAutoReg[self.packagePlat] and VenderAutoReg[self.packagePlat][self.packageVender]) then
-	-- 	canAutoReg = false;
-	-- end
-	
-	-- if (canAutoReg) then
-		self:autoReg();
-	-- end
-
-end
-
-function BaseLogic:autoReg()
-	echoVerb("=============================BaseLogic:autoReg")
-	local hasSessionGuest = 0;
-	local defaultSession = "";
-	for sessionName,sessionInfo in pairs(self.MBPluginManager.allLoginTyp) do
-		if (sessionName=="SessionGuest") then
-			defaultSession = "SessionGuest";
-		else
-			if sessionInfo.default==1 then				
-				defaultSession = sessionName;
-			end
-		end
-		
-	end
-	if (defaultSession~="") then		
-		scheduler.performWithDelayGlobal(function()
-			self.MBPluginManager:sessionLogin(defaultSession); 
-	    end, 0.01);
-	else
-
-		gBaseLogic:unblockUI();
-		gBaseLogic.lobbyLogic:showLoginTypeLayer();
-	end
-	 
-
-end
-
--- function BaseLogic:checkGameModules(gameModule)
--- 	self.upgradingGameModule = gameModule;
--- 	-- 检查版本
--- 	local url = string.gsub(URL.CHECK_PACAKGE_VERSION,"{moduleName}",gameModule);
--- 	echoInfo(url);
-
--- 	local upgradeManager = UpgradeManager:new(gameModule,url,RESOURCE_PATH);
---     upgradeManager:deleteVersion();
--- 	local needUpdate = upgradeManager:checkUpgrade();
--- 	echoInfo("needUpdate of "..gameModule.." is :"..needUpdate);
--- 	self.total_packages = 0;
--- 	if (needUpdate>0) then
--- 		self.total_packages = needUpdate;
-        
---         -- 进入下载页面
-        
---         upgradeManager:startDownload();
---         upgradeManager:registerScriptHandler(handler(self.lobbyLogic,self.lobbyLogic.onCheckGameModules));
---         self.lobbyLogic:dispatchLogicEvent({
--- 	        name = "MSG_PLUGIN_ASSET_START",
--- 	        message = {plugin=self.upgradingGameModule}
--- 	    })
--- 	elseif (needUpdate==0) then
--- 		-- 没下载也进下载页面
-		
--- 	    function NO_NEW_VERSION()
--- 			self.lobbyLogic:dispatchLogicEvent({
--- 		        name = "MSG_PLUGIN_ASSET_SUCCESS",
--- 		        message = {plugin=self.upgradingGameModule,
--- 		    	typ="NO_NEW_VERSION"
--- 		    	}
--- 		    })
--- 		end
--- 	    self.scheduler.performWithDelayGlobal(NO_NEW_VERSION, 1)
--- 	else
--- 		-- 出错处理
-		
--- 	end
-	
--- end
 
 function BaseLogic:checkGameUpdate(sessionInfo)
 	if (true) then
@@ -800,7 +903,7 @@ function BaseLogic:onSessionResult(sessionRst)
 		--switch user
 		gBaseLogic.lobbyLogic.achieveListData = nil;
 	    gBaseLogic.lobbyLogic.achieveListData = {};
-		gBaseLogic.lobbyLogic:reShowLoginScene(false);
+		gBaseLogic.lobbyLogic:resetLogin(false);
 		gBaseLogic:prepareRelogin();
 		self:unblockUI();
 	elseif (sessionRst.SessionResultCode == 5) then
@@ -1183,7 +1286,7 @@ end
 
 function BaseLogic:showMessageRstBox(msg,maskType,zOrder)
     self.sceneManager.currentPage.view.popChildren = require("moduleLobby.views.MessageRstBox").new(msg,self.sceneManager.currentPage.view);
-    self.sceneManager.currentPage.view:showPopBoxCCB("interfaces/MessageRstBox.ccbi",self.sceneManager.currentPage.view.popChildren,true,maskType,zOrder);
+    self.sceneManager.currentPage.view:showPopBoxCCJ("interfaces/MessageRstBox.json",self.sceneManager.currentPage.view.popChildren,true,maskType,zOrder);
 end
 -- 掉钱动画
 function BaseLogic:coin_drop(cback)

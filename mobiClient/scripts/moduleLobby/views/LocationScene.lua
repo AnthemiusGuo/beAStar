@@ -1,21 +1,26 @@
 local LocationScene = class("LocationScene",izx.baseView)
 
 function LocationScene:prepareVar()
-	self.pageVar.location_img = 'images/Location/Locale_'..self.ctrller.data.locationInfo.imgId..'.png';
-	self.pageVar.location_name = self.ctrller.data.locationInfo.locationName;
-	self.pageVar.city_name = self.ctrller.data.locationInfo.cityName;
-	self.pageVar.avatar_img = 'images/Avatar/'..self.ctrller.data.userInfo.avatarId..'.png';
-	self.pageVar.uname = self.ctrller.data.userInfo.uname;
-	self.pageVar.vip_level = self.ctrller.data.userInfo.vip_level;
-	self.pageVar.level = self.ctrller.data.userInfo.level;
-	self.pageVar.exp = self.ctrller.data.userInfo.exp;
-	self.pageVar.exp_len = self.ctrller.data.userInfo.exp_len;
-	self.pageVar.money = self.ctrller.data.userInfo.money;
-	self.pageVar.voucher = self.ctrller.data.userInfo.voucher;
-	self.pageVar.credits = self.ctrller.data.userInfo.credits;
-	self.pageVar.money_show = self.ctrller.data.userInfo.money_show;
-	self.pageVar.mood = self.ctrller.data.userInfo.mood;
-	self.pageVar.energy = self.ctrller.data.userInfo.energy;
+	self.pageVar.location_img = 'images/Location/Locale_'..gBaseLogic.lobbyLogic.locationData.imgId..'.png';
+	self.pageVar.location_name = gBaseLogic.lobbyLogic.locationData.locationName;
+	self.pageVar.city_name = gBaseLogic.lobbyLogic.locationData.cityName;
+	self.pageVar.avatar_img = 'images/Avatar/'..gBaseLogic.lobbyLogic.userData.avatarId..'.png';
+	self.pageVar.uname = gBaseLogic.lobbyLogic.userData.uname;
+	self.pageVar.vip_level = gBaseLogic.lobbyLogic.userData.vip_level;
+	self.pageVar.level = gBaseLogic.lobbyLogic.userData.level;
+	self.pageVar.exp = gBaseLogic.lobbyLogic.userData.exp;
+	self.pageVar.exp_len = gBaseLogic.lobbyLogic.userData.exp_len;
+	self.pageVar.money = gBaseLogic.lobbyLogic.userData.money;
+	self.pageVar.voucher = gBaseLogic.lobbyLogic.userData.voucher;
+	self.pageVar.credits = gBaseLogic.lobbyLogic.userData.credits;
+	self.pageVar.money_show = gBaseLogic.lobbyLogic.userData.money_show;
+	self.pageVar.mood = gBaseLogic.lobbyLogic.userData.mood;
+	self.pageVar.energy = gBaseLogic.lobbyLogic.userData.energy;
+end
+
+function LocationScene:resetPage()
+	self:prepareVar();
+	
 end
 
 function LocationScene:onAssignVars()
