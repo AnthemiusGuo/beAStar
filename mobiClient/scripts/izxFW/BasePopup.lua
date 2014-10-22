@@ -5,6 +5,7 @@ function BasePopup:ctor(popupName,data,relateView)
 	self.popupName = popupName;
 	self.data = data;
 	self.relateView = relateView;
+	self.pageVar = {};
 end
 
 function BasePopup:onInitView()

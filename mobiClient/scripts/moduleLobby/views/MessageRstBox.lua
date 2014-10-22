@@ -12,6 +12,10 @@ function popChildren:onAssignVars()
     self.labelPopContent:setString(self.data.content)
 end
 
+function popChildren:onPressBtnOK()
+    self:closePopBox();
+end
+
 function popChildren:onClosePopBox()
 	izx.baseAudio:playSound("audio_menu");
 	if (self.relateView) then

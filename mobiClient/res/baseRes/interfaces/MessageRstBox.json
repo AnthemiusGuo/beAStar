@@ -7,25 +7,13 @@
 		"root":{
 			"var":"null",
 			"displayName":"根节点",
-			"baseClass":"CCLayer",
+			"baseClass":"CCNode",
 			"properties":{
-				"contentSize":[100,"%",100,"%"],
+				"contentSize":[600,"px",400,"px"],
 				"anchorPoint":[0.5,0.5],
 				"scale":[1,1]
 			},
 			"children":[
-				{
-					"var":"null",
-					"displayName":"color节点",
-					"baseClass":"CCLayerColor",
-					"properties":{
-						"contentSize":[50,"%",50,"%"],
-						"anchorPoint":[0.5,0.5],
-						"scale":[1,1],
-						"color":[255,255,255],
-						"opacity":255
-					}
-				},
 				{
 					"var":"bgMain",
 					"displayName":"背景",
@@ -34,54 +22,19 @@
 						"anchorPoint":[0.5,0.5],
 						"scale":[1,1],
 						"position":[50,"%",50,"%"],
-						"displayFrame":"images/Main/lobby_bg.jpg"
+						"displayFrame":"images/Common/panel_s.png"
 					}
 				},
 				{
-					"var":"null",
-					"displayName":"九宫格",
-					"baseClass":"CCScale9Sprite",
-					"properties":{
-						"displayFrame":"images/Main/lobby_btn_shangdian2.png",
-						"opacity":255,
-						"color":[255,255,255],
-						"position":[70,"%",30,"%"],
-						"contentSize":[50,"%",50,"%"],
-						"inset":[10,10,10,10]				
-					}
-				},
-				{
-					"var":"null",
-					"displayName":"顶部",
-					"baseClass":"CCNode",
-					"properties":{
-						"anchorPoint":[0.5,0.5],
-						"scale":[1,1]
-					}
-				},
-				{
-					"var":"null",
-					"displayName":"按钮1",
-					"baseClass":"CCControlButton",
-					"ccControl":"onPressBtn",
-					"properties":{
-						"anchorPoint":[0.5,0.5],
-						"scale":[1,1],
-						"position":[50,"%",50,"%"],
-						"backgroundSpriteFrame":["images/Main/popup_btn_lan1.png","images/Main/popup_btn_lan2.png","images/Main/popup_btn_lan2.png"],
-						"scale9":false
-					}
-				},
-				{
-					"var":"null",
+					"var":"labelPopTitle",
 					"displayName":"文字1",
 					"baseClass":"CCLabelTTF",
 					"properties":{
 						"anchorPoint":[0.5,0.5],
 						"scale":[1,1],
-						"position":[30,"%",40,"%"],
+						"position":[50,"%",90,"%"],
 						"string":"test2",
-						"fontSize":24,
+						"fontSize":28,
 						"fontColor":[255,255,255],
 						"fontName":"Helvetica",
 						"dimensions":[0,"%",0,"%"],
@@ -89,46 +42,39 @@
 					}
 				},
 				{
-					"var":"null",
-					"displayName":"按钮2",
-					"baseClass":"CCControlButton",
-					"ccControl":"onPressBtn",
+					"var":"labelPopContent",
+					"displayName":"info",
+					"baseClass":"CCLabelTTF",
 					"properties":{
 						"anchorPoint":[0.5,0.5],
 						"scale":[1,1],
-						"position":[40,"%",60,"%"],
-						"backgroundSpriteFrame":["images/Main/popup_btn_lan1.png","images/Main/popup_btn_lan2.png","images/Main/popup_btn_lan2.png"],
-						"scale9":true,
-						"preferedSize":[250,"px",80,"px"],
-						"labelAnchorPoint":[0.5,0.5],
-						"title":[{
-							"title":"test2",
-							"titleTTFSize":36,
-							"titleColor":[255,255,255]
-						},
-						{
-							"title":"test2",
-							"titleTTFSize":36,
-							"titleColor":[188,188,188]
-						},
-						{
-							"title":"test2",
-							"titleTTFSize":36,
-							"titleColor":[255,255,255]
-						}]
+						"position":[50,"%",50,"%"],
+						"string":"test2",
+						"fontSize":24,
+						"fontColor":[255,255,255],
+						"fontName":"Helvetica",
+						"dimensions":[80,"%",60,"%"],
+						"align":5
 					}
 				},
 				{
 					"var":"null",
-					"displayName":"多彩字",
-					"baseClass":"CCLabelBMFont",
+					"displayName":"按钮2",
+					"baseClass":"CCControlButton",
+					"ccControl":"onPressBtnOK",
 					"properties":{
 						"anchorPoint":[0.5,0.5],
 						"scale":[1,1],
-						"position":[70,"%",80,"%"],
-						"string":"3211",
-						"fntFile":"images/fonts/KaiBaoXiangBeiShu.fnt",
-						"align":5
+						"position":[50,"%",10,"%"],
+						"backgroundSpriteFrame":["images/Common/btn_lan_m.png","images/Common/btn_lan_m_2.png","images/Common/btn_lan_m_2.png"],
+						"scale9":true,
+						"preferedSize":[182,"px",49,"px"],
+						"labelAnchorPoint":[0.5,0.5],
+						"title":[{
+							"title":"确定",
+							"titleTTFSize":24,
+							"titleColor":[255,255,255]
+						}]
 					}
 				}
 			]

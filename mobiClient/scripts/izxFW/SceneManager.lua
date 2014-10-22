@@ -203,8 +203,8 @@ function SceneManager:unblockUI()
         local blockUILayer = tolua.cast(self.blockUILayer,"CCLayerColor");
         if (blockUILayer) then
 
-          blockUILayer:unregisterScriptTouchHandler()
-          blockUILayer:removeFromParentAndCleanup(true);
+            -- blockUILayer:unregisterScriptTouchHandler()
+            blockUILayer:removeFromParentAndCleanup(true);
         end
         self.blockUILayer = nil;
     else 

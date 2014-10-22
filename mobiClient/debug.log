@@ -1,209 +1,225 @@
-
+Cocos2d: 
 <dict>
 	cocos2d.x.version: quick-cocos2d-x 2.2.5
 	cocos2d.x.compiled_with_profiler: false
 	cocos2d.x.compiled_with_gl_state_cache: true
-	gl.vendor: Intel Open Source Technology Center
-	gl.renderer: Mesa DRI Intel(R) Ivybridge Desktop x86/MMX/SSE2
-	gl.version: 3.0 Mesa 10.1.3
-	gl.max_texture_size: 8192
-	gl.max_texture_units: 48
+	gl.vendor: Intel Inc.
+	gl.renderer: Intel HD Graphics 4000 OpenGL Engine
+	gl.version: 2.1 INTEL-10.0.86
+	gl.max_texture_size: 16384
+	gl.max_texture_units: 16
 	gl.supports_PVRTC: false
 	gl.supports_NPOT: true
 	gl.supports_BGRA8888: false
 	gl.supports_discard_framebuffer: false
 	gl.supports_vertex_array_object: true
 </dict>
-lua_loadChunksFromZIP() - load zip file: \data\Codes\quick\quick-cocos2d-x\lib\framework_precompiled\framework_precompiled.zip
-lua_loadChunksFromZIP() - loaded chunks count: 108
-------------------------------------------------
-LOAD LUA FILE: Z:/data/Codes/beAStar/mobiClient/scripts/main.lua
-------------------------------------------------
-[0.1367] [INFO] 
-[0.1370] [INFO] # DEBUG                        = 0
-[0.1372] [INFO] #
-[0.1374] [INFO] # device.platform              = windows
-[0.1375] [INFO] # device.model                 = unknown
-[0.1377] [INFO] # device.language              = cn
-[0.1378] [INFO] # device.writablePath          = Z:\data\Codes\beAStar\mobiClient\
-[0.1380] [INFO] # device.cachePath             = Z:\data\Codes\beAStar\mobiClient\
-[0.1381] [INFO] # device.directorySeparator    = \
-[0.1383] [INFO] # device.pathSeparator         = ;
-[0.1384] [INFO] #
-[0.1398] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
-[0.1400] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
-[0.1401] [INFO] # CONFIG_SCREEN_HEIGHT         = 757.33
-[0.1402] [INFO] # display.widthInPixels        = 960.00
-[0.1404] [INFO] # display.heightInPixels       = 640.00
-[0.1405] [INFO] # display.contentScaleFactor   = 0.85
-[0.1406] [INFO] # display.width                = 1136.00
-[0.1408] [INFO] # display.height               = 757.33
-[0.1409] [INFO] # display.cx                   = 568.00
-[0.1410] [INFO] # display.cy                   = 378.67
-[0.1412] [INFO] # display.left                 = 0.00
-[0.1413] [INFO] # display.right                = 1136.00
-[0.1414] [INFO] # display.top                  = 757.33
-[0.1415] [INFO] # display.bottom               = 0.00
-[0.1417] [INFO] # display.c_left               = -568.00
-[0.1418] [INFO] # display.c_right              = 568.00
-[0.1419] [INFO] # display.c_top                = 378.67
-[0.1420] [INFO] # display.c_bottom             = -378.67
-[0.1422] [INFO] #
-[0.1541] [INFO] INIT ResourceManager
-CCNetwork::isLocalWiFiAvailable() - not support this platform.
-CCNetwork::isInternetConnectionAvailable() - not support this platform.
-[0.1545] [INFO] old path------> Z:\data\Codes\beAStar\mobiClient
-[0.1548] [INFO] path check OK------> Z:\data\Codes\beAStar\mobiClient\download/
-[0.1590] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
-[0.1614] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
-[0.1646] [INFO] BEGIN!!!!!!BaseLogic:run
-[0.1647] [INFO] BaseLogic:initPluginManager
-[0.1661] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
-[0.1687] key = dianxin_sms
-[0.1688] key = liantong_sms
-[0.1690] key = yidong_sms
-[0.1692] key = replace_text
-[0.1693] self.distributions====replace_text
-[0.1694] 炸金花:赢三张|扎金花:赢三张|掌心游:掌心游
-[0.1696] key = share
-[0.1697] key = thirdplatformexitpage
-[0.1698] key = thirdplatformquickpay
-[0.1700] key = toolbar
-[0.1701] key = banedpay
-[0.1702] key = usetestenv
-[0.1704] key = skipupgrade
-[0.1705] key = quickpay
-[0.1707] key = logoloading
-[0.1708] key = logodenglu
-[0.1710] key = logodating
-[0.1711] key = showPingCoo
-[0.1712] plugins.t.plist
-[0.1715] [INFO] will load plugins from plugins.t.plist
-[0.1717] [INFO] plugins.t.plist not exists
-[0.1769] [INFO] will init 5 : PluginSession ,SessionGuest
-[0.1784] [INFO] will init 5 : PluginSession ,SessionWeibo
-[0.1792] [INFO] will init 5 : PluginSession ,Session360
-[0.1794] [INFO] will init 3 : PluginIAP ,IAP360
-[0.1808] [INFO] will init 6 : PluginExtend ,Extend360
-[0.1822] [INFO] will init 9 : PluginPlatform ,PlatformWP
-[0.1837] [INFO] will init 10 : PluginIAPSms ,IAPEstore
-[0.1851] [INFO] will init 10 : PluginIAPSms ,IAPYdmm
-[0.1852] [INFO] will init 10 : PluginIAPSms ,IAPUniPay
-[0.1854] [INFO] will init 7 : PluginPush ,PushIGeXin
-[0.1869] [INFO] -----SET PACKAGE NAME:com.hiigame.ddz.android.qh360-----
-[0.1871] [INFO] Will load :SessionGuest
-[0.1872] [INFO] Load Plugin:SessionGuest
-[0.1873] [INFO] Will load :IAP360
-[0.1875] [INFO] Load Plugin:IAP360
-[0.1876] [INFO] Will load :PushIGeXin
-[0.1877] [INFO] Load Plugin:PushIGeXin
-[0.1878] [INFO] Will load :IAPUniPay
-[0.1879] [INFO] Load Plugin:IAPUniPay
-[0.1881] [INFO] Will load :IAPYdmm
-[0.1882] [INFO] Load Plugin:IAPYdmm
-[0.1884] [INFO] Will load :SessionWeibo
-[0.1885] [INFO] Load Plugin:SessionWeibo
-[0.1886] [INFO] Will load :Extend360
-[0.1887] [INFO] Load Plugin:Extend360
-[0.1889] [INFO] Will load :PlatformWP
-[0.1890] [INFO] Load Plugin:PlatformWP
-[0.1891] [INFO] Will load :Session360
-[0.1893] [INFO] Load Plugin:Session360
-[0.1894] [INFO] Will load :IAPEstore
-[0.1895] [INFO] Load Plugin:IAPEstore
-[0.1896] LobbyLogic:resetUserInfo
-[0.1898] LobbyLogic:dispatchLogicEvent dis
-[0.1918] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
-[0.1928] [INFO]  dealing createElement CCLayer as 根节点
-[0.1929] [INFO]  dealing contentSize w:1136,h:757
-[0.1931] [INFO] 	 dealing createElement CCLayerColor as 背景色
-[0.1932] [INFO] 	 dealing contentSize w:1136,h:757
-[0.1933] [INFO] 	 dealing createElement CCSprite as 背景
-[0.1980] [INFO] 	 dealing position x:568,y:379
-[0.1982] [INFO] 	 dealing createElement CCNode as 底栏
-[0.1983] [INFO] 	 dealing contentSize w:1136,h:240
-[0.1984] [INFO] 	 dealing position x:568,y:0
-[0.1986] [INFO] 		 dealing createElement CCScale9Sprite as 九宫格
-[0.1996] [INFO] 		 dealing contentSize w:1136,h:240
-[0.1998] [INFO] 		 dealing position x:568,y:120
-[0.2000] [INFO] 		 dealing createElement CCSprite as NPC
-[0.2064] [INFO] 		 dealing position x:10,y:0
-[0.2068] [INFO] 		 dealing createElement CCLabelTTF as NPC Name
-[0.2084] [INFO] 		 dealing position x:180,y:170
-[0.2086] [INFO] 		 dealing createElement CCNode as 顶栏
-[0.2088] [INFO] 		 dealing contentSize w:1136,h:151
-[0.2089] [INFO] 		 dealing position x:568,y:757
-[0.2091] [INFO] 			 dealing createElement CCSprite as 头像
-[0.2116] [INFO] 			 dealing position x:10,y:141
-[0.2117] [INFO] 			 dealing createElement CCLabelTTF as 名字
-[0.2126] [INFO] 			 dealing position x:180,y:121
-[0.2127] [INFO] 			 dealing createElement CCLabelTTF as 体力
-[0.2133] [INFO] 			 dealing position x:180,y:81
-[0.2134] [INFO] 			 dealing createElement CCLabelTTF as 经验
-[0.2140] [INFO] 			 dealing position x:180,y:41
-[0.2141] [INFO] 			 dealing createElement CCLabelTTF as 钱等
-[0.2147] [INFO] 			 dealing position x:180,y:1
-[0.2148] [INFO] 			 dealing createElement CCControlButton as 人物列表
-[0.2162] [INFO] 			 dealing position x:1086,y:86
-[0.2164] [INFO] 			 dealing createElement CCControlButton as 人物列表
-[0.2177] [INFO] 			 dealing position x:986,y:86
-[0.2179] [INFO] 			 dealing createElement CCControlButton as 人物列表
-[0.2192] [INFO] 			 dealing position x:886,y:86
-[0.2193] [INFO] 			 dealing createElement CCControlButton as 人物列表
-[0.2201] [INFO] 			 dealing position x:786,y:86
-[0.2202] [INFO] 			 dealing createElement CCControlButton as 人物列表
-[0.2208] [INFO] 			 dealing position x:686,y:86
-[0.2210] [INFO] 			 dealing createElement CCControlButton as 人物列表
-[0.2216] [INFO] 			 dealing position x:586,y:86
-[0.2218] [INFO] 			 dealing createElement CCNode as 右栏
-[0.2219] [INFO] 			 dealing position x:1136,y:757
-[0.2221] [INFO] 				 dealing createElement CCLabelTTF as 地点
-[0.2227] [INFO] 				 dealing position x:-10,y:-120
-[0.2228] [INFO] 				 dealing createElement CCControlButton as 人物列表
-[0.2239] [INFO] 				 dealing position x:-70,y:-200
-[0.2241] [INFO] 				 dealing preferedSize w:120,h:80
-[0.2243] [DEPRECATED] Node.registerScriptHandler() is deprecated, please use Node.addNodeEventListener()
-[0.2244] 4  (number)
+Cocos2d: lua_loadChunksFromZIP() - load zip file: /Users/GuoJia/Project/quick/quick-cocos2d-x-2.2.5/lib/framework_precompiled/framework_precompiled.zip
+Cocos2d: lua_loadChunksFromZIP() - loaded chunks count: 108
+Cocos2d: ------------------------------------------------
+Cocos2d: LOAD LUA FILE: /wwwroot/beAStar/mobiClient/scripts/main.lua
+Cocos2d: ------------------------------------------------
+Cocos2d: [0.0235] [INFO] 
+Cocos2d: [0.0236] [INFO] # DEBUG                        = 0
+Cocos2d: [0.0236] [INFO] #
+Cocos2d: [0.0236] [INFO] # device.platform              = mac
+Cocos2d: [0.0236] [INFO] # device.model                 = unknown
+Cocos2d: [0.0236] [INFO] # device.language              = cn
+Cocos2d: [0.0236] [INFO] # device.writablePath          = /wwwroot/beAStar/mobiClient/
+Cocos2d: [0.0236] [INFO] # device.cachePath             = /wwwroot/beAStar/mobiClient/
+Cocos2d: [0.0236] [INFO] # device.directorySeparator    = /
+Cocos2d: [0.0236] [INFO] # device.pathSeparator         = :
+Cocos2d: [0.0236] [INFO] #
+Cocos2d: [0.0248] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_WIDTH
+Cocos2d: [0.0248] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+Cocos2d: [0.0248] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
+Cocos2d: [0.0248] [INFO] # display.widthInPixels        = 1136.00
+Cocos2d: [0.0249] [INFO] # display.heightInPixels       = 640.00
+Cocos2d: [0.0249] [INFO] # display.contentScaleFactor   = 1.00
+Cocos2d: [0.0249] [INFO] # display.width                = 1136.00
+Cocos2d: [0.0249] [INFO] # display.height               = 640.00
+Cocos2d: [0.0249] [INFO] # display.cx                   = 568.00
+Cocos2d: [0.0249] [INFO] # display.cy                   = 320.00
+Cocos2d: [0.0249] [INFO] # display.left                 = 0.00
+Cocos2d: [0.0249] [INFO] # display.right                = 1136.00
+Cocos2d: [0.0249] [INFO] # display.top                  = 640.00
+Cocos2d: [0.0249] [INFO] # display.bottom               = 0.00
+Cocos2d: [0.0249] [INFO] # display.c_left               = -568.00
+Cocos2d: [0.0249] [INFO] # display.c_right              = 568.00
+Cocos2d: [0.0249] [INFO] # display.c_top                = 320.00
+Cocos2d: [0.0249] [INFO] # display.c_bottom             = -320.00
+Cocos2d: [0.0249] [INFO] #
+Cocos2d: [0.0343] [INFO] INIT ResourceManager
+Cocos2d: [0.0362] [INFO] old path------> /
+Cocos2d: [0.0362] [INFO] path check OK------> /wwwroot/beAStar/mobiClient/download/
+Cocos2d: [0.0391] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+Cocos2d: [0.0406] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+Cocos2d: [0.0423] [INFO] BEGIN!!!!!!BaseLogic:run
+Cocos2d: [0.0423] [INFO] BaseLogic:initPluginManager
+Cocos2d: [0.0432] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+Cocos2d: [0.0440] key = replace_text
+Cocos2d: [0.0440] self.distributions====replace_text
+Cocos2d: [0.0440] 炸金花:赢三张|扎金花:赢三张|掌心游:掌心游
+Cocos2d: [0.0441] key = quickpay
+Cocos2d: [0.0441] key = liantong_sms
+Cocos2d: [0.0441] key = banedpay
+Cocos2d: [0.0441] key = logodating
+Cocos2d: [0.0441] key = thirdplatformquickpay
+Cocos2d: [0.0441] key = dianxin_sms
+Cocos2d: [0.0441] key = skipupgrade
+Cocos2d: [0.0442] key = logodenglu
+Cocos2d: [0.0442] key = share
+Cocos2d: [0.0442] key = usetestenv
+Cocos2d: [0.0442] key = toolbar
+Cocos2d: [0.0442] key = yidong_sms
+Cocos2d: [0.0443] key = thirdplatformexitpage
+Cocos2d: [0.0443] key = logoloading
+Cocos2d: [0.0443] key = showPingCoo
+Cocos2d: [0.0443] plugins.t.plist
+Cocos2d: [0.0443] [INFO] will load plugins from plugins.t.plist
+Cocos2d: [0.0444] [INFO] plugins.t.plist not exists
+Cocos2d: [0.0453] [INFO] will init 5 : PluginSession ,SessionGuest
+Cocos2d: [0.0460] [INFO] will init 5 : PluginSession ,SessionWeibo
+Cocos2d: [0.0462] [INFO] will init 5 : PluginSession ,Session360
+Cocos2d: [0.0462] [INFO] will init 3 : PluginIAP ,IAP360
+Cocos2d: [0.0466] [INFO] will init 6 : PluginExtend ,Extend360
+Cocos2d: [0.0470] [INFO] will init 9 : PluginPlatform ,PlatformWP
+Cocos2d: [0.0474] [INFO] will init 10 : PluginIAPSms ,IAPEstore
+Cocos2d: [0.0477] [INFO] will init 10 : PluginIAPSms ,IAPYdmm
+Cocos2d: [0.0478] [INFO] will init 10 : PluginIAPSms ,IAPUniPay
+Cocos2d: [0.0478] [INFO] will init 7 : PluginPush ,PushIGeXin
+Cocos2d: [0.0481] [INFO] -----SET PACKAGE NAME:com.hiigame.ddz.android.qh360-----
+Cocos2d: [0.0481] [INFO] Will load :SessionGuest
+Cocos2d: [0.0481] [INFO] Load Plugin:SessionGuest
+Cocos2d: [0.0481] [INFO] Will load :IAP360
+Cocos2d: [0.0481] [INFO] Load Plugin:IAP360
+Cocos2d: [0.0481] [INFO] Will load :PushIGeXin
+Cocos2d: [0.0481] [INFO] Load Plugin:PushIGeXin
+Cocos2d: [0.0482] [INFO] Will load :IAPUniPay
+Cocos2d: [0.0482] [INFO] Load Plugin:IAPUniPay
+Cocos2d: [0.0482] [INFO] Will load :IAPYdmm
+Cocos2d: [0.0482] [INFO] Load Plugin:IAPYdmm
+Cocos2d: [0.0482] [INFO] Will load :SessionWeibo
+Cocos2d: [0.0482] [INFO] Load Plugin:SessionWeibo
+Cocos2d: [0.0482] [INFO] Will load :Extend360
+Cocos2d: [0.0482] [INFO] Load Plugin:Extend360
+Cocos2d: [0.0482] [INFO] Will load :PlatformWP
+Cocos2d: [0.0482] [INFO] Load Plugin:PlatformWP
+Cocos2d: [0.0482] [INFO] Will load :Session360
+Cocos2d: [0.0482] [INFO] Load Plugin:Session360
+Cocos2d: [0.0482] [INFO] Will load :IAPEstore
+Cocos2d: [0.0482] [INFO] Load Plugin:IAPEstore
+Cocos2d: [0.0482] LobbyLogic:resetUserInfo
+Cocos2d: [0.0482] LobbyLogic:dispatchLogicEvent dis
+Cocos2d: [0.0488] [DEPRECATED] module api.EventProtocol is deprecated, please use cc.components.behavior.EventProtocol
+Cocos2d: [0.0492] [INFO]  dealing createElement CCLayer as 根节点
+Cocos2d: [0.0492] [INFO]  dealing contentSize w:1136,h:640
+Cocos2d: [0.0492] [INFO] 	 dealing createElement CCLayerColor as 背景色
+Cocos2d: [0.0492] [INFO] 	 dealing contentSize w:1136,h:640
+Cocos2d: [0.0493] [INFO] 	 dealing createElement CCSprite as 背景
+Cocos2d: [0.0526] [INFO] 	 dealing position x:568,y:320
+Cocos2d: [0.0526] [INFO] 	 dealing createElement CCNode as 底栏
+Cocos2d: [0.0526] [INFO] 	 dealing contentSize w:1136,h:240
+Cocos2d: [0.0526] [INFO] 	 dealing position x:568,y:0
+Cocos2d: [0.0526] [INFO] 		 dealing createElement CCScale9Sprite as 九宫格
+Cocos2d: [0.0540] [INFO] 		 dealing contentSize w:1136,h:240
+Cocos2d: [0.0540] [INFO] 		 dealing position x:568,y:120
+Cocos2d: [0.0540] [INFO] 		 dealing createElement CCSprite as NPC
+Cocos2d: [0.0578] [INFO] 		 dealing position x:10,y:0
+Cocos2d: [0.0579] [INFO] 		 dealing createElement CCLabelTTF as NPC Name
+Cocos2d: [0.1066] [INFO] 		 dealing position x:180,y:170
+Cocos2d: [0.1066] [INFO] 		 dealing createElement CCNode as 顶栏
+Cocos2d: [0.1066] [INFO] 		 dealing contentSize w:1136,h:128
+Cocos2d: [0.1066] [INFO] 		 dealing position x:568,y:640
+Cocos2d: [0.1066] [INFO] 			 dealing createElement CCSprite as 头像
+Cocos2d: [0.1086] [INFO] 			 dealing position x:10,y:118
+Cocos2d: [0.1086] [INFO] 			 dealing createElement CCLabelTTF as 名字
+Cocos2d: [0.1106] [INFO] 			 dealing position x:180,y:98
+Cocos2d: [0.1107] [INFO] 			 dealing createElement CCLabelTTF as 体力
+Cocos2d: [0.1134] [INFO] 			 dealing position x:180,y:58
+Cocos2d: [0.1134] [INFO] 			 dealing createElement CCLabelTTF as 经验
+Cocos2d: [0.1152] [INFO] 			 dealing position x:180,y:18
+Cocos2d: [0.1152] [INFO] 			 dealing createElement CCLabelTTF as 钱等
+Cocos2d: [0.1170] [INFO] 			 dealing position x:180,y:-22
+Cocos2d: [0.1170] [INFO] 			 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1264] [INFO] 			 dealing position x:1086,y:74
+Cocos2d: [0.1265] [INFO] 			 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1292] [INFO] 			 dealing position x:986,y:74
+Cocos2d: [0.1292] [INFO] 			 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1315] [INFO] 			 dealing position x:886,y:74
+Cocos2d: [0.1315] [INFO] 			 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1323] [INFO] 			 dealing position x:786,y:74
+Cocos2d: [0.1324] [INFO] 			 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1330] [INFO] 			 dealing position x:686,y:74
+Cocos2d: [0.1330] [INFO] 			 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1337] [INFO] 			 dealing position x:586,y:74
+Cocos2d: [0.1337] [INFO] 			 dealing createElement CCNode as 右栏
+Cocos2d: [0.1337] [INFO] 			 dealing position x:1136,y:640
+Cocos2d: [0.1338] [INFO] 				 dealing createElement CCLabelTTF as 地点
+Cocos2d: [0.1359] [INFO] 				 dealing position x:-10,y:-120
+Cocos2d: [0.1359] [INFO] 				 dealing createElement CCControlButton as 人物列表
+Cocos2d: [0.1378] [INFO] 				 dealing position x:-70,y:-200
+Cocos2d: [0.1378] [INFO] 				 dealing preferedSize w:120,h:80
+Cocos2d: [0.1379] [DEPRECATED] Node.registerScriptHandler() is deprecated, please use Node.addNodeEventListener()
+Cocos2d: [0.1379] 4  (number)
 
-[0.2245] moduleLobby_LocationScene  (string)
+Cocos2d: [0.1379] moduleLobby_LocationScene  (string)
 
-[0.2246]   (string)
+Cocos2d: [0.1379]   (string)
 
-[0.2248] sharedDirector:runWithScene
-[0.2262] ----LocationScene: on enter------------
-[0.2270] ----LocationScene: on enterTransitionFinish------------
-[0.2271] enterTransitionFinish
-[0.2272] nil  (nil)
+Cocos2d: [0.1380] sharedDirector:runWithScene
+Cocos2d: [0.3460] ----LocationScene: on enter------------
+Cocos2d: [0.3463] ----LocationScene: on enterTransitionFinish------------
+Cocos2d: [0.3463] enterTransitionFinish
+Cocos2d: [0.3464] nil  (nil)
 
-[0.2273] [DEPRECATED] Layer.addKeypadEventListener() is deprecated, please use Layer.addNodeEventListener()
-[0.2275] BasePage:run
-[0.2276] [INFO] checkLogin!!
-[0.2279] view onFinishedTransition
-[0.2603] LobbyLogic:resetUserInfo
-[0.2605] LobbyLogic:dispatchLogicEvent dis
-[0.2606] [INFO] Who Block ME!!!
-[0.2608] [INFO] blockUI:scene:nil
-[0.2612] [DEPRECATED] Node.registerScriptTouchHandler() is deprecated, please use Node.addNodeEventListener()
-[0.2731] [INFO] Who Block ME!!!
-[0.2733] [INFO] ---In Block UI already!
-[0.2735] [INFO] THANKS TO UNBlock ME!!!
-[0.2739] [DEPRECATED] Node.registerScriptTouchHandler() is deprecated, please use Node.addNodeEventListener()
-[0.2818] autoUnblock onBlockUIFail
-[6.4902] [ERR] SceneManager:onBlockUIFail
-[6.4907] 
+Cocos2d: [0.3464] [DEPRECATED] Layer.addKeypadEventListener() is deprecated, please use Layer.addNodeEventListener()
+Cocos2d: [0.3464] BasePage:run
+Cocos2d: [0.3464] [INFO] checkLogin!!
+Cocos2d: [0.3466] view onFinishedTransition
+Cocos2d: [0.4751] LobbyLogic:resetUserInfo
+Cocos2d: [0.4752] LobbyLogic:dispatchLogicEvent dis
+Cocos2d: [0.4752] [INFO] Who Block ME!!!
+Cocos2d: [0.4752] [INFO] blockUI:scene:nil
+Cocos2d: [0.4754] [DEPRECATED] Node.registerScriptTouchHandler() is deprecated, please use Node.addNodeEventListener()
+Cocos2d: [0.4904] [INFO] Who Block ME!!!
+Cocos2d: [0.4904] [INFO] ---In Block UI already!
+Cocos2d: [0.4904] [INFO] THANKS TO UNBlock ME!!!
+Cocos2d: [0.4905] [DEPRECATED] Node.registerScriptTouchHandler() is deprecated, please use Node.addNodeEventListener()
+Cocos2d: [0.4991] autoUnblock onBlockUIFail
+Cocos2d: [6.8049] [ERR] SceneManager:onBlockUIFail
+Cocos2d: [6.8050] 
 stack traceback:
-	[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:839: in function <[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:838>
-[6.4911] [INFO] THANKS TO UNBlock ME!!!
-[6.4917] ====请求服务器失败:::网络错误
-[6.4935] MessageRstBox  table  table
-Get data from file(interfaces/MessageRstBox.ccbi) failed!
-[6.4956] ----------------------------------------
-[6.4959] LUA ERROR: [string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseView.lua"]:153: attempt to index field 'nodePopBox' (a nil value)
+	[string "/wwwroot/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:839: in function <[string "/wwwroot/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:838>
+Cocos2d: [6.8050] [INFO] THANKS TO UNBlock ME!!!
+Cocos2d: [6.8051] ====请求服务器失败:::网络错误
+Cocos2d: [6.8056] MessageRstBox  table  table
+Cocos2d: [6.8058] [INFO] 				 dealing createElement CCNode as 根节点
+Cocos2d: [6.8058] [INFO] 				 dealing contentSize w:600,h:400
+Cocos2d: [6.8059] [INFO] 					 dealing createElement CCSprite as 背景
+Cocos2d: [6.8127] [INFO] 					 dealing position x:300,y:200
+Cocos2d: [6.8127] [INFO] 					 dealing createElement CCLabelTTF as 文字1
+Cocos2d: [6.8142] [INFO] 					 dealing position x:300,y:360
+Cocos2d: [6.8142] [INFO] 					 dealing createElement CCLabelTTF as info
+Cocos2d: [6.8155] [INFO] 					 dealing position x:300,y:200
+Cocos2d: [6.8156] [INFO] 					 dealing createElement CCControlButton as 按钮2
+Cocos2d: [6.8189] [INFO] 					 dealing position x:300,y:40
+Cocos2d: [6.8190] [INFO] 					 dealing preferedSize w:182,h:49
+Cocos2d: [6.8191] self.maskLayerColor:setTouchEnabled
+Cocos2d: [6.8191] [DEPRECATED] Node.addTouchEventListener() is deprecated, please use Node.addNodeEventListener()
+Cocos2d: [6.8191] [DEPRECATED] Node.addTouchEventListener() is deprecated, please use Node.addNodeEventListener()
+Cocos2d: [6.8191] [DEPRECATED] Node.addTouchEventListener() is deprecated, please use Node.addNodeEventListener()
+Cocos2d: [6.8231] self.maskLayerColor:setTouchEnabled1
+Cocos2d: [6.8231] userdata: 0x149f4ba8  (userdata)
 
-[6.4962] 
+Cocos2d: [6.8232] nil  9999
+Cocos2d: [6.8232] 12334
+Cocos2d: [8.4019] ----------------------------------------
+Cocos2d: [8.4019] LUA ERROR: [string "/wwwroot/beAStar/mobiClient/scripts/moduleLobby/views/MessageRstBox.lua"]:16: attempt to call method 'closePopBox' (a nil value)
+
+Cocos2d: [8.4019] 
 stack traceback:
-	[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseView.lua"]:153: in function 'showPopBoxCCB'
-	[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseLogic.lua"]:1289: in function 'showMessageRstBox'
-	[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:850: in function 'izxMessageBox'
-	[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:841: in function <[string "Z:/data/Codes/beAStar/mobiClient/scripts/izxFW/BaseFunctions.lua"]:838>
-[6.4966] ----------------------------------------
+	[string "/wwwroot/beAStar/mobiClient/scripts/moduleLobby/views/MessageRstBox.lua"]:16: in function <[string "/wwwroot/beAStar/mobiClient/scripts/moduleLobby/views/MessageRstBox.lua"]:15>
+	[string "framework.cc.components.behavior.EventProtocol"]: in function 'dispatchEvent'
+	[string "framework.cc.ui.UIPushButton"]: in main chunk
+Cocos2d: [8.4019] ----------------------------------------
