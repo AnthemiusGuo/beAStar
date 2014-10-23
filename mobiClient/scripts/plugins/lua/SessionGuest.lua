@@ -18,11 +18,16 @@ function SessionGuest:getUuid()
 	end
 end
 
-function SessionGuest:sessionLogin()
-	gBaseLogic:blockUI();
-	self:getUuid();
-	
+function SessionGuest:onPressCancelLogin()
 
+end
+
+function SessionGuest:sessionLogin()
+	echoInfo("SessionGuest:sessionLogin");
+	gBaseLogic:blockUI({autoUnblock=false,msg=LOGIN_LOADING_TIPS1,hasCancel=false});
+	self:getUuid();
+	echoInfo("self:getUuid %s",self.uuid);
+	
 end
 
 return SessionGuest;
