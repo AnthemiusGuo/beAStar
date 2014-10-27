@@ -3,6 +3,7 @@ local SessionGuest = class("SessionGuest",BaseClass);
 
 function SessionGuest:ctor()
 	SessionGuest.super.ctor();
+	CCFileUtils:sharedFileUtils():addSearchPath("res/pluginRes/");
 end
 
 function SessionGuest:getUuid()
@@ -27,7 +28,8 @@ function SessionGuest:sessionLogin()
 	gBaseLogic:blockUI({autoUnblock=false,msg=LOGIN_LOADING_TIPS1,hasCancel=false});
 	self:getUuid();
 	echoInfo("self:getUuid %s",self.uuid);
-	
+	self.mainPanel = require("plugins.lua.views.SessionGuestMain").new({},gBaseLogic.sceneManager.currentPage.view);
+    gBaseLogic.sceneManager.currentPage.view:showPopBoxCCJ("interfaces/sessionGuestMain.json",self.mainPanel,true,0,1);
 end
 
 return SessionGuest;
