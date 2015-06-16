@@ -23,7 +23,7 @@
 
 include_once FR."functions/common/common.func.php";
 include_once FR.'functions/common/mongo.func.php';
-include_once FR.'functions/common/redis.func.php';
+// include_once FR.'functions/common/redis.func.php';
 include_once FR.'functions/common/cache_info.func.php';
 
 function return_not_exist(){

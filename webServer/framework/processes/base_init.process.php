@@ -136,7 +136,10 @@ $g_debug_info = array();
 ** 载入其他基本文件
 */
 include_once AR.'config/server/'.$g_server_name.'.config.php';
-include_once FR.'processes/lang.init.process.php';
+if (!$g_server_name=='local'){
+    include_once FR.'processes/lang.init.process.php';
+}
+
 include_once AR.'functions/common/base.func.php';
 
 if ($is_testing){
@@ -145,4 +148,4 @@ if ($is_testing){
 
 base_prepare();
 mongo_connect();
-redis_connect();
+// redis_connect();
