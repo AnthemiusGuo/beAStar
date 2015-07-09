@@ -23,8 +23,14 @@
 
 include_once FR."functions/common/common.func.php";
 include_once FR.'functions/common/mongo.func.php';
-// include_once FR.'functions/common/redis.func.php';
+include_once FR.'functions/common/redis.func.php';
 include_once FR.'functions/common/cache_info.func.php';
+
+function show_error($str='',$httpStatus=500)
+{
+    echo $str;
+    exit;
+}
 
 function return_not_exist(){
     global $g_view,$g_module,$g_action;
@@ -41,7 +47,7 @@ function return_not_exist(){
 function return_not_open(){
     global $game_www_url,$config;
     header('Location: '.$game_www_url.'?m=index&a=not_open&open_zeit='.$config['game_start'].'&server='.urlencode($config['srv_name']));
-    exit; 
+    exit;
 }
 
 function return_maintain_work($view){
@@ -79,7 +85,7 @@ function return_maintain_work($view){
 
 function return_no_login($g_view){
     //exit;
-    global $game_www_url,$text_function_text,$mix_index,$_GET;
+    global $game_www_url,$text_function_text,$mix_index,$_GET,$app_config;
 	//var_dump($_GET);
 	//exit;
 	$json_rst = array('rstno'=>-99,'error'=>"你没有登录");
@@ -101,15 +107,16 @@ function return_no_login($g_view){
 			$this_jump_url .= "?".$plus_str;
 		}
 	}
-	
+
     if ($g_view == PAGE) {
-		$this_jump_url = '?m=account&a=login';
+
+		$this_jump_url = site_url($app_config['not_login_uri']);
 		header('Location: '.$this_jump_url );
-		exit; 
+		exit;
     } elseif ($g_view == HTML) {
 		print
 		'<script language="javascript" type="text/javascript">
-           window.location.href="'.$this_jump_url.'"; 
+           window.location.href="'.$this_jump_url.'";
 		</script>';
 		exit;
     } elseif ($g_view == JSON) {
@@ -125,21 +132,23 @@ function return_no_login($g_view){
 
             print json_encode($json_rst);
         }
-        
+
 	exit;
     }
     exit;
 }
 
 function return_logined($view){
+    print($view);exit;
     global $game_index_url,$text_function_text;
     if ($view == PAGE) {
-	header('Location: '.$game_index_url );
-	exit; 
+
+        header('Location: '.$game_index_url );
+	    exit;
     } elseif ($view == HTML) {
     	print
 		'<script language="javascript" type="text/javascript">
-           window.location.href="'.$game_index_url.'"; 
+           window.location.href="'.$game_index_url.'";
 		</script>';
 	exit;
     } elseif ($view == JSON) {
@@ -202,17 +211,17 @@ function base_check_user_online($uid,$typ=1){
 
 function base_gen_att_def_display($att,$def,$show='team',$max_width=285){
     //$att = 9000;
-    //$def = 8000;	
+    //$def = 8000;
     if ($show=='team'){
-	$max = 10000; 
+	$max = 10000;
     } else {
-	$max = 1000; 
+	$max = 1000;
     }
     $att_width = ($att>$max)?$max_width:round($att/$max*$max_width);
     $def_width = ($def>$max)?$max_width:round($def/$max*$max_width);
 	//$att_left = gen_team_img_left_deff($att,$att_width,$show,0);
 	//$def_left = gen_team_img_left_deff($def,$def_width,$show,1);
-	
+
     if($max_width==122){
             //$att_left = ($att>=$max)?40:round(($att)/$max*$max_width-30);
             //$def_left = ($def>=$max)?35:round(($def)/$max*$max_width-30);
@@ -222,14 +231,14 @@ function base_gen_att_def_display($att,$def,$show='team',$max_width=285){
         $att_left = gen_team_img_left_deff($att,$att_width,$show,$max_width,0);
         $def_left = gen_team_img_left_deff($def,$def_width,$show,$max_width,1);
     }
-    
+
     //$att_right = ($att>$max)?0:min(round(($max-$att)/$max*$max_width-30),$max_width-70);
     //$def_right = ($def>$max)?0:min(round(($max-$def)/$max*$max_width-35),$max_width-65);
- 
+
     //var_dump($att_right,$def_right,$max,$def,round(($max-$def)/$max*$max_width-40),$max_width-70);
     //exit;
     $str = '<div class="attack_defend_bar_blue"><div class="attack_bar" style="width:'.$att_width.'px;"><span class="attack_player_img" style="left:0px;">'._('进攻:').$att.'</span></div></div>';
-    $str .= '<div class="attack_defend_bar_red"><div class="defend_bar" style="width:'.$def_width.'px;"><span class="defend_player_img" style="left:0px;">'._('防守:').$def.'</span></div></div>';   
+    $str .= '<div class="attack_defend_bar_red"><div class="defend_bar" style="width:'.$def_width.'px;"><span class="defend_player_img" style="left:0px;">'._('防守:').$def.'</span></div></div>';
     return $str;
 }
 function gen_team_img_left_deff($value,$width_diff,$show,$max_width,$flag){//$flag>=2在tooltip中
@@ -285,14 +294,14 @@ function gen_team_img_left_deff($value,$width_diff,$show,$max_width,$flag){//$fl
 					$diff_left = -22;
 				}else{
 					$diff_left = -16;
-				}			
+				}
 			}else{
-				$diff_left = $width_diff-65;			
+				$diff_left = $width_diff-65;
 			}
 			if($flag==0){
 				$diff_left += 5;
 			}
-			
+
 			if($diff_left>$max_width-81){
 				if($flag==0){
 					$diff_left = $max_width-81;
@@ -324,7 +333,7 @@ function base_update_update_board(){
     $sql = "SELECT *
             FROM feed_notice WHERE id=1";
     $rst = mysql_w_query($sql);
-    $update_info = mysql_fetch_assoc($rst);   
+    $update_info = mysql_fetch_assoc($rst);
     base_set_update_board($update_info);
     db_connect();
     return 0;
@@ -366,7 +375,7 @@ function stop_page_log()
     	$sql = "INSERT INTO st_page_op (module,action,pv,escape,access_mode) VALUES ('$g_module','$g_action',1,$escape,$g_access_mode)";
     	mysql_x_query($sql);
     }
- 
-} 
+
+}
 }
 ?>

@@ -5,33 +5,41 @@ author:
 date:
 使用说明：不同服务器的具体配置在这里配，缺省配置在default.config.php中
 */
- 
+
 //数据库配置
 
 //$config['dbhost1'] =  '192.168.1.31';
-$config['dbhost1'] =  '192.168.78.137';
-$config['dbhost1'] =  '127.0.0.1';
-$config['dbport1'] = '3306';
+$app_config['dbhost1'] =  '192.168.78.137';
+$app_config['dbhost1'] =  '127.0.0.1';
+$app_config['dbport1'] = '3306';
 
-$config['dbdb1'] = 'card_game';
-$config['dbuser'] = 'test';
-$config['dbpwd'] = 'test';
+$app_config['dbdb1'] = 'card_game';
+$app_config['dbuser'] = 'test';
+$app_config['dbpwd'] = 'test';
 
-$config['mongo']['host'] =  '127.0.0.1';
-$config['mongo']['port'] = '27017';
+$app_config['mongo']['host'] =  '127.0.0.1';
+$app_config['mongo']['port'] = '27017';
 
-$config['mongo']['db'] = 'beStar';
-$config['mongo']['user'] = 'test';
-$config['mongo']['pwd'] = 'test';
+$app_config['mongo']['db'] = 'beStar';
+$app_config['mongo']['user'] = '';
+$app_config['mongo']['pass'] = '';
+/*
+ * Defaults to FALSE. If FALSE, the program continues executing without waiting for a database response.
+ * If TRUE, the program will wait for the database response and throw a MongoCursorException if the update did not succeed.
+*/
+$app_config['mongo']['query_safety'] = 1;
 
-$config['redis']['host'] = '127.0.0.1';
-$config['redis']['port'] = '6379';
+//If running in auth mode and the user does not have global read/write then set this to true
+$app_config['mongo']['db_flag'] = TRUE;
+
+$app_config['redis']['host'] = '127.0.0.1';
+$app_config['redis']['port'] = '6379';
 
 
-$config['mcache']['host'] =  '192.168.78.137';
-$config['mcache']['host'] =  '127.0.0.1';
-$config['mcache']['port'] = '11211';
-$config['mcache']['version'] =  0;
+$app_config['mcache']['host'] =  '192.168.78.137';
+$app_config['mcache']['host'] =  '127.0.0.1';
+$app_config['mcache']['port'] = '11211';
+$app_config['mcache']['version'] =  0;
 
 $config['lobby'] = array(
 	'lobby-server-1'=>	array("id"=>'lobby-server-1',
@@ -53,10 +61,10 @@ $sys_id = 1;
 $zone_id = 0;
 $g_server_id = 1;
 $public_key = "XWR555";
- 
+
 
 $game_index_url = './';
- 
+
 $game_www_url = 'demo.php'; //英文登录页
 //
 define('COOKIE_DOMAIN','s3.app100640938.qqopenapp.com');
@@ -79,9 +87,9 @@ $g_lang = 'zh_CN';
 
 //预合服状态
 $cfg_before_merge = false;
- 
+
 $g_lang = 'en_US';
- 
+
 
 $g_default_name_nid = 27;
 

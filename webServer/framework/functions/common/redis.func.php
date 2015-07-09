@@ -3,10 +3,10 @@ $redis_flag = 0;
 $redis = null;
 
 function redis_connect(){
-    global $config,$redis_flag,$redis;
+    global $app_config,$redis_flag,$redis;
     if ($redis_flag != 1) {
-        $redis=new Redis() or die("Can not load redis."); 
-        $redis->connect($config['redis']['host'],$config['redis']['port']); 
+        $redis=new Redis() or die("Can not load redis.");
+        $redis->connect($app_config['redis']['host'],$app_config['redis']['port']);
         $redis_flag = 1;
     }
 
@@ -85,7 +85,7 @@ function redis_get_cache($key,$typ,$is_user=1,$special_refresh_interval=0)
             if ($ts - $rst['last_sync_memcache_zeit'] > $session_config['memcache_sync_time']) {
                 $rst['last_sync_memcache_zeit'] = $ts;
                 memcache_version_set($memcache_obj, md5($sys_id.'_'.$key.'_'.$typ),$rst,MEMCACHE_COMPRESSED,$session_config['memcache_store_time']);
-                $rst['sync_memcache']=1;    
+                $rst['sync_memcache']=1;
             }
             if ($special_refresh_interval!=0){
                 $out_of_date_time = $special_refresh_interval;
@@ -95,21 +95,21 @@ function redis_get_cache($key,$typ,$is_user=1,$special_refresh_interval=0)
                 $out_of_date_time = $session_config['update_global_cache_time'];
             }
             if ($ts - $rst['last_update_zeit'] > $out_of_date_time) {
-    
+
                 if ($special_refresh_interval!=0){
-    
+
                     $rst['last_update_zeit'] = $ts;
-    
+
                     $rst['last_sync_memcache_zeit'] = $ts;
-    
+
                     memcache_version_set($memcache_obj, md5($sys_id.'_'.$key.'_'.$typ),$rst,MEMCACHE_COMPRESSED,$session_config['memcache_store_time']);
-    
+
                 }
-    
+
                 return -2;
-    
+
             } else {
-                return $rst;    
+                return $rst;
             }
         } else {
             return -1;

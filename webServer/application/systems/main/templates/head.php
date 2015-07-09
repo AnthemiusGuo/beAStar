@@ -1,62 +1,18 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Demo</title>
-    <meta charset="utf-8" />
-    <script src="js/appframework.min.js"></script>
-    <script src="js/demo.js"></script>
-    <style>
-        body{
-            background: #333;
-        }
-        .fl{float: left;}
-        #wrap{
-            width:960px;
-            margin: 0 auto;
-            background: #F0F0F0;
-        }
-        .content{
-            padding: 10px;
-        }
-        .box{
-            float: left;
-            width: 150px;
-            height: 100px;
-            border: 1px solid #CCC;
-            margin: 10px;
-        }
-        .box_title{
-            width:100%;
-            background: #333;
-            color: #F0F0F0;
-            text-align: center;
-            font-weight:bold;
-        }
-        .clear{
-            clear: both;
-        }
-        .c_r{
-            color: #FF0000;
-            font-weight: bold;
-        }
-        .c_g{
-            color: #00FF00;
-            font-weight: bold;
-        }
-        .c_y{
-            color: #FFFF00;
-            font-weight: bold;
-        }
-        .c_b{
-            color: #0000FF;
-            font-weight: bold;
-        }
-    </style>
-    <script>
-        var uid = <?php echo $uid; ?>;
-        var sid = '<?php echo $sid; ?>';
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TEST</title>
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="js/lib.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script type="text/javascript">
+    var req_url_template = '<?=site_url('{ctrller}/{action}')?>';
     </script>
 </head>
 <body>
-    <div id="wrap">
-        <div class="content">

@@ -1,10 +1,3 @@
-        </div>
-    </div>
-    <script>
-        $(function(){
-           get_my_uuid();
-           setInterval(real_cd,1000);
-        });
-    </script>
+
 </body>
 </html>

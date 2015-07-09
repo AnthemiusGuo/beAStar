@@ -23,21 +23,27 @@
 /*
 ** 目录处理I
 */
+
 define('IR', dirname(dirname(dirname( __FILE__))).'/');
+define('BASEPATH', IR);
 define('FR', IR.'/framework/');
 define('AR', IR.'/application/');
 
-function __autoload($classname) { 
+function __autoload($classname) {
     $classname = strtolower($classname);
     if (file_exists(AR.'classes'.'/'.$classname.'.class.php'))
     {
-        require_once (AR.'classes'.'/'.$classname.'.class.php'); 
-    } else {
-        require_once (FR.'classes'.'/'.$classname.'.class.php'); 
+        require_once (AR.'classes'.'/'.$classname.'.class.php');
+    } else if (file_exists(FR.'classes'.'/'.$classname.'.class.php'))
+    {
+        require_once (FR.'classes'.'/'.$classname.'.class.php');
     }
-} 
+}
 
 include_once FR.'functions/common/framework.func.php';
+include_once FR.'functions/common/loader.func.php';
+
+include_once AR.'functions/common/base.func.php';
 
 $seed = rand();
 mt_srand($seed);
@@ -59,9 +65,12 @@ if (isset($g_access_mode) && ($g_access_mode==1 || $g_access_mode==2)){
 
 
 
-//set default 补上被省略的system，module，action，format
+
+
+include_once FR.'config/default.config.php';
 include_once AR.'config/application.config.php';
 
+//set default 补上被省略的system，module，action，format
 $g_server_name = 'local';
 $g_system = $app_config['default_system'];
 $g_module = 'index';
@@ -76,29 +85,81 @@ if ($g_access_mode!=-2) {
     }
 }
 
-if(empty($_REQUEST['s']))
+$g_input = new Input();
+
+$g_uri = new Uri();
+$g_uri->_fetch_uri_string();
+// Is there a URI string? If not, the default controller specified in the "routes" file will be shown.
+if ($g_uri->uri_string == '')
 {
-    $_REQUEST['s'] = $g_system;
+
 } else {
-    if (isset($app_allow_system[$_REQUEST['s']]) ) {
-        $g_system = addslashes($_REQUEST['s']);;
+
+}
+
+// Do we need to remove the URL suffix?
+$g_uri->_remove_url_suffix();
+
+// Compile the segments into an array
+$g_uri->_explode_segments();
+if (isset($g_uri->segments[0])){
+
+    if (isset($app_allow_system[$g_uri->segments[0]]) ) {
+        $g_system = $g_uri->segments[0];
+        if (isset($g_uri->segments[1])){
+            $g_module = $g_uri->segments[1];
+        }
+        if (isset($g_uri->segments[2])){
+            $g_action = $g_uri->segments[2];
+        }
+
+        $g_reqs = array();
+        if (count($g_uri->segments)>3){
+            for ($i=3; $i < count($g_uri->segments); $i++) {
+                $g_reqs[] = $g_uri->segments[$i];
+            }
+        }
+    } else {
+        if (isset($g_uri->segments[0])){
+            $g_module = $g_uri->segments[0];
+        }
+        if (isset($g_uri->segments[1])){
+            $g_action = $g_uri->segments[1];
+        }
+
+        $g_reqs = array();
+        if (count($g_uri->segments)>2){
+            for ($i=2; $i < count($g_uri->segments); $i++) {
+                $g_reqs[] = $g_uri->segments[$i];
+            }
+        }
     }
 }
 
-if(!isset($_REQUEST['m']))
-{
-    $_REQUEST['m'] = $g_module;
-} else {
-    $g_module = addslashes($_REQUEST['m']);
-}
 
-if(!isset($_REQUEST['a']))
-{
-    $_REQUEST['a'] = $g_action;
-    
-} else {
-    $g_action = addslashes($_REQUEST['a']);
-}
+// if(empty($_REQUEST['s']))
+// {
+//     $_REQUEST['s'] = $g_system;
+// } else {
+//     if (isset($app_allow_system[$_REQUEST['s']]) ) {
+//         $g_system = addslashes($_REQUEST['s']);;
+//     }
+// }
+
+// if(!isset($_REQUEST['m']))
+// {
+//     $_REQUEST['m'] = $g_module;
+// } else {
+//     $g_module = addslashes($_REQUEST['m']);
+// }
+
+// if(!isset($_REQUEST['a']))
+// {
+//     $_REQUEST['a'] = $g_action;
+
+// } else {
+//     $g_action = addslashes($_REQUEST['a']);
+// }
 
 if(isset($_REQUEST['format']))
 {
@@ -108,6 +169,11 @@ if(isset($_REQUEST['format']))
         $g_view = JSON;
     } elseif ($_REQUEST['format']=='page') {
         $g_view = PAGE;
+    }
+} else {
+    if (strpos($g_action, 'do') === 0){
+        //以 do 什么打头的，一律认为是 json 请求
+        $g_view = JSON;
     }
 }
 
@@ -140,12 +206,13 @@ if (!$g_server_name=='local'){
     include_once FR.'processes/lang.init.process.php';
 }
 
-include_once AR.'functions/common/base.func.php';
-
 if ($is_testing){
     ini_set('display_errors','On');
 }
 
 base_prepare();
-mongo_connect();
-// redis_connect();
+
+include_once(FR.'thirdparty/cimongo/Cimongo.php');
+$g_mongo = new Cimongo();
+// mongo_connect();
+redis_connect();

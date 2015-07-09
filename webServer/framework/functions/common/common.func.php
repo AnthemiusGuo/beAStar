@@ -25,7 +25,7 @@
 function call_remote_by_curl($url_str)
 {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url_str ); 
+    curl_setopt($ch, CURLOPT_URL, $url_str );
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     $remote_result = curl_exec($ch);
 
@@ -49,11 +49,11 @@ function call_remote_by_curl_post($url_str,$post_data)
         }
         $curlPosts = implode('&', $curlPost);
     }
-    curl_setopt($ch, CURLOPT_URL, $url_str ); 
+    curl_setopt($ch, CURLOPT_URL, $url_str );
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    
+
     curl_setopt($ch, CURLOPT_HEADER, 0);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPosts);
@@ -105,7 +105,7 @@ function _cmp_ip_addr($a,$b){
 }
 
 function common_get_ip_addr($ip){
-    $sql = "SELECT * FROM  `s_ip` 
+    $sql = "SELECT * FROM  `s_ip`
 	    WHERE  `ip_from` <=$ip
 	    AND  `ip_to` >=$ip";
     $rst = mysql_x_query($sql);
@@ -135,7 +135,7 @@ function check_input($arr,$input_typ='GET') {
             if (!isset($_GET[$this_value])) {
                     return $this_value;
             }
-        }	
+        }
     } else {
         foreach ($arr as $this_value) {
             if ($this_value=='') {
@@ -167,18 +167,18 @@ function build_return_url($rst_typ,$ext_rst,$callback='',$url=''){
         $callback .="&callback=$callback";
     }
 	if ($url!='') {
-		
-	}	
+
+	}
 	elseif (isset($_SERVER['HTTP_REFERER'])) {
-		$url = $_SERVER['HTTP_REFERER'];	
+		$url = $_SERVER['HTTP_REFERER'];
 	} else {
 		$url = 'index.php';
 	}
-	
+
 	$url = preg_replace('/rst=\w*/', '', $url);
 	$url = preg_replace('/ext_rst=\w*/', '', $url);
 	$url = preg_replace('/callback=\w*/', '', $url);
-	
+
     if(preg_match('/\?/',$url))
 	{
 		if(!preg_match('/[?&]$/',$url))
@@ -218,7 +218,7 @@ function common_format_time($atime){
     $H = intval($atime /3600);
     $M = intval(($atime%3600)/60);
     $S = $atime%60;
-    
+
     if ($H<10){$H = '0'.$H;}else{$H = $H;}
     if ($M<10){$M = '0'.$M;}else{$M = $M;}
     if ($S<10){$S = '0'.$S;}else{$S = $S;}
@@ -260,21 +260,21 @@ function sysSubStr($str,$len,$append = false)
 		if (!isset($chars[$i])){
 			break;
 		}
-        if (preg_match ("/[0-9a-zA-Z]/", $chars[$i])){//纯英文   
-            $m++;   
-		}   
+        if (preg_match ("/[0-9a-zA-Z]/", $chars[$i])){//纯英文
+            $m++;
+		}
 		else
 		{
 			$n++;
-		}//非英文字节,   
-        $k = $n/3+$m/2;   
+		}//非英文字节,
+        $k = $n/3+$m/2;
         $l = $n/3+$m;//最终截取长度；$l = $n/3+$m*2？
 		if ($l>=$len_org){
 			break;
 		}
-        $i++;   
+        $i++;
     } while($k < $len);
-	
+
 	if ($l<$len){
 		return $str;
 	} else {
@@ -288,7 +288,7 @@ function sysSubStr($str,$len,$append = false)
 		}
         return $str;
 	}
-} 
+}
 
 
 /*
@@ -340,7 +340,7 @@ function get_saturday_in_month($time , $week, $nth=1)
     $date_array = getdate($time);
     $f_t = ($time - $time%86400) - 86400*($date_array['mday']-1);   // 月份第一天
     $last_t = date('t', $f_t);  // 此月的天数
-    
+
     $w = getdate($f_t);
     $wday = $w['wday'];
     $w_array = array();
@@ -370,7 +370,7 @@ function base_prepare() {
     date_default_timezone_set('Etc/GMT-8');
 }
 
- 
+
 
 //格式化倒计时需要的时间，带天的
 function format_need_time($atime){
@@ -390,7 +390,7 @@ function format_date_time($time,$typ){
         //2009-12-12 00:00:00
         return date('Y-m-d H:i:s',$time);
     } elseif ($typ == 2){
-        return date('m-d H:i:s',$time);	
+        return date('m-d H:i:s',$time);
     } elseif ($typ == 3)
     {
         return date('H:i:s',$time);
@@ -410,84 +410,84 @@ function convert_decbin($number,$length){
 
 
 
-function RGB_TO_HSV ($R, $G, $B)  // RGB Values:Number 0-255 
-{                                 // HSV Results:Number 0-1 
-   $HSL = array(); 
+function RGB_TO_HSV ($R, $G, $B)  // RGB Values:Number 0-255
+{                                 // HSV Results:Number 0-1
+   $HSL = array();
 
-   $var_R = ($R / 255); 
-   $var_G = ($G / 255); 
-   $var_B = ($B / 255); 
+   $var_R = ($R / 255);
+   $var_G = ($G / 255);
+   $var_B = ($B / 255);
 
-   $var_Min = min($var_R, $var_G, $var_B); 
-   $var_Max = max($var_R, $var_G, $var_B); 
-   $del_Max = $var_Max - $var_Min; 
+   $var_Min = min($var_R, $var_G, $var_B);
+   $var_Max = max($var_R, $var_G, $var_B);
+   $del_Max = $var_Max - $var_Min;
 
-   $V = $var_Max; 
+   $V = $var_Max;
 
-   if ($del_Max == 0) 
-   { 
-      $H = 0; 
-      $S = 0; 
-   } 
-   else 
-   { 
-      $S = $del_Max / $var_Max; 
+   if ($del_Max == 0)
+   {
+      $H = 0;
+      $S = 0;
+   }
+   else
+   {
+      $S = $del_Max / $var_Max;
 
-      $del_R = ( ( ( $var_Max - $var_R ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max; 
-      $del_G = ( ( ( $var_Max - $var_G ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max; 
-      $del_B = ( ( ( $var_Max - $var_B ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max; 
+      $del_R = ( ( ( $var_Max - $var_R ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
+      $del_G = ( ( ( $var_Max - $var_G ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
+      $del_B = ( ( ( $var_Max - $var_B ) / 6 ) + ( $del_Max / 2 ) ) / $del_Max;
 
-      if      ($var_R == $var_Max) $H = $del_B - $del_G; 
-      else if ($var_G == $var_Max) $H = ( 1 / 3 ) + $del_R - $del_B; 
-      else if ($var_B == $var_Max) $H = ( 2 / 3 ) + $del_G - $del_R; 
+      if      ($var_R == $var_Max) $H = $del_B - $del_G;
+      else if ($var_G == $var_Max) $H = ( 1 / 3 ) + $del_R - $del_B;
+      else if ($var_B == $var_Max) $H = ( 2 / 3 ) + $del_G - $del_R;
 
-      if ($H<0) $H++; 
-      if ($H>1) $H--; 
-   } 
+      if ($H<0) $H++;
+      if ($H>1) $H--;
+   }
 
-   $HSL['H'] = $H; 
-   $HSL['S'] = $S; 
-   $HSL['V'] = $V; 
+   $HSL['H'] = $H;
+   $HSL['S'] = $S;
+   $HSL['V'] = $V;
 
-   return $HSL; 
-} 
-
-function HSV_TO_RGB ($H, $S, $V)  // HSV Values:Number 0-1 
-{                                 // RGB Results:Number 0-255 
-    $RGB = array(); 
-
-    if($S == 0) 
-    { 
-        $R = $G = $B = $V * 255; 
-    } 
-    else 
-    { 
-        $var_H = $H * 6; 
-        $var_i = floor( $var_H ); 
-        $var_1 = $V * ( 1 - $S ); 
-        $var_2 = $V * ( 1 - $S * ( $var_H - $var_i ) ); 
-        $var_3 = $V * ( 1 - $S * (1 - ( $var_H - $var_i ) ) ); 
-
-        if       ($var_i == 0) { $var_R = $V     ; $var_G = $var_3  ; $var_B = $var_1 ; } 
-        else if  ($var_i == 1) { $var_R = $var_2 ; $var_G = $V      ; $var_B = $var_1 ; } 
-        else if  ($var_i == 2) { $var_R = $var_1 ; $var_G = $V      ; $var_B = $var_3 ; } 
-        else if  ($var_i == 3) { $var_R = $var_1 ; $var_G = $var_2  ; $var_B = $V     ; } 
-        else if  ($var_i == 4) { $var_R = $var_3 ; $var_G = $var_1  ; $var_B = $V     ; } 
-        else                   { $var_R = $V     ; $var_G = $var_1  ; $var_B = $var_2 ; } 
-
-        $R = $var_R * 255; 
-        $G = $var_G * 255; 
-        $B = $var_B * 255; 
-    } 
-
-    $RGB['R'] = $R; 
-    $RGB['G'] = $G; 
-    $RGB['B'] = $B; 
-
-    return $RGB; 
+   return $HSL;
 }
-function common_get_user_browser() 
-{ 
+
+function HSV_TO_RGB ($H, $S, $V)  // HSV Values:Number 0-1
+{                                 // RGB Results:Number 0-255
+    $RGB = array();
+
+    if($S == 0)
+    {
+        $R = $G = $B = $V * 255;
+    }
+    else
+    {
+        $var_H = $H * 6;
+        $var_i = floor( $var_H );
+        $var_1 = $V * ( 1 - $S );
+        $var_2 = $V * ( 1 - $S * ( $var_H - $var_i ) );
+        $var_3 = $V * ( 1 - $S * (1 - ( $var_H - $var_i ) ) );
+
+        if       ($var_i == 0) { $var_R = $V     ; $var_G = $var_3  ; $var_B = $var_1 ; }
+        else if  ($var_i == 1) { $var_R = $var_2 ; $var_G = $V      ; $var_B = $var_1 ; }
+        else if  ($var_i == 2) { $var_R = $var_1 ; $var_G = $V      ; $var_B = $var_3 ; }
+        else if  ($var_i == 3) { $var_R = $var_1 ; $var_G = $var_2  ; $var_B = $V     ; }
+        else if  ($var_i == 4) { $var_R = $var_3 ; $var_G = $var_1  ; $var_B = $V     ; }
+        else                   { $var_R = $V     ; $var_G = $var_1  ; $var_B = $var_2 ; }
+
+        $R = $var_R * 255;
+        $G = $var_G * 255;
+        $B = $var_B * 255;
+    }
+
+    $RGB['R'] = $R;
+    $RGB['G'] = $G;
+    $RGB['B'] = $B;
+
+    return $RGB;
+}
+function common_get_user_browser()
+{
     $u_agent = $_SERVER['HTTP_USER_AGENT'];
     $rst['browser'] = '';
     $rst['version'] = '';
@@ -497,39 +497,39 @@ function common_get_user_browser()
     } elseif (strpos($u_agent,'360SE')!==false){
         $rst['special'] = '360SE';
     }
-    if(preg_match('/MSIE/i',$u_agent)) 
-    { 
+    if(preg_match('/MSIE/i',$u_agent))
+    {
         $rst['browser'] = "MSIE";
 	$match=preg_match('/MSIE ([0-9]\.[0-9])/',$u_agent,$reg);
 	if($match==0)
 	    $rst['version'] =  -1;
 	else
 	    $rst['version'] = floatval($reg[1]);
-    } 
-    elseif(preg_match('/Firefox/i',$u_agent)) 
-    { 
-        $rst['browser'] = "firefox"; 
     }
-    elseif(preg_match('/Chrome/i',$u_agent)) 
-    { 
-        $rst['browser'] = "chrome"; 
-    } 
-    elseif(preg_match('/Safari/i',$u_agent)) 
-    { 
-        $rst['browser'] = "safari"; 
-    } 
-    elseif(preg_match('/Opera/i',$u_agent)) 
-    { 
-        $rst['browser'] = "opera"; 
-    } 
-    return $rst; 
-} 
+    elseif(preg_match('/Firefox/i',$u_agent))
+    {
+        $rst['browser'] = "firefox";
+    }
+    elseif(preg_match('/Chrome/i',$u_agent))
+    {
+        $rst['browser'] = "chrome";
+    }
+    elseif(preg_match('/Safari/i',$u_agent))
+    {
+        $rst['browser'] = "safari";
+    }
+    elseif(preg_match('/Opera/i',$u_agent))
+    {
+        $rst['browser'] = "opera";
+    }
+    return $rst;
+}
 function common_get_IE_fix_png_style($img_src,$width,$height,$special=''){
     global $browser;
     if ($browser['browser']=='MSIE' && $browser['version']<7){
 	return '<span style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.$img_src.', sizingMethod=\'scale\');width='.$width.'px;height='.$height.'px;display:block;" '.$special.'></span>';
     } else {
-	return '<img src="'.$img_src.'" width="'.$width.'px" height="'.$height.'px" '.$special.'/>';	
+	return '<img src="'.$img_src.'" width="'.$width.'px" height="'.$height.'px" '.$special.'/>';
     }
 }
 
@@ -540,7 +540,7 @@ function common_add_zero_left($src,$length){
     return $src;
 }
 function common_get_zipd_number($src){
-    
+
     $src = (int)$src;
     if ($src < 0 ){
         $pre = '-';
@@ -569,14 +569,14 @@ function common_set_json_rst($module,$err_no,$replace_arr = '',$replace_by_arr =
 	} else {
 	    $json_rst['error'] = $text_handler_text[$module][$err_no];
 	}
-	
+
     } else {
 	if ($err_no>0){
 	    $json_rst['error'] = $text_handler_text['succ'];
 	} else {
 	    $json_rst['error'] = $text_handler_text['err'];
 	}
-	
+
     }
     $json_rst['err_module'] = $module;
     $json_rst['rstno'] = $err_no;
@@ -589,15 +589,15 @@ function special_word_replace($str){
 //    $snda_bad_word = array();
 //	foreach($snda_word_list as $i=>$this_word_list){
 //        //$snda_bad_word = $snda_bad_word+$this_word_list;
-//        $snda_bad_word = array_merge($snda_bad_word, $this_word_list);  
+//        $snda_bad_word = array_merge($snda_bad_word, $this_word_list);
 //	}
-//   
+//
 //    uasort($snda_bad_word, "my_sort_word_length");
 //    //var_dump($snda_bad_word);
 //    foreach($snda_bad_word as $str_replace){
-//        $str_replace_to = '***'; 
+//        $str_replace_to = '***';
 //		$str = str_ireplace($str_replace,$str_replace_to,$str);
-//    } 
+//    }
 //	return $str;
 }
 function my_sort_word_length($a,$b){
@@ -606,13 +606,13 @@ function my_sort_word_length($a,$b){
 //reg特殊字屏蔽
 function reg_special_word_return($str){
     include_once FR.'config/define/bad_word.config.php';
-    $bad_word_list = get_barword_list();	
+    $bad_word_list = get_barword_list();
     foreach($bad_word_list as $s){
-        if(preg_match('/'.implode('|',$s).'/i',$str,$matches)>0){ 
+        if(preg_match('/'.implode('|',$s).'/i',$str,$matches)>0){
             return true;
         }
     }
-    return false;	  
+    return false;
 }
 function get_length( $str )
 {
@@ -624,7 +624,7 @@ function get_length( $str )
 		{
 			$len++;
 		}
-		else 
+		else
 		{
 			$len += 2;
 			$i += 2;
@@ -693,7 +693,7 @@ function in_multi_array($needle, $haystack)
         $in_multi_array = true;
     }
     else
-    {   
+    {
         foreach($haystack as $key=>$value)
         {
             if(is_array($value))
@@ -723,10 +723,10 @@ function str_supplant($orginal_str,$replace_array){
 
 function str_array_supplant($orginal_str_array,$replace_array){
 	foreach($orginal_str_array as $key=>$orginal_str){
-		$orginal_str_array[$key] = str_supplant($orginal_str,$replace_array);		 
+		$orginal_str_array[$key] = str_supplant($orginal_str,$replace_array);
 	}
     return $orginal_str_array;
-	
+
 }
 //页面中文字显示
 function common_format_name($name,$len=8){
@@ -785,9 +785,9 @@ function format_club_name($vip_level,$club_name){
     }else if($vip_level==1){
         $vip_info = " <img src=".$res_url_prefix."images/common/club_bronze.png alt='铜牌教头'/>";
     }else if($vip_level==2){
-        $vip_info = " <img src=".$res_url_prefix."images/common/club_silvel.png alt='银牌教头'/>"; 
+        $vip_info = " <img src=".$res_url_prefix."images/common/club_silvel.png alt='银牌教头'/>";
     }else if($vip_level==3){
-        $vip_info = " <img src=".$res_url_prefix."images/common/club_g.png alt='金牌教头'/>";  
+        $vip_info = " <img src=".$res_url_prefix."images/common/club_g.png alt='金牌教头'/>";
     }
     return $club_name.$vip_info;
 }
@@ -799,7 +799,7 @@ function super_rand($min,$max){
     if ($scope>10000){
         return mt_rand($min,$max);
     }
-    
+
     if (!isset($g_rand_seed)){
 	$g_rand_seed = round(microtime(true)*10000);
     }
@@ -848,13 +848,13 @@ function common_lottery($arr){
 
 // chat udp
 function chat_content_udp($chat_content){
-    global $g_is_public,$config; 
+    global $g_is_public,$config;
     $server_ip = $config['chat']['server_ip'];
     $port = $config['chat_udp']['port'];
     $sock= socket_create(AF_INET,SOCK_DGRAM,0);
     if(!$sock){
         err_log("socket create failure");
-    } 
+    }
     if(!socket_sendto($sock,$chat_content,strlen($chat_content),0,$server_ip,$port)){
         err_log("socket sendto failure");
     }
@@ -864,8 +864,8 @@ function chat_content_udp($chat_content){
 function common_format_incoming($incoming){
     $t = floor($incoming/10);
     $s = array();
-    
-    
+
+
     while ($t>=10000){
         $s[] = common_add_zero_left($t % 10000,4);
         $t= floor($t / 10000);
@@ -941,43 +941,225 @@ function common_insert_table($table,$info){
 		error_log($sql.'::'.$e->getMessage());
 	}
 	return;
-	
+
 }
 
-function common_alpha_id($in, $to_num = false)  
-{  
-    $index = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";  
+function common_alpha_id($in, $to_num = false)
+{
+    $index = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+    $base  = strlen($index);
+
+    if ($to_num) {
+        // Digital number  <<--  alphabet letter code
+        $in  = strrev($in);
+        $out = 0;
+        $len = strlen($in) - 1;
+        for ($t = 0; $t <= $len; $t++) {
+            $bcpow = bcpow($base, $len - $t);
+            $out   = $out + strpos($index, substr($in, $t, 1)) * $bcpow;
+        }
+
+
+        $out = sprintf('%F', $out);
+        $out = substr($out, 0, strpos($out, '.'));
+    } else {
+        // Digital number  -->>  alphabet letter code
+
+
+        $out = "";
+        for ($t = floor(log($in, $base)); $t >= 0; $t--) {
+            $bcp = bcpow($base, $t);
+            $a   = floor($in / $bcp) % $base;
+            $out = $out . substr($index, $a, 1);
+            $in  = $in - ($a * $bcp);
+        }
+        $out = strrev($out); // reverse
+    }
+
+    return $out;
+}
+
+
+/**
+* Error Logging Interface
+*
+* We use this as a simple mechanism to access the logging
+* class and send messages to be logged.
+*
+* @access   public
+* @return   void
+*/
+if ( ! function_exists('log_message'))
+{
+    function log_message($level = 'error', $message, $php_error = FALSE)
+    {
+        static $_log;
+        global $app_config;
+        if ($app_config['log_threshold'] == 0)
+        {
+            return;
+        }
+
+        $_log =& load_class('log');
+        $_log->write_log($level, $message, $php_error);
+    }
+}
+
+
+/**
+* Class registry
+*
+* This function acts as a singleton.  If the requested class does not
+* exist it is instantiated and set to a static variable.  If it has
+* previously been instantiated the variable is returned.
+*
+* @access   public
+* @param    string  the class name being requested
+* @param    string  the directory where the class should be found
+* @param    string  the class name prefix
+* @return   object
+*/
+if ( ! function_exists('load_class'))
+{
+    function &load_class($class, $directory = 'classes', $prefix = '')
+    {
+        static $_classes = array();
+
+        // Does the class exist?  If so, we're done...
+        if (isset($_classes[$class]))
+        {
+            return $_classes[$class];
+        }
+
+        $name = FALSE;
+
+        // Look for the class first in the local application/libraries folder
+        // then in the native system/libraries folder
+        foreach (array(FR, AR) as $path)
+        {
+            if (file_exists($path.$directory.'/'.$class.'.class.php'))
+            {
+                $name = $prefix.$class;
+
+                if (class_exists($name) === FALSE)
+                {
+                    require($path.$directory.'/'.$class.'.class.php');
+                }
+
+                break;
+            }
+        }
+
+
+        // Did we find the class?
+        if ($name === FALSE)
+        {
+            // Note: We use exit() rather then show_error() in order to avoid a
+            // self-referencing loop with the Excptions class
+            exit('Unable to locate the specified class: '.$class.'.class.php');
+        }
+
+        // Keep track of what we just loaded
+        is_loaded($class);
+
+        $_classes[$class] = new $name();
+        return $_classes[$class];
+    }
+}
+
+
+/**
+* Keeps track of which libraries have been loaded.  This function is
+* called by the load_class() function above
+*
+* @access   public
+* @return   array
+*/
+if ( ! function_exists('is_loaded'))
+{
+    function &is_loaded($class = '')
+    {
+        static $_is_loaded = array();
+
+        if ($class != '')
+        {
+            $_is_loaded[strtolower($class)] = $class;
+        }
+
+        return $_is_loaded;
+    }
+}
+
+function config_item($item){
+    global $app_config;
     
-   
-    $base  = strlen($index);  
-   
-    if ($to_num) {  
-        // Digital number  <<--  alphabet letter code  
-        $in  = strrev($in);  
-        $out = 0;  
-        $len = strlen($in) - 1;  
-        for ($t = 0; $t <= $len; $t++) {  
-            $bcpow = bcpow($base, $len - $t);  
-            $out   = $out + strpos($index, substr($in, $t, 1)) * $bcpow;  
-        }  
-       
-         
-        $out = sprintf('%F', $out);  
-        $out = substr($out, 0, strpos($out, '.'));  
-    } else {  
-        // Digital number  -->>  alphabet letter code  
-         
-       
-        $out = "";  
-        for ($t = floor(log($in, $base)); $t >= 0; $t--) {  
-            $bcp = bcpow($base, $t);  
-            $a   = floor($in / $bcp) % $base;  
-            $out = $out . substr($index, $a, 1);  
-            $in  = $in - ($a * $bcp);  
-        }  
-        $out = strrev($out); // reverse  
-    }  
-   
-    return $out;  
+    if (isset($app_config[$item])){
+        return $app_config[$item];
+    } else {
+        return false;
+    }
+}
+function get_config($item=false){
+    global $app_config;
+    if ($item==false){
+        return $app_config;
+    }
+    if (isset($app_config[$item])){
+        return $app_config[$item];
+    } else {
+        return false;
+    }
+}
+
+
+/**
+ * Remove Invisible Characters
+ *
+ * This prevents sandwiching null characters
+ * between ascii characters, like Java\0script.
+ *
+ * @access  public
+ * @param   string
+ * @return  string
+ */
+if ( ! function_exists('remove_invisible_characters'))
+{
+    function remove_invisible_characters($str, $url_encoded = TRUE)
+    {
+        $non_displayables = array();
+
+        // every control character except newline (dec 10)
+        // carriage return (dec 13), and horizontal tab (dec 09)
+
+        if ($url_encoded)
+        {
+            $non_displayables[] = '/%0[0-8bcef]/';  // url encoded 00-08, 11, 12, 14, 15
+            $non_displayables[] = '/%1[0-9a-f]/';   // url encoded 16-31
+        }
+
+        $non_displayables[] = '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]+/S';   // 00-08, 11, 12, 14-31, 127
+
+        do
+        {
+            $str = preg_replace($non_displayables, '', $str, -1, $count);
+        }
+        while ($count);
+
+        return $str;
+    }
+}
+
+if (!function_exists('_')){
+    function _($str){
+        //i18n兼容
+        return $str;
+    }
+}
+
+function site_url($info){
+    global $g_system;
+    return './index.php?/'.$g_system.'/'.$info;
 }
 ?>
